@@ -1,0 +1,352 @@
+---
+const starPath =
+  "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z";
+
+type Segment = { text: string; emphasize?: boolean };
+
+type Testimonial = {
+  segments: Segment[];
+  name: string;
+  location?: string;
+  detail?: string;
+};
+
+const testimonials: Testimonial[] = [
+  {
+    segments: [
+      { text: "From the moment you walk in, 816 feels like a true " },
+      { text: "luxury experience", emphasize: true },
+      {
+        text: ". The team listens, tailors every treatment, and delivers results that are refined, natural, and unmistakably you.",
+      },
+    ],
+    name: "Molly B.",
+    location: "Kansas City",
+  },
+  {
+    segments: [
+      {
+        text: "I can't say enough good things about 816 Med Spa. From the initial consultation to follow-up care, every detail was handled with ",
+      },
+      { text: "professionalism and genuine warmth", emphasize: true },
+      {
+        text: ". My skin has never looked better, and I finally feel confident without makeup.",
+      },
+    ],
+    name: "Amanda K.",
+    location: "Kansas City",
+    detail: "CoolSculpting & facial treatments",
+  },
+  {
+    segments: [
+      { text: "Fantastic experience from start to finish. The team made me feel " },
+      { text: "comfortable", emphasize: true },
+      { text: " and explained every step clearly." },
+    ],
+    name: "David M.",
+    location: "Kansas City",
+  },
+  {
+    segments: [
+      { text: "My go-to place for all things beauty and wellness. " },
+      { text: "The results speak for themselves", emphasize: true },
+      { text: ", and the atmosphere is incredibly welcoming." },
+    ],
+    name: "Lisa H.",
+    location: "Kansas City",
+  },
+];
+
+const slideCount = testimonials.length;
+---
+
+<section id="testimonials" class="bg-espresso py-20 lg:py-28">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <p
+      class="mb-4 text-center text-xs font-medium tracking-[0.2em] text-cream uppercase"
+    >
+      Client Stories
+    </p>
+    <h2
+      class="mx-auto mb-12 max-w-3xl text-center font-display text-3xl text-cream sm:mb-14 sm:text-4xl lg:mb-16 lg:text-5xl"
+    >
+      Words from Our Clients
+    </h2>
+
+    <div
+      class="relative mx-auto max-w-4xl px-11 sm:px-12 md:px-4 lg:px-14"
+      data-testimonial-carousel
+    >
+      <button
+        type="button"
+        class="text-cream/90 hover:text-cream absolute top-1/2 left-0 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream/15 bg-espresso/80 transition hover:border-sage/50 hover:bg-espresso focus-visible:ring-2 focus-visible:ring-sage focus-visible:outline-none sm:left-1 sm:size-11 lg:left-0"
+        aria-controls="testimonials-track"
+        data-carousel-prev
+        aria-label="Previous testimonial"
+      >
+        <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="text-cream/90 hover:text-cream absolute top-1/2 right-0 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream/15 bg-espresso/80 transition hover:border-sage/50 hover:bg-espresso focus-visible:ring-2 focus-visible:ring-sage focus-visible:outline-none sm:right-1 sm:size-11 lg:right-0"
+        aria-controls="testimonials-track"
+        data-carousel-next
+        aria-label="Next testimonial"
+      >
+        <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <div
+        id="testimonials-track"
+        class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth pb-10 [-ms-overflow-style:none] [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-espresso focus-visible:outline-none [&::-webkit-scrollbar]:hidden"
+        tabindex="0"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Client testimonials"
+        data-carousel-track
+      >
+        {testimonials.map((t, i) => (
+          <article
+            class="w-full shrink-0 snap-center snap-always px-1 sm:px-6 md:px-10"
+            data-carousel-slide
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${i + 1} of ${slideCount}`}
+            id={`testimonial-slide-${i + 1}`}
+          >
+            <figure class="text-center">
+              <div
+                class="mb-8 flex justify-center gap-1.5 sm:gap-2"
+                role="img"
+                aria-label="5 out of 5 stars"
+              >
+                {Array.from({ length: 5 }).map(() => (
+                  <svg
+                    class="h-4 w-4 text-cream sm:h-5 sm:w-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path d={starPath}></path>
+                  </svg>
+                ))}
+              </div>
+              <blockquote
+                class="font-body text-lg leading-relaxed text-cream sm:text-xl sm:leading-relaxed"
+              >
+                <span aria-hidden="true">“</span>
+                {t.segments.map((s) =>
+                  s.emphasize ? (
+                    <span class="font-display text-cream italic">{s.text}</span>
+                  ) : (
+                    s.text
+                  ),
+                )}
+                <span aria-hidden="true">”</span>
+              </blockquote>
+              <figcaption class="mx-auto mt-8 max-w-2xl">
+                <p
+                  class="font-body text-xs tracking-[0.18em] text-cream/90 uppercase sm:text-sm"
+                >
+                  — {t.name}
+                  {t.location && `, ${t.location}`}
+                </p>
+                {t.detail && (
+                  <p class="mt-2 font-body text-sm text-cream/55">{t.detail}</p>
+                )}
+              </figcaption>
+            </figure>
+          </article>
+        ))}
+      </div>
+
+      <div
+        class="flex justify-center gap-2.5"
+        role="group"
+        aria-label="Testimonial slides"
+        data-carousel-dots
+      >
+        {testimonials.map((_, i) => (
+          <button
+            type="button"
+            class="size-2.5 rounded-full border border-cream/20 bg-cream/20 transition data-[active=true]:border-sage/60 data-[active=true]:bg-sage"
+            data-carousel-dot={String(i)}
+            aria-label={`Show testimonial ${i + 1}`}
+            aria-controls={`testimonial-slide-${i + 1}`}
+          ></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initTestimonialCarousel(root) {
+    const track = root.querySelector("[data-carousel-track]");
+    const slides = [...root.querySelectorAll("[data-carousel-slide]")];
+    const prev = root.querySelector("[data-carousel-prev]");
+    const next = root.querySelector("[data-carousel-next]");
+    const dotContainer = root.querySelector("[data-carousel-dots]");
+    const dots = dotContainer
+      ? [...dotContainer.querySelectorAll("[data-carousel-dot]")]
+      : [];
+
+    if (!track || slides.length === 0) return;
+
+    const AUTO_DELAY_MS = 5000;
+    let autoTimer = null;
+    let pausedByHover = false;
+    let pausedByVisibility = false;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const clearAutoplay = () => {
+      if (autoTimer !== null) {
+        clearTimeout(autoTimer);
+        autoTimer = null;
+      }
+    };
+
+    const shouldRunAutoplay = () =>
+      !prefersReducedMotion.matches && !pausedByHover && !pausedByVisibility;
+
+    const scheduleAutoplay = () => {
+      clearAutoplay();
+      if (!shouldRunAutoplay() || slides.length <= 1) return;
+      autoTimer = window.setTimeout(() => {
+        autoTimer = null;
+        const i = getIndex();
+        goTo(i >= slides.length - 1 ? 0 : i + 1);
+        scheduleAutoplay();
+      }, AUTO_DELAY_MS);
+    };
+
+    const getPageSize = () => track.clientWidth;
+
+    const getIndex = () => {
+      const w = getPageSize();
+      if (!w) return 0;
+      return Math.min(slides.length - 1, Math.max(0, Math.round(track.scrollLeft / w)));
+    };
+
+    const goTo = (index) => {
+      const w = getPageSize();
+      const clamped = Math.max(0, Math.min(slides.length - 1, index));
+      track.scrollTo({ left: clamped * w, behavior: "smooth" });
+    };
+
+    const goToAndResetAutoplay = (index) => {
+      goTo(index);
+      scheduleAutoplay();
+    };
+
+    const setDots = () => {
+      const idx = getIndex();
+      dots.forEach((dot, i) => {
+        const active = i === idx;
+        dot.dataset.active = active ? "true" : "false";
+        if (active) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    };
+
+    let scrollRaf = 0;
+    const onScroll = () => {
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = 0;
+        setDots();
+      });
+    };
+
+    prev?.addEventListener("click", () => goToAndResetAutoplay(getIndex() - 1));
+    next?.addEventListener("click", () => goToAndResetAutoplay(getIndex() + 1));
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => goToAndResetAutoplay(i));
+    });
+
+    track.addEventListener("scroll", onScroll, { passive: true });
+
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goToAndResetAutoplay(getIndex() - 1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goToAndResetAutoplay(getIndex() + 1);
+      }
+    });
+
+    root.addEventListener("mouseenter", () => {
+      pausedByHover = true;
+      clearAutoplay();
+    });
+    root.addEventListener("mouseleave", () => {
+      pausedByHover = false;
+      scheduleAutoplay();
+    });
+
+    const onVisibility = () => {
+      pausedByVisibility = document.hidden;
+      if (document.hidden) clearAutoplay();
+      else scheduleAutoplay();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
+    prefersReducedMotion.addEventListener("change", () => {
+      if (prefersReducedMotion.matches) clearAutoplay();
+      else scheduleAutoplay();
+    });
+
+    const ro = new ResizeObserver(() => {
+      const w = getPageSize();
+      if (!w) return;
+      const idx = Math.min(slides.length - 1, Math.max(0, Math.round(track.scrollLeft / w)));
+      track.scrollLeft = idx * w;
+      setDots();
+      scheduleAutoplay();
+    });
+    ro.observe(track);
+
+    setDots();
+
+    const onScrollEnd = () => {
+      setDots();
+      scheduleAutoplay();
+    };
+
+    if ("onscrollend" in track) {
+      track.addEventListener("scrollend", onScrollEnd);
+    } else {
+      let scrollEndTimer = null;
+      track.addEventListener(
+        "scroll",
+        () => {
+          if (scrollEndTimer) window.clearTimeout(scrollEndTimer);
+          scrollEndTimer = window.setTimeout(() => {
+            scrollEndTimer = null;
+            onScrollEnd();
+          }, 120);
+        },
+        { passive: true },
+      );
+    }
+
+    scheduleAutoplay();
+  }
+
+  function boot() {
+    document.querySelectorAll("[data-testimonial-carousel]").forEach(initTestimonialCarousel);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot, { once: true });
+  } else {
+    boot();
+  }
+</script>

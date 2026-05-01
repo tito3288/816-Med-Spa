@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+}
+
+const { title, description, href, image } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative block aspect-[3/4] min-h-72 overflow-hidden rounded-2xl shadow-sm outline-none transition hover:shadow-md focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+>
+  <img
+    src={image}
+    alt=""
+    class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
+    loading="lazy"
+    decoding="async"
+  />
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"
+    aria-hidden="true"
+  ></div>
+  <div class="relative flex h-full flex-col justify-end p-6 md:p-8">
+    <h3 class="font-body text-lg font-bold text-white md:text-xl">{title}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-white/90">{description}</p>
+  </div>
+</a>

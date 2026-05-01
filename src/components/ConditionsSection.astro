@@ -1,0 +1,66 @@
+---
+import SectionBadge from "./SectionBadge.astro";
+import ConditionCard from "./ConditionCard.astro";
+
+const conditions = [
+  {
+    title: "Aging Skin",
+    description: "Botox, fillers, microneedling, skin tightening",
+    href: "#aging-skin",
+    image: "/images/conditions/aging-skin.svg",
+  },
+  {
+    title: "Body Sculpting",
+    description: "CoolSculpting, Sculptra, fat reduction, contouring",
+    href: "#body-sculpting",
+    image: "/images/conditions/body-sculpting.svg",
+  },
+  {
+    title: "Wellness",
+    description: "IV therapy, hormones, weight loss, optimization",
+    href: "#wellness",
+    image: "/images/conditions/wellness.svg",
+  },
+  {
+    title: "Hair Removal",
+    description: "Laser hair removal, safe & effective solutions",
+    href: "#hair-removal",
+    image: "/images/conditions/hair-removal.svg",
+  },
+  {
+    title: "Pigmentation",
+    description: "Laser treatments, peels, brightening therapies",
+    href: "#pigmentation",
+    image: "/images/conditions/pigmentation.svg",
+  },
+];
+---
+
+<section id="conditions" class="bg-cream py-20 lg:py-32">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 text-center">
+      <SectionBadge label="Personalized Solutions" class="mb-6" />
+      <h2 class="font-display mb-6 text-4xl sm:text-5xl lg:text-6xl">
+        Choose Your Area of Concern
+      </h2>
+      <p class="mx-auto max-w-3xl text-lg text-gray-600">
+        Explore the areas that matter most to you, and we'll build a personalized plan with care
+        and intention—whether you're focused on confidence, contour, wellness, or an even glow.
+      </p>
+    </div>
+    <div
+      class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:thin] lg:grid lg:grid-cols-5 lg:gap-4 lg:overflow-visible lg:pb-0 lg:snap-none [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sage/40"
+    >
+      {conditions.map((c) => (
+        <div class="w-[min(78vw,280px)] shrink-0 snap-start lg:w-auto lg:min-w-0 lg:shrink">
+          <ConditionCard
+            title={c.title}
+            description={c.description}
+            href={c.href}
+            image={c.image}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

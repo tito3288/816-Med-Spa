@@ -1,0 +1,25 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  { href: "#privacy", label: "Privacy Policy" },
+  { href: "#terms", label: "Terms & Conditions" },
+  { href: "#careers", label: "Careers" },
+];
+---
+
+<footer class="bg-white py-12 border-t border-sage/20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <a href="/" aria-label="816 Med Spa home">
+        <img src="/logo.png" alt="816 Med Spa" class="h-10 w-auto" />
+      </a>
+      <nav class="flex flex-wrap justify-center gap-6 text-sm text-gray-600" aria-label="Footer">
+        {links.map((link) => (
+          <a href={link.href} class="hover:text-sage transition">{link.label}</a>
+        ))}
+      </nav>
+      <p class="text-sm text-gray-600">&copy; {year} 816 Med Spa. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

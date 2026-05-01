@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* Synced from src/lib/theme.config.ts — keep values in lockstep. */
+@theme {
+  --color-sage: #a29b94;
+  --color-lavender: #d5cde4;
+  --color-warmGray: #f5f3f0;
+  --color-cream: #faf8f5;
+  /* Deep band for contrast sections; warm neutral aligned with sage undertones */
+  --color-espresso: #2c2825;
+
+  --font-display: "Bodoni Moda", serif;
+  --font-body: "Work Sans", sans-serif;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+  }
+}

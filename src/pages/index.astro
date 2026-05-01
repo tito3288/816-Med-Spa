@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ConditionsSection from "../components/ConditionsSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+---
+
+<BaseLayout
+  title="816 Med Spa — Kansas City Medical Aesthetics & Wellness"
+  description="Personalized medical aesthetics and wellness in Kansas City. Skin, body, and wellness treatments delivered with expert care at 816 Med Spa."
+  canonical="https://816medspa.com/"
+>
+  <SiteHeader />
+  <main>
+    <HeroSection />
+    <ConditionsSection />
+    <AboutSection />
+    <TestimonialsSection />
+    <ContactSection />
+  </main>
+  <SiteFooter />
+</BaseLayout>
