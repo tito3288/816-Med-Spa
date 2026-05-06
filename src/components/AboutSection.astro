@@ -3,16 +3,16 @@ import SectionBadge from "./SectionBadge.astro";
 
 const features = [
   {
-    title: "Expert Medical Team",
-    description: "Board-certified professionals with years of specialized experience",
+    title: "Cutting-Edge Technology",
+    description: "Modern treatment options selected for safe, effective, confidence-building care",
   },
   {
-    title: "Advanced Technology",
-    description: "State-of-the-art equipment for safe, effective treatments",
+    title: "Artful Aesthetics",
+    description: "An expert touch focused on refined results that enhance your natural beauty",
   },
   {
-    title: "Personalized Plans",
-    description: "Custom treatment strategies tailored to your unique goals",
+    title: "Tailored Treatment Options",
+    description: "Health and cosmetic services shaped around your goals, lifestyle, and comfort",
   },
 ];
 ---
@@ -22,23 +22,22 @@ const features = [
     <div class="max-w-6xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="order-2 lg:order-1">
-          <SectionBadge label="Our Approach" class="mb-6" />
-          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
-            Care That's As Unique As You Are
+          <SectionBadge label="World-Class Expertise" class="mb-6" />
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight" data-reveal>
+            Beauty Inside and Out
           </h2>
-          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-            At 816 Med Spa, we believe exceptional care begins with truly listening. Our team
-            combines cutting-edge treatments with genuine compassion to help you achieve your
-            aesthetic and wellness goals.
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed" data-reveal style="--reveal-delay: 120ms">
+            Experience a holistic approach to wellness with specialized programs designed to help
+            you target your ideal weight, restore balance, and perfect your beauty inside and out.
           </p>
-          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-            Whether you're here for glowing skin, body contouring, or a moment to focus on
-            yourself, we combine advanced medical aesthetics with a personal touch in an
-            environment designed to make you feel at home.
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed" data-reveal style="--reveal-delay: 180ms">
+            At 816 Aesthetic Med Spa, cutting-edge technology meets artful aesthetics in a calm,
+            modern setting. Our rejuvenating services are thoughtfully tailored so your cosmetic
+            aspirations can become a stunning reality.
           </p>
           <ul class="space-y-4">
-            {features.map((feature) => (
-              <li class="flex items-start gap-4">
+            {features.map((feature, i) => (
+              <li class="flex items-start gap-4" data-reveal style={`--reveal-delay: ${240 + i * 80}ms`}>
                 <div class="w-12 h-12 rounded-full bg-sage/20 flex items-center justify-center flex-shrink-0">
                   <svg
                     class="w-6 h-6 text-sage"
@@ -60,8 +59,8 @@ const features = [
             ))}
           </ul>
         </div>
-        <div class="order-1 lg:order-2">
-          <div class="aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden shadow-2xl">
+        <div class="order-1 lg:order-2" data-reveal="fade-left" style="--reveal-delay: 160ms">
+          <div class="aspect-[4/5] bg-gray-200 rounded-2xl overflow-hidden shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800"
               alt="816 Med Spa team welcoming a client in the treatment room"

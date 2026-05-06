@@ -2,9 +2,11 @@
 const year = new Date().getFullYear();
 
 const links = [
-  { href: "#privacy", label: "Privacy Policy" },
-  { href: "#terms", label: "Terms & Conditions" },
-  { href: "#careers", label: "Careers" },
+  { href: "/", label: "Home" },
+  { href: "#conditions", label: "Services" },
+  { href: "#about", label: "About Us" },
+  { href: "#contact", label: "Request an Appointment" },
+  { href: "#contact", label: "Contact Us" },
 ];
 ---
 
@@ -19,7 +21,7 @@ const links = [
           <a href={link.href} class="hover:text-sage transition">{link.label}</a>
         ))}
       </nav>
-      <p class="text-sm text-gray-600">&copy; {year} 816 Med Spa. All rights reserved.</p>
+      <p class="text-sm text-gray-600">&copy; {year} 816 Aesthetic Med Spa. All rights reserved.</p>
     </div>
   </div>
 </footer>

@@ -14,45 +14,45 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     segments: [
-      { text: "From the moment you walk in, 816 feels like a true " },
-      { text: "luxury experience", emphasize: true },
+      { text: "A restorative med spa experience should feel personal from the first conversation. At 816, every detail is shaped around " },
+      { text: "your goals", emphasize: true },
       {
-        text: ". The team listens, tailors every treatment, and delivers results that are refined, natural, and unmistakably you.",
+        text: ", your comfort, and the confidence you want to feel when you leave.",
       },
     ],
-    name: "Molly B.",
+    name: "Client Story",
     location: "Kansas City",
   },
   {
     segments: [
       {
-        text: "I can't say enough good things about 816 Med Spa. From the initial consultation to follow-up care, every detail was handled with ",
+        text: "From subtle enhancements to transformative wellness support, the right treatment plan can help you rediscover a more ",
       },
-      { text: "professionalism and genuine warmth", emphasize: true },
+      { text: "confident version of yourself", emphasize: true },
       {
-        text: ". My skin has never looked better, and I finally feel confident without makeup.",
+        text: " with care that feels refined, thoughtful, and tailored.",
       },
     ],
-    name: "Amanda K.",
+    name: "816 Med Spa Client",
     location: "Kansas City",
-    detail: "CoolSculpting & facial treatments",
+    detail: "Aesthetic and wellness treatments",
   },
   {
     segments: [
-      { text: "Fantastic experience from start to finish. The team made me feel " },
-      { text: "comfortable", emphasize: true },
-      { text: " and explained every step clearly." },
+      { text: "Skin care, injectables, weight loss, and hormone therapy each begin with the same promise: a plan made with " },
+      { text: "care and intention", emphasize: true },
+      { text: " for your unique journey." },
     ],
-    name: "David M.",
-    location: "Kansas City",
+    name: "Client Experience",
+    location: "816 Aesthetic Med Spa",
   },
   {
     segments: [
-      { text: "My go-to place for all things beauty and wellness. " },
-      { text: "The results speak for themselves", emphasize: true },
-      { text: ", and the atmosphere is incredibly welcoming." },
+      { text: "Our clients' stories reflect a shared goal: renewed confidence, a natural glow, and " },
+      { text: "results that feel like you", emphasize: true },
+      { text: " at your best." },
     ],
-    name: "Lisa H.",
+    name: "Community Story",
     location: "Kansas City",
   },
 ];
@@ -64,18 +64,23 @@ const slideCount = testimonials.length;
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <p
       class="mb-4 text-center text-xs font-medium tracking-[0.2em] text-cream uppercase"
+      data-reveal
     >
-      Client Stories
+      Reviews
     </p>
     <h2
       class="mx-auto mb-12 max-w-3xl text-center font-display text-3xl text-cream sm:mb-14 sm:text-4xl lg:mb-16 lg:text-5xl"
+      data-reveal
+      style="--reveal-delay: 120ms"
     >
-      Words from Our Clients
+      Stories of Confidence and Renewal
     </h2>
 
     <div
       class="relative mx-auto max-w-4xl px-11 sm:px-12 md:px-4 lg:px-14"
       data-testimonial-carousel
+      data-reveal
+      style="--reveal-delay: 220ms"
     >
       <button
         type="button"

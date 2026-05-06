@@ -1,55 +1,59 @@
 ---
-const phoneDigits = "8165550100";
-const phoneDisplay = "(816) 555-0100";
+const phoneDigits = "8165512322";
+const phoneDisplay = "816-551-2322";
 ---
 
 <section id="contact" class="py-20 lg:py-32 bg-sage text-white">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-display text-5xl sm:text-6xl lg:text-7xl mb-6">Your Journey Starts Here</h2>
-      <p class="text-xl mb-12 opacity-90">
-        Schedule your complimentary consultation and discover what's possible
+      <h2 class="font-display text-5xl sm:text-6xl lg:text-7xl mb-6" data-reveal>
+        Request an Appointment
+      </h2>
+      <p class="text-xl mb-12 text-white/90" data-reveal style="--reveal-delay: 120ms">
+        Your transformation awaits. Schedule a consultation and discover what is possible with care
+        tailored specifically for you.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+      <div
+        class="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+        data-reveal
+        style="--reveal-delay: 220ms"
+      >
         <a
           href={`tel:${phoneDigits}`}
-          class="bg-white text-sage px-10 py-4 text-center hover:bg-white/90 transition font-medium text-lg"
+          class="rounded-lg bg-white text-sage px-10 py-4 text-center hover:bg-white/90 transition font-medium text-lg"
         >
           Call {phoneDisplay}
         </a>
         <a
-          href="#book"
-          class="border-2 border-white text-white px-10 py-4 text-center hover:bg-white hover:text-sage transition font-medium text-lg"
+          href="#contact"
+          class="rounded-lg border-2 border-white text-white px-10 py-4 text-center hover:bg-white hover:text-sage transition font-medium text-lg"
         >
-          Book Online
+          Request Online
         </a>
       </div>
       <div class="grid sm:grid-cols-3 gap-8 pt-12 border-t border-white/20">
-        <div class="text-left">
+        <div class="text-left" data-reveal style="--reveal-delay: 280ms">
           <h3 class="font-display text-xl mb-3">Location</h3>
           <p class="opacity-80 text-sm leading-relaxed">
-            123 Main Street<br />
-            Kansas City, MO 64108
+            638 W 39th St.<br />
+            Kansas City, MO 64111
           </p>
         </div>
-        <div class="text-left">
+        <div class="text-left" data-reveal style="--reveal-delay: 360ms">
           <h3 class="font-display text-xl mb-3">Hours</h3>
           <p class="opacity-80 text-sm leading-relaxed">
-            Monday – Friday: 9am – 6pm<br />
-            Saturday: 10am – 4pm<br />
-            Sunday: Closed
+            Monday - Friday<br />
+            8:00 AM - 4:00 PM
           </p>
         </div>
-        <div class="text-left">
+        <div class="text-left" data-reveal style="--reveal-delay: 440ms">
           <h3 class="font-display text-xl mb-3">Connect</h3>
           <p class="opacity-80 text-sm leading-relaxed">
-            Email: <a href="mailto:info@816medspa.com" class="hover:underline">info@816medspa.com</a><br />
-            Instagram:
+            Phone:
             <a
-              href="https://instagram.com/816medspa"
+              href={`tel:${phoneDigits}`}
               class="hover:underline"
-              rel="noopener"
-              target="_blank">@816medspa</a
+              >{phoneDisplay}</a
             >
           </p>
         </div>
