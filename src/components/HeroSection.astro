@@ -1,103 +1,65 @@
 ---
-import SectionBadge from "./SectionBadge.astro";
 ---
 
-<section class="relative py-20 md:py-28 lg:py-14 xl:py-16 bg-gradient-to-br from-lavender/20 via-warmGray to-cream">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="relative lg:min-h-[31rem] xl:min-h-[34rem]">
-      <SectionBadge label="Your Transformation Awaits" class="relative z-[2] mb-5 max-w-2xl lg:max-w-[min(100%,40rem)] xl:max-w-[44rem]" />
+<section class="relative isolate min-h-screen overflow-hidden bg-espresso text-cream">
+  <img
+    src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1800"
+    alt="Relaxed client receiving a facial treatment at a med spa"
+    class="absolute inset-0 -z-20 size-full object-cover"
+    fetchpriority="high"
+    decoding="async"
+    width="1800"
+    height="1200"
+  />
+  <div class="absolute inset-0 -z-10 bg-espresso/55"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-espresso/45 via-espresso/15 to-espresso/55"></div>
 
-      <h1
-        class="relative z-[2] font-display text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl leading-[0.95] mb-6 max-w-2xl lg:max-w-[34rem] xl:max-w-[40rem] text-espresso"
+  <div class="container mx-auto flex min-h-screen items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl">
+      <p
+        class="mb-6 text-xs font-medium tracking-[0.35em] text-cream/85 uppercase"
         data-reveal
       >
-        Meet Your Best Self
-      </h1>
-
-      <p
-        class="relative z-[2] text-xl sm:text-2xl lg:text-lg xl:text-xl text-gray-600 mb-8 max-w-2xl lg:max-w-md xl:max-w-lg leading-relaxed"
+        Med Spa in Kansas City, Missouri
+      </p>
+      <h1
+        class="font-display text-5xl leading-[0.95] text-cream italic sm:text-6xl md:text-7xl lg:text-8xl"
         data-reveal
         style="--reveal-delay: 120ms"
       >
-        Indulge in a restorative med spa experience where cutting-edge technology meets artful
-        aesthetics in the heart of Kansas City. Every treatment is tailored to help you renew your
-        glow, elevate your confidence, and feel at home in your skin.
-      </p>
-
-      <div
-        class="relative z-[2] flex flex-col sm:flex-row gap-4 max-w-2xl lg:max-w-md xl:max-w-lg"
+        Meet Your Best Self
+      </h1>
+      <p
+        class="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-cream/85 sm:text-lg"
         data-reveal
         style="--reveal-delay: 220ms"
       >
+        Restorative medical aesthetics and wellness treatments tailored to help you renew your glow,
+        elevate your confidence, and feel at home in your skin.
+      </p>
+      <div
+        class="mt-10 flex flex-col justify-center gap-4 sm:flex-row"
+        data-reveal
+        style="--reveal-delay: 320ms"
+      >
         <a
           href="#contact"
-          class="rounded-lg bg-sage text-white px-8 py-4 text-center hover:bg-sage/90 transition font-medium"
+          class="border border-cream/70 px-8 py-3.5 text-xs font-medium tracking-[0.22em] text-cream uppercase transition hover:bg-cream hover:text-espresso"
         >
-          Request an Appointment
+          Schedule Now
         </a>
         <a
-          href="#conditions"
-          class="rounded-lg bg-white border-2 border-sage text-sage px-8 py-4 text-center hover:bg-sage hover:text-white transition font-medium"
+          href="#contact"
+          class="border border-cream/70 px-8 py-3.5 text-xs font-medium tracking-[0.22em] text-cream uppercase transition hover:bg-cream hover:text-espresso"
         >
-          Explore Services
+          Contact Us
         </a>
-      </div>
-
-      <div
-        class="mt-12 w-full max-w-lg mx-auto sm:max-w-2xl lg:mx-0 lg:mt-0 lg:max-w-none lg:absolute lg:top-0 lg:right-0 lg:w-[min(42%,520px)] xl:w-[min(44%,600px)] lg:scale-100 xl:scale-105 lg:origin-top-right z-[1]"
-        data-reveal="fade-left"
-        style="--reveal-delay: 180ms"
-      >
-        <div class="grid grid-cols-2 gap-4">
-          <div class="space-y-4 lg:pt-3">
-            <div class="aspect-[3/4] bg-gray-200 rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600"
-                alt="Calm, modern medical spa interior with soft natural light"
-                class="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="800"
-              />
-            </div>
-            <div class="aspect-[4/3] bg-gray-200 rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=600"
-                alt="Spa treatment room with warm towels and calming skincare details"
-                class="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="450"
-              />
-            </div>
-          </div>
-          <div class="space-y-4 pt-6 lg:pt-0">
-            <div class="aspect-square bg-gray-200 rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600"
-                alt="Aesthetician applying a facial treatment to a relaxed client"
-                class="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="600"
-              />
-            </div>
-            <div class="aspect-[3/4] bg-gray-200 rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600"
-                alt="Wellness consultation between practitioner and client"
-                class="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="800"
-              />
-            </div>
-          </div>
-        </div>
+        <a
+          href="#gift-cards"
+          class="border border-cream/70 px-8 py-3.5 text-xs font-medium tracking-[0.22em] text-cream uppercase transition hover:bg-cream hover:text-espresso"
+        >
+          Gift Cards
+        </a>
       </div>
     </div>
   </div>

@@ -84,7 +84,7 @@ const slideCount = testimonials.length;
     >
       <button
         type="button"
-        class="text-cream/90 hover:text-cream absolute top-1/2 left-0 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream/15 bg-espresso/80 transition hover:border-sage/50 hover:bg-espresso focus-visible:ring-2 focus-visible:ring-sage focus-visible:outline-none sm:left-1 sm:size-11 lg:left-0"
+        class="text-cream/90 hover:text-cream absolute top-1/2 left-0 z-10 flex size-10 -translate-y-1/2 items-center justify-center border border-cream/15 bg-espresso/80 transition hover:border-sage/50 hover:bg-espresso focus-visible:ring-2 focus-visible:ring-sage focus-visible:outline-none sm:left-1 sm:size-11 lg:left-0"
         aria-controls="testimonials-track"
         data-carousel-prev
         aria-label="Previous testimonial"
@@ -95,7 +95,7 @@ const slideCount = testimonials.length;
       </button>
       <button
         type="button"
-        class="text-cream/90 hover:text-cream absolute top-1/2 right-0 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream/15 bg-espresso/80 transition hover:border-sage/50 hover:bg-espresso focus-visible:ring-2 focus-visible:ring-sage focus-visible:outline-none sm:right-1 sm:size-11 lg:right-0"
+        class="text-cream/90 hover:text-cream absolute top-1/2 right-0 z-10 flex size-10 -translate-y-1/2 items-center justify-center border border-cream/15 bg-espresso/80 transition hover:border-sage/50 hover:bg-espresso focus-visible:ring-2 focus-visible:ring-sage focus-visible:outline-none sm:right-1 sm:size-11 lg:right-0"
         aria-controls="testimonials-track"
         data-carousel-next
         aria-label="Next testimonial"
@@ -178,7 +178,7 @@ const slideCount = testimonials.length;
         {testimonials.map((_, i) => (
           <button
             type="button"
-            class="size-2.5 rounded-full border border-cream/20 bg-cream/20 transition data-[active=true]:border-sage/60 data-[active=true]:bg-sage"
+            class="size-2.5 border border-cream/20 bg-cream/20 transition data-[active=true]:border-sage/60 data-[active=true]:bg-sage"
             data-carousel-dot={String(i)}
             aria-label={`Show testimonial ${i + 1}`}
             aria-controls={`testimonial-slide-${i + 1}`}

@@ -38,7 +38,7 @@ const features = [
           <ul class="space-y-4">
             {features.map((feature, i) => (
               <li class="flex items-start gap-4" data-reveal style={`--reveal-delay: ${240 + i * 80}ms`}>
-                <div class="w-12 h-12 rounded-full bg-sage/20 flex items-center justify-center flex-shrink-0">
+                <div class="w-12 h-12 bg-sage/20 flex items-center justify-center flex-shrink-0">
                   <svg
                     class="w-6 h-6 text-sage"
                     fill="currentColor"
@@ -60,7 +60,9 @@ const features = [
           </ul>
         </div>
         <div class="order-1 lg:order-2" data-reveal="fade-left" style="--reveal-delay: 160ms">
-          <div class="aspect-[4/5] bg-gray-200 rounded-2xl overflow-hidden shadow-2xl">
+          <div class="relative mx-auto max-w-[82%] sm:max-w-md lg:max-w-none">
+            <div class="absolute top-3 left-3 h-full w-full bg-sage sm:top-4 sm:left-4" aria-hidden="true"></div>
+            <div class="relative aspect-[4/5] bg-gray-200 overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800"
               alt="816 Med Spa team welcoming a client in the treatment room"
@@ -70,6 +72,7 @@ const features = [
               width="800"
               height="1000"
             />
+            </div>
           </div>
         </div>
       </div>
