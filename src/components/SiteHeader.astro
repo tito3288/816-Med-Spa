@@ -1,32 +1,32 @@
 ---
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#conditions", label: "Services" },
-  { href: "#conditions", label: "Concerns" },
-  { href: "#treatments", label: "Treatments" },
+  { href: "#about", label: "About", caret: true },
+  { href: "#services", label: "Services", caret: true },
+  { href: "#conditions", label: "Conditions", caret: true },
+  { href: "#treatments", label: "Treatments", caret: true },
   { href: "#gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
 ---
 
 <header
-  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent text-cream transition-colors duration-300"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent text-parchment transition-colors duration-300"
   data-site-header
 >
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Mobile / tablet: single row -->
-    <div class="flex items-center justify-between py-4 md:py-5 lg:hidden">
+    <div class="flex items-center justify-between py-4 md:py-5 min-[900px]:hidden">
       <a href="/" class="shrink-0" aria-label="816 Med Spa home">
         <img src="/logo.png" alt="816 Med Spa" class="h-16 w-auto sm:h-20" />
       </a>
       <div class="flex items-center gap-3">
         <a
-          href="#contact"
-          class="hidden border border-cream/70 bg-transparent px-4 py-2.5 text-sm font-medium text-cream transition hover:bg-cream hover:text-espresso sm:inline-block"
+          href="#"
+          class="hidden border border-parchment/70 bg-transparent px-4 py-2.5 font-sans-wide text-[11px] font-medium tracking-[0.35em] text-parchment uppercase transition hover:bg-parchment hover:text-ink sm:inline-block"
           data-header-cta
         >
-          Request Appointment
+          Book Now
         </a>
         <button
           type="button"
@@ -69,43 +69,68 @@ const navLinks = [
     </div>
 
     <!-- Desktop: centered logo + nav row -->
-    <div class="hidden lg:block py-6 transition-[padding] duration-300" data-desktop-header-inner>
+    <div
+      class="hidden py-6 transition-[padding] duration-300 min-[900px]:block"
+      data-desktop-header-inner
+    >
       <div class="grid grid-cols-[1fr_auto_1fr] items-center">
         <div aria-hidden="true"></div>
-        <a href="/" class="justify-self-center" aria-label="816 Med Spa home">
+        <a
+          href="/"
+          class="flex flex-col items-center justify-self-center"
+          aria-label="816 Med Spa home"
+        >
           <img
             src="/logo.png"
             alt="816 Med Spa"
-            class="h-20 w-auto transition-all duration-300 xl:h-24"
+            class="h-[110px] w-auto drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)] transition-all duration-300"
             data-header-logo
           />
+          <span
+            class="mt-2 overflow-hidden font-sans-wide text-[10px] tracking-[0.55em] text-parchment uppercase opacity-100 transition-all duration-300"
+            data-header-subtitle
+          >
+            Med Spa &middot; Kansas City
+          </span>
         </a>
-        <a
-          href="#contact"
-          class="justify-self-end border border-cream/70 bg-transparent px-6 py-2.5 text-xs font-medium tracking-[0.12em] text-cream uppercase transition hover:bg-cream hover:text-espresso"
-          data-header-cta
-        >
-          Request Appointment
-        </a>
+        <div class="flex items-center justify-end gap-[18px] justify-self-end">
+          <a
+            href="#"
+            class="border border-parchment/70 bg-transparent px-6 py-[14px] font-sans-wide text-[11px] font-medium tracking-[0.35em] text-parchment uppercase transition hover:bg-parchment hover:text-ink"
+            data-header-cta
+          >
+            Book Now
+          </a>
+          <button
+            type="button"
+            aria-label="Search"
+            class="grid h-[22px] w-[22px] place-items-center rounded-full border border-parchment text-[12px] leading-none text-parchment transition hover:bg-parchment hover:text-ink"
+          >
+            ⌕
+          </button>
+        </div>
       </div>
       <nav
-        class="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 transition-[margin] duration-300 xl:gap-x-9"
+        class="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-2 transition-[margin] duration-300"
         aria-label="Primary"
         data-header-nav
       >
         {navLinks.map((link) => (
           <a
             href={link.href}
-            class="font-body text-sm font-medium tracking-[0.16em] text-current uppercase transition hover:text-sage focus-visible:text-sage"
+            class="inline-flex items-center font-sans-wide text-[11px] font-medium tracking-[0.35em] text-current uppercase transition hover:text-sage focus-visible:text-sage"
             data-header-nav-link
           >
             {link.label}
+            {link.caret && (
+              <span aria-hidden="true" class="ml-1 text-[9px] opacity-80">▾</span>
+            )}
           </a>
         ))}
       </nav>
     </div>
 
-    <div id="mobile-menu" class="hidden pb-4 lg:hidden" data-mobile-menu>
+    <div id="mobile-menu" class="hidden pb-4 min-[900px]:hidden" data-mobile-menu>
       <nav class="flex flex-col gap-1 border-t border-current/20 pt-4" aria-label="Mobile">
         {navLinks.map((link) => (
           <a
@@ -116,11 +141,11 @@ const navLinks = [
           </a>
         ))}
         <a
-          href="#contact"
-          class="mt-3 border border-cream/70 bg-transparent px-6 py-3 text-center font-medium text-cream transition hover:bg-cream hover:text-espresso"
+          href="#"
+          class="mt-3 border border-parchment/70 bg-transparent px-6 py-3 text-center font-medium text-parchment transition hover:bg-parchment hover:text-ink"
           data-header-cta
         >
-          Request Appointment
+          Book Now
         </a>
       </nav>
     </div>
@@ -132,6 +157,7 @@ const navLinks = [
   const headerCtas = document.querySelectorAll<HTMLElement>("[data-header-cta]");
   const headerNavLinks = document.querySelectorAll<HTMLElement>("[data-header-nav-link]");
   const headerLogo = document.querySelector<HTMLElement>("[data-header-logo]");
+  const headerSubtitle = document.querySelector<HTMLElement>("[data-header-subtitle]");
   const desktopHeaderInner = document.querySelector<HTMLElement>("[data-desktop-header-inner]");
   const headerNav = document.querySelector<HTMLElement>("[data-header-nav]");
   const button = document.querySelector<HTMLButtonElement>("[data-mobile-menu-button]");
@@ -145,7 +171,7 @@ const navLinks = [
 
     header.classList.toggle("border-transparent", atTop);
     header.classList.toggle("bg-transparent", atTop);
-    header.classList.toggle("text-cream", atTop);
+    header.classList.toggle("text-parchment", atTop);
     header.classList.toggle("border-sage/20", !atTop);
     header.classList.toggle("bg-white", !atTop);
     header.classList.toggle("text-gray-900", !atTop);
@@ -153,26 +179,31 @@ const navLinks = [
 
     desktopHeaderInner?.classList.toggle("py-6", atTop);
     desktopHeaderInner?.classList.toggle("py-4", !atTop);
-    headerLogo?.classList.toggle("h-20", atTop);
-    headerLogo?.classList.toggle("xl:h-24", atTop);
+    headerLogo?.classList.toggle("h-[110px]", atTop);
     headerLogo?.classList.toggle("h-14", !atTop);
     headerLogo?.classList.toggle("xl:h-16", !atTop);
-    headerNav?.classList.toggle("mt-4", atTop);
-    headerNav?.classList.toggle("mt-2", !atTop);
+    headerNav?.classList.toggle("mt-6", atTop);
+    headerNav?.classList.toggle("mt-3", !atTop);
+
+    headerSubtitle?.classList.toggle("opacity-100", atTop);
+    headerSubtitle?.classList.toggle("mt-2", atTop);
+    headerSubtitle?.classList.toggle("opacity-0", !atTop);
+    headerSubtitle?.classList.toggle("mt-0", !atTop);
+    headerSubtitle?.classList.toggle("h-0", !atTop);
 
     headerNavLinks.forEach((link) => {
-      link.classList.toggle("text-sm", atTop);
-      link.classList.toggle("tracking-[0.16em]", atTop);
-      link.classList.toggle("text-xs", !atTop);
-      link.classList.toggle("tracking-[0.14em]", !atTop);
+      link.classList.toggle("text-[11px]", atTop);
+      link.classList.toggle("tracking-[0.35em]", atTop);
+      link.classList.toggle("text-[10px]", !atTop);
+      link.classList.toggle("tracking-[0.28em]", !atTop);
     });
 
     headerCtas.forEach((cta) => {
-      cta.classList.toggle("border-cream/70", atTop);
+      cta.classList.toggle("border-parchment/70", atTop);
       cta.classList.toggle("bg-transparent", atTop);
-      cta.classList.toggle("text-cream", atTop);
-      cta.classList.toggle("hover:bg-cream", atTop);
-      cta.classList.toggle("hover:text-espresso", atTop);
+      cta.classList.toggle("text-parchment", atTop);
+      cta.classList.toggle("hover:bg-parchment", atTop);
+      cta.classList.toggle("hover:text-ink", atTop);
       cta.classList.toggle("border-sage", !atTop);
       cta.classList.toggle("bg-sage", !atTop);
       cta.classList.toggle("text-white", !atTop);

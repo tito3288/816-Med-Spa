@@ -8,9 +8,14 @@
   --color-cream: #faf8f5;
   /* Deep band for contrast sections; warm neutral aligned with sage undertones */
   --color-espresso: #2c2825;
+  --color-parchment: #f6f0e3;
+  --color-ink: #322b21;
 
-  --font-display: "Bodoni Moda", serif;
-  --font-body: "Work Sans", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-serif-italic: "Cormorant Garamond", serif;
+  --font-sans-wide: "Montserrat", sans-serif;
+  --font-script: "Pinyon Script", cursive;
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -25,6 +30,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-optical-sizing: auto;
+  }
+
+  h1, h2 {
+    font-style: italic;
+    font-weight: 300;
   }
 }
 

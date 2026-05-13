@@ -11,7 +11,7 @@ const { title, description, href, image } = Astro.props;
 
 <a
   href={href}
-  class="group relative block aspect-[3/4] min-h-72 overflow-hidden shadow-sm outline-none transition hover:shadow-md focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+  class="group relative block aspect-[3/4] min-h-72 overflow-hidden rounded-2xl shadow-sm outline-none transition hover:shadow-md focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
 >
   <img
     src={image}
@@ -25,7 +25,7 @@ const { title, description, href, image } = Astro.props;
     aria-hidden="true"
   ></div>
   <div class="relative flex h-full flex-col justify-end p-6 md:p-8">
-    <h3 class="font-body text-lg font-bold text-white md:text-xl">{title}</h3>
+    <h3 class="font-display text-2xl font-bold italic text-white md:text-3xl">{title}</h3>
     <p class="mt-2 text-sm leading-relaxed text-white/90">{description}</p>
   </div>
 </a>

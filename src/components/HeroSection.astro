@@ -1,66 +1,78 @@
 ---
 ---
 
-<section class="relative isolate min-h-screen overflow-hidden bg-espresso text-cream">
-  <img
-    src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1800"
-    alt="Relaxed client receiving a facial treatment at a med spa"
-    class="absolute inset-0 -z-20 size-full object-cover"
-    fetchpriority="high"
-    decoding="async"
-    width="1800"
-    height="1200"
-  />
-  <div class="absolute inset-0 -z-10 bg-espresso/55"></div>
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-espresso/45 via-espresso/15 to-espresso/55"></div>
-
-  <div class="container mx-auto flex min-h-screen items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-4xl">
-      <p
-        class="mb-6 text-xs font-medium tracking-[0.35em] text-cream/85 uppercase"
-        data-reveal
-      >
-        Med Spa in Kansas City, Missouri
-      </p>
-      <h1
-        class="font-display text-5xl leading-[0.95] text-cream italic sm:text-6xl md:text-7xl lg:text-8xl"
-        data-reveal
-        style="--reveal-delay: 120ms"
-      >
-        Meet Your Best Self
-      </h1>
-      <p
-        class="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-cream/85 sm:text-lg"
-        data-reveal
-        style="--reveal-delay: 220ms"
-      >
-        Restorative medical aesthetics and wellness treatments tailored to help you renew your glow,
-        elevate your confidence, and feel at home in your skin.
-      </p>
-      <div
-        class="mt-10 flex flex-col justify-center gap-4 sm:flex-row"
-        data-reveal
-        style="--reveal-delay: 320ms"
-      >
-        <a
-          href="#contact"
-          class="border border-cream/70 px-8 py-3.5 text-xs font-medium tracking-[0.22em] text-cream uppercase transition hover:bg-cream hover:text-espresso"
-        >
-          Schedule Now
-        </a>
-        <a
-          href="#contact"
-          class="border border-cream/70 px-8 py-3.5 text-xs font-medium tracking-[0.22em] text-cream uppercase transition hover:bg-cream hover:text-espresso"
-        >
-          Contact Us
-        </a>
-        <a
-          href="#gift-cards"
-          class="border border-cream/70 px-8 py-3.5 text-xs font-medium tracking-[0.22em] text-cream uppercase transition hover:bg-cream hover:text-espresso"
-        >
-          Gift Cards
-        </a>
-      </div>
+<section class="hero relative isolate min-h-screen w-full overflow-hidden">
+  <div
+    class="relative z-[1] flex min-h-screen flex-col items-center justify-center px-6 pt-[200px] pb-[120px] text-center max-[900px]:pt-[160px]"
+  >
+    <p class="hero-eyebrow" data-reveal>Med Spa in Kansas City, Missouri</p>
+    <h1 class="hero-headline" data-reveal style="--reveal-delay: 120ms">
+      this must be<br />the place.
+    </h1>
+    <div
+      class="hero-ctas flex flex-wrap justify-center gap-[22px]"
+      data-reveal
+      style="--reveal-delay: 320ms"
+    >
+      <a href="#" class="hero-btn">Schedule Now</a>
+      <a href="#" class="hero-btn">Contact Us</a>
+      <a href="#" class="hero-btn">Gift Cards</a>
     </div>
   </div>
 </section>
+
+<style>
+  .hero {
+    background-color: #8f7f68;
+    background-image:
+      linear-gradient(rgba(90, 76, 56, 0.35), rgba(60, 48, 33, 0.45)),
+      url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-sans-wide);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--color-parchment);
+    opacity: 0.95;
+    margin-bottom: 28px;
+  }
+
+  .hero-headline {
+    font-family: var(--font-serif-italic);
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(56px, 8vw, 132px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--color-parchment);
+    max-width: 1000px;
+    margin: 0 0 56px;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    padding: 20px 36px;
+    border: 1px solid var(--color-parchment);
+    color: var(--color-parchment);
+    background: transparent;
+    font-family: var(--font-sans-wide);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 220px;
+    transition: all 0.25s ease;
+  }
+
+  .hero-btn:hover {
+    background: var(--color-parchment);
+    color: var(--color-ink);
+  }
+</style>

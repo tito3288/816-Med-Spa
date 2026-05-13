@@ -2,36 +2,39 @@
 import SectionBadge from "./SectionBadge.astro";
 import ConditionCard from "./ConditionCard.astro";
 
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&h=1067&q=80`;
+
 const conditions = [
   {
     title: "Skin Care",
     description: "Personalized facials, resurfacing, and treatments designed around your glow goals",
     href: "#skin-care",
-    image: "/images/conditions/aging-skin.svg",
+    image: unsplash("photo-1570172619644-dfd03ed5d881"),
   },
   {
     title: "Weight Loss",
     description: "Tailored support to help you regain control, build confidence, and feel renewed",
     href: "#weight-loss",
-    image: "/images/conditions/body-sculpting.svg",
+    image: unsplash("photo-1571019613454-1cb2f99b2d8b"),
   },
   {
     title: "Hormone Therapy",
     description: "Balance, harmony, and renewal through care designed to optimize your well-being",
     href: "#hormone-therapy",
-    image: "/images/conditions/wellness.svg",
+    image: unsplash("photo-1544161515-4ab6ce6db874"),
   },
   {
     title: "Botox & Fillers",
     description: "Refined face and contouring solutions for natural-looking, confidence-building results",
     href: "#botox-fillers",
-    image: "/images/conditions/hair-removal.svg",
+    image: unsplash("photo-1487412947147-5cebf100ffc2"),
   },
   {
     title: "Morpheus8",
     description: "Advanced technology for smoother texture, tighter-looking skin, and refreshed radiance",
     href: "#morpheus8",
-    image: "/images/conditions/pigmentation.svg",
+    image: unsplash("photo-1616394584738-fc6e612e71b9"),
   },
 ];
 ---
@@ -41,7 +44,7 @@ const conditions = [
     <div class="mb-16 text-center">
       <SectionBadge label="Beauty Beyond Boundaries" class="mb-6" />
       <h2 class="font-display mb-6 text-4xl sm:text-5xl lg:text-6xl" data-reveal>
-        Refine Your Natural Glow
+        <span class="font-bold">Treatments</span> Tailored <span class="font-bold">to You</span>
       </h2>
       <p class="mx-auto max-w-3xl text-lg text-gray-600" data-reveal style="--reveal-delay: 120ms">
         From skin care and injectables to weight loss and hormone replacement therapy, our
