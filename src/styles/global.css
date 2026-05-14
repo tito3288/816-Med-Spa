@@ -9,12 +9,15 @@
   /* Deep band for contrast sections; warm neutral aligned with sage undertones */
   --color-espresso: #2c2825;
   --color-parchment: #f6f0e3;
+  --color-bone: #f7efe2;
   --color-ink: #322b21;
+  --color-gold: #8a7450;
 
   --font-display: "Cormorant Garamond", serif;
   --font-body: "Montserrat", sans-serif;
   --font-serif-italic: "Cormorant Garamond", serif;
   --font-sans-wide: "Montserrat", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
   --font-script: "Pinyon Script", cursive;
 
   --radius-sm: 0.25rem;

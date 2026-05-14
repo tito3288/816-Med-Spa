@@ -1,5 +1,4 @@
 ---
-import SectionBadge from "./SectionBadge.astro";
 import ConditionCard from "./ConditionCard.astro";
 
 const unsplash = (id: string) =>
@@ -39,18 +38,22 @@ const conditions = [
 ];
 ---
 
-<section id="conditions" class="bg-cream py-20 lg:py-32">
+<section id="conditions" class="bg-bone font-dm-sans py-20 lg:py-32">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-16 text-center">
-      <SectionBadge label="Beauty Beyond Boundaries" class="mb-6" />
-      <h2 class="font-display mb-6 text-4xl sm:text-5xl lg:text-6xl" data-reveal>
-        <span class="font-bold">Treatments</span> Tailored <span class="font-bold">to You</span>
-      </h2>
-      <p class="mx-auto max-w-3xl text-lg text-gray-600" data-reveal style="--reveal-delay: 120ms">
-        From skin care and injectables to weight loss and hormone replacement therapy, our
-        rejuvenating services are tailored to your goals. You are not just a client; you are the
-        masterpiece.
+      <p
+        class="mb-6 font-dm-sans text-[12px] font-medium tracking-[0.32em] uppercase text-gold"
+        data-reveal
+      >
+        Our Services
       </p>
+      <h2
+        class="mx-auto max-w-5xl font-dm-sans text-5xl font-normal leading-[1.05] text-ink not-italic sm:text-6xl lg:text-7xl"
+        data-reveal
+        style="--reveal-delay: 120ms"
+      >
+        Treatments <span class="font-serif-italic font-normal italic text-gold">tailored</span> <span class="whitespace-nowrap">to <br class="hidden sm:inline" />you.</span>
+      </h2>
     </div>
     <div
       class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:thin] lg:grid lg:grid-cols-5 lg:gap-4 lg:overflow-visible lg:pb-0 lg:snap-none [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:bg-sage/40"
