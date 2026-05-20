@@ -1,0 +1,314 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import QuizTab from "../../components/QuizTab.astro";
+import SectionBadge from "../../components/SectionBadge.astro";
+
+const janeAppUrl = "https://816medspa.janeapp.com/";
+
+const affiliations = [
+  "The American Dental Association",
+  "The Missouri Dental Association",
+  "The Kansas Dental Association",
+  "The American Association of Oral and Maxillofacial Surgery",
+  "The American Academy of Oral and Maxillofacial Radiology",
+  "The American Society of Dental Anesthesiologists",
+  "The International Association of Oral and Maxillofacial Surgeons",
+  "The American College of Oral and Maxillofacial Surgeons",
+  "The Kansas Society of Oral and Maxillofacial Surgeons",
+];
+
+const lectures = [
+  "Comparing Suture Strengths for Clinical Application: A Novel in Vitro Study, Midwest Dental Conference/The American Dental Association",
+  "Clinical Implications of Ameloblastoma, Midwest Dental Conference",
+  "Treatment Options for Mandibular Subcondyle Fractures, Midwest Dental Conference",
+  "Reconstruction Options for Basal Cell Carcinoma, Midwest Dental Conference",
+  "Management of Sports-Related Facial Injuries, Sports Medicine Department at the University of Central Missouri",
+];
+
+const awards = [
+  "The International Youth Leadership Award by Habitat for Humanity, 2003",
+  "The Dentsply Award for Best Table Clinic Award, 2008",
+  "The University of Missouri School of Dentistry Graduation Honors, 2009",
+  "The Mosby Surgical Excellence Award, 2015",
+];
+
+const hospitals = [
+  "Truman Medical Center, Kansas City, MO (2009 – present)",
+  "Children’s Mercy Hospital, Kansas City, MO (2009 – 2015)",
+  "Saint Luke’s Hospital system, Kansas City, MO (2009 – 2015)",
+  "Kansas City Veterans Administration Hospital, Kansas City, MO (2013)",
+  "Salina Surgical Hospital, Salina, KS (2016 – present)",
+];
+---
+
+<BaseLayout
+  title="Meet the Doctor | Patrick Lucaci, D.D.S., M.D. | 816 Med Spa"
+  description="Meet Dr. Patrick Lucaci, D.D.S., M.D., a Kansas City physician with advanced training in dental surgery, medicine, oral and maxillofacial surgery, and aesthetic procedures."
+  canonical="https://816medspa.com/about-us/meet-the-doctor/"
+  ogImage="/images/imgi_4_internal_meetdrlucaci.jpg"
+>
+  <SiteHeader />
+  <main>
+    <section class="relative isolate min-h-screen overflow-hidden bg-espresso text-parchment">
+      <div class="container mx-auto grid min-h-screen items-center gap-12 px-4 pt-[180px] pb-20 sm:px-6 lg:grid-cols-[1fr_0.82fr] lg:px-8 lg:pt-[210px] lg:pb-24">
+        <div class="relative z-[1] max-w-3xl">
+          <p
+            class="mb-7 font-sans-wide text-[11px] font-normal tracking-[0.4em] uppercase text-parchment/80"
+            data-reveal
+          >
+            Meet the Doctor
+          </p>
+          <h1
+            class="font-serif-italic text-[clamp(56px,8vw,116px)] font-light italic leading-none text-parchment"
+            data-reveal
+            style="--reveal-delay: 120ms"
+          >
+            Patrick Lucaci, D.D.S., M.D.
+          </h1>
+          <p
+            class="mt-8 max-w-2xl text-base leading-relaxed text-parchment/85 sm:text-lg"
+            data-reveal
+            style="--reveal-delay: 220ms"
+          >
+            A physician and doctor of dental surgery with advanced training in oral and maxillofacial surgery, facial anatomy, and minimally invasive aesthetic care.
+          </p>
+        </div>
+
+        <div
+          class="relative z-[1] mx-auto w-full max-w-[520px]"
+          data-reveal="fade-left"
+          style="--reveal-delay: 260ms"
+        >
+          <div class="absolute top-4 left-4 h-full w-full rounded-lg bg-sage/50" aria-hidden="true"></div>
+          <div class="relative aspect-square overflow-hidden rounded-lg bg-sage/20">
+            <img
+              src="/images/imgi_4_internal_meetdrlucaci.jpg"
+              alt="Dr. Patrick Lucaci"
+              width="600"
+              height="600"
+              class="h-full w-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <div>
+            <SectionBadge label="Background" class="mb-6" />
+            <h2
+              class="font-display text-5xl italic leading-[1.05] text-ink sm:text-6xl lg:text-7xl"
+              data-reveal
+              style="--reveal-delay: 120ms"
+            >
+              a lifelong path toward medicine.
+            </h2>
+          </div>
+
+          <div class="space-y-6 text-base leading-relaxed text-ink/70 sm:text-lg">
+            <p data-reveal style="--reveal-delay: 180ms">
+              Born and raised in Kampala, Uganda, Dr. Patrick Lucaci is the eldest of five children. With a lifelong dream of pursuing medicine, Dr. Lucaci earned his bachelor’s degree in dental surgery from the prestigious Makerere University in Uganda.
+            </p>
+            <p data-reveal style="--reveal-delay: 240ms">
+              Concurrently, he also received credits from Queen’s University in Belfast and the Karolinska Institutet in Stockholm, Sweden. Following his time at these universities, he moved to the U.S. to earn his doctorate in dental surgery from the University of Missouri – Kansas City (UMKC) in 2009.
+            </p>
+            <p data-reveal style="--reveal-delay: 300ms">
+              Once finished with his D.D.S., he pursued a medical degree from the University of Missouri School of Medicine in 2012. As part of his studies, he completed a general surgery residency and received a certificate in oral and maxillofacial surgery from UMKC.
+            </p>
+            <p data-reveal style="--reveal-delay: 360ms">
+              Since completing his education, Dr. Lucaci has proudly served his community in Salina, KS, and its surrounding areas. When Dr. Lucaci is not at work, he loves to travel and play golf.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-cream py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+          <article
+            class="rounded-lg border border-sage/20 bg-white p-7 shadow-sm sm:p-9"
+            data-reveal
+          >
+            <p class="font-dm-sans text-[11px] font-medium tracking-[0.32em] uppercase text-gold">Skills and Specialties</p>
+            <h2 class="mt-4 font-display text-4xl italic leading-tight text-ink sm:text-5xl">
+              an expert understanding of the face, skin, and body.
+            </h2>
+            <p class="mt-6 text-base leading-relaxed text-ink/70">
+              Dr. Lucaci has years of experience in the medical spa industry. With training in both dental and general medicine, he understands the complexities of the face, skin, and body.
+            </p>
+            <p class="mt-5 text-base leading-relaxed text-ink/70">
+              As a doctor of dental surgery, he has an in-depth understanding of the structure of the face. This makes him skilled at administering dermal fillers and wrinkle relaxers. Additionally, he specializes in nonsurgical and minimally invasive procedures, such as laser hair removal and FaceTite®.
+            </p>
+          </article>
+
+          <article
+            class="rounded-lg border border-sage/20 bg-white p-7 shadow-sm sm:p-9"
+            data-reveal
+            style="--reveal-delay: 120ms"
+          >
+            <p class="font-dm-sans text-[11px] font-medium tracking-[0.32em] uppercase text-gold">Education and Training</p>
+            <h2 class="mt-4 font-display text-4xl italic leading-tight text-ink sm:text-5xl">
+              medical training with surgical precision.
+            </h2>
+            <p class="mt-6 text-base leading-relaxed text-ink/70">
+              Completing school with honors, Dr. Lucaci received his doctor of dental surgery degree from the University of Missouri – Kansas City (UMKC) School of Dentistry. To continue specializing in this area, he attended an intense oral and maxillofacial residency with UMKC.
+            </p>
+            <p class="mt-5 text-base leading-relaxed text-ink/70">
+              This residency also allowed him to earn a doctor of medicine at the same time. After receiving both his D.D.S. and M.D., he pursued an internship in general surgery and became a board-certified oral surgeon by the American Board of Oral and Maxillofacial Surgery.
+            </p>
+            <p class="mt-5 text-base leading-relaxed text-ink/70">
+              To ensure the safety of his patients, he also has advanced certifications in cardiac life support (ACLS), pediatric advanced life support (PALS), advanced trauma life support (ATLS), and basic life support (BLS).
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p
+            class="mb-6 font-dm-sans text-[12px] font-medium tracking-[0.4em] uppercase text-gold"
+            data-reveal
+          >
+            Affiliations
+          </p>
+          <h2
+            class="font-display text-4xl italic leading-tight text-ink sm:text-5xl lg:text-6xl"
+            data-reveal
+            style="--reveal-delay: 120ms"
+          >
+            connected to trusted medical communities.
+          </h2>
+        </div>
+
+        <div class="mx-auto mt-12 grid max-w-6xl gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <div
+            class="rounded-lg border border-sage/20 bg-cream p-7 sm:p-9"
+            data-reveal
+            style="--reveal-delay: 180ms"
+          >
+            <h3 class="font-display text-3xl italic leading-tight text-ink">Personal Affiliations</h3>
+            <p class="mt-4 text-base leading-relaxed text-ink/70">
+              Dr. Lucaci is proud to be a part of several notable medical groups, including:
+            </p>
+            <ul class="mt-7 grid gap-3 text-sm leading-relaxed text-ink/75 sm:grid-cols-2">
+              {affiliations.map((affiliation) => (
+                <li class="border-b border-sage/15 pb-3">{affiliation}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div
+            class="rounded-lg border border-sage/20 bg-cream p-7 sm:p-9"
+            data-reveal
+            style="--reveal-delay: 260ms"
+          >
+            <h3 class="font-display text-3xl italic leading-tight text-ink">Hospital Affiliations</h3>
+            <p class="mt-4 text-base leading-relaxed text-ink/70">
+              Dr. Lucaci works with several hospitals, including:
+            </p>
+            <ul class="mt-7 grid gap-3 text-sm leading-relaxed text-ink/75">
+              {hospitals.map((hospital) => (
+                <li class="border-b border-sage/15 pb-3 last:border-0 last:pb-0">{hospital}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-cream py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+          <div>
+            <SectionBadge label="Awards & Research" class="mb-6" />
+            <h2
+              class="font-display text-5xl italic leading-[1.05] text-ink sm:text-6xl lg:text-7xl"
+              data-reveal
+              style="--reveal-delay: 120ms"
+            >
+              recognized for leadership and clinical work.
+            </h2>
+            <p
+              class="mt-7 max-w-xl text-base leading-relaxed text-ink/70 sm:text-lg"
+              data-reveal
+              style="--reveal-delay: 220ms"
+            >
+              Dr. Lucaci has contributed to several prestigious journals and has given lectures on dental implant surgery, ablative pathology and reconstructive surgery, maxillofacial trauma surgery, and facial cosmetic surgery.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div
+              class="rounded-lg border border-sage/20 bg-white p-7 shadow-sm sm:p-9"
+              data-reveal
+              style="--reveal-delay: 180ms"
+            >
+              <p class="font-dm-sans text-[11px] font-medium tracking-[0.32em] uppercase text-gold">Lectures and Presentations</p>
+              <ul class="mt-6 grid gap-4 text-sm leading-relaxed text-ink/75">
+                {lectures.map((lecture) => (
+                  <li class="border-b border-sage/15 pb-4 last:border-0 last:pb-0">{lecture}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div
+              class="rounded-lg border border-sage/20 bg-white p-7 shadow-sm sm:p-9"
+              data-reveal
+              style="--reveal-delay: 260ms"
+            >
+              <p class="font-dm-sans text-[11px] font-medium tracking-[0.32em] uppercase text-gold">Recognition</p>
+              <ul class="mt-6 grid gap-4 text-sm leading-relaxed text-ink/75">
+                {awards.map((award) => (
+                  <li class="border-b border-sage/15 pb-4 last:border-0 last:pb-0">{award}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sage py-20 text-white lg:py-28">
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <p
+          class="mb-4 font-dm-sans text-[12px] font-medium tracking-[0.4em] uppercase text-white/80"
+          data-reveal
+        >
+          Schedule Your Consultation Today
+        </p>
+        <h2
+          class="mx-auto max-w-3xl font-display text-4xl italic leading-tight sm:text-5xl lg:text-6xl"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          begin with care that understands your goals.
+        </h2>
+        <div
+          class="mt-10"
+          data-reveal
+          style="--reveal-delay: 220ms"
+        >
+          <a
+            href={janeAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block rounded-full bg-white px-10 py-4 text-center text-lg font-medium text-sage transition hover:bg-white/90"
+          >
+            Request an Appointment
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <QuizTab />
+</BaseLayout>
