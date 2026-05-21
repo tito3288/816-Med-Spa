@@ -1,6 +1,7 @@
 ---
 const phoneDigits = "8165512322";
 const phoneDisplay = "816-551-2322";
+const appointmentUrl = "https://816medspa.janeapp.com/";
 ---
 
 <section id="contact" class="py-20 lg:py-32 bg-sage text-white">
@@ -25,7 +26,9 @@ const phoneDisplay = "816-551-2322";
           Call {phoneDisplay}
         </a>
         <a
-          href="#contact"
+          href={appointmentUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           class="border-2 border-white text-white rounded-full px-10 py-4 text-center hover:bg-white hover:text-sage transition font-medium text-lg"
         >
           Request Online
