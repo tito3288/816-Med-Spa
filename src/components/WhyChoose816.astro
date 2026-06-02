@@ -1,0 +1,61 @@
+---
+interface Props {
+  // Background utility for the section (to fit the page's alternating rhythm).
+  class?: string;
+}
+
+const { class: className = "bg-bone" } = Astro.props;
+
+const reasons = [
+  {
+    title: "Physician-Led Care",
+    description:
+      "Our practice is led by Dr. Patrick Lucaci, D.D.S., M.D., alongside an experienced team of nurse practitioners and nurses — so you're in expert, medically trained hands.",
+  },
+  {
+    title: "Personalized to You",
+    description:
+      "There's no one-size-fits-all here. Every plan is built around your goals, anatomy, lifestyle, and comfort, and refined as we go.",
+  },
+  {
+    title: "Natural-Looking Results",
+    description:
+      "We believe the best results are the ones no one can quite place. Our refined, balanced approach enhances your natural beauty.",
+  },
+];
+---
+
+<section class={`${className} py-20 lg:py-28`}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <p
+          class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
+          data-reveal
+        >
+          Why 816 Med Spa
+        </p>
+        <h2
+          class="font-display text-4xl italic leading-tight text-ink sm:text-5xl"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          care you can trust.
+        </h2>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        {reasons.map((reason, i) => (
+          <div
+            class="rounded-lg border border-sage/20 bg-white p-7 shadow-sm sm:p-8"
+            data-reveal
+            style={`--reveal-delay: ${i * 100}ms`}
+          >
+            <h3 class="font-display text-2xl italic leading-tight text-ink">{reason.title}</h3>
+            <p class="mt-4 text-base leading-relaxed text-ink/70">{reason.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

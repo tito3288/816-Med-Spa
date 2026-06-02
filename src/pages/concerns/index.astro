@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import QuizTab from "../../components/QuizTab.astro";
+import { categories, concernsByCategory } from "../../data/concerns";
+
+const janeAppUrl = "https://816medspa.janeapp.com/";
+
+const sections = categories.map((category) => ({
+  category,
+  items: concernsByCategory(category),
+}));
+---
+
+<BaseLayout
+  title="Concerns We Treat | 816 Med Spa"
+  description="Explore the face, body, skin, and wellness concerns we treat at 816 Med Spa in Kansas City — and the personalized treatments that help address each one."
+  canonical="https://816medspa.com/concerns/"
+>
+  <SiteHeader />
+  <main>
+    <section class="relative isolate overflow-hidden bg-espresso text-parchment">
+      <div class="container mx-auto px-4 pt-[180px] pb-20 text-center sm:px-6 lg:px-8 lg:pt-[230px] lg:pb-24">
+        <p
+          class="mb-7 font-sans-wide text-[11px] font-normal tracking-[0.4em] uppercase text-parchment/80"
+          data-reveal
+        >
+          Concerns We Treat
+        </p>
+        <h1
+          class="mx-auto max-w-4xl font-serif-italic text-[clamp(52px,8vw,108px)] font-light italic leading-none text-parchment"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          what would you like to address?
+        </h1>
+        <p
+          class="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-parchment/85 sm:text-lg"
+          data-reveal
+          style="--reveal-delay: 220ms"
+        >
+          From the first fine line to whole-body wellness, explore the concerns we treat — and find the personalized care that fits your goals.
+        </p>
+      </div>
+    </section>
+
+    {sections.map((section, s) => (
+      <section class={s % 2 === 0 ? "bg-bone py-16 lg:py-24" : "bg-cream py-16 lg:py-24"}>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-6xl">
+            <div class="mb-10 flex items-end justify-between gap-6">
+              <h2
+                class="font-display text-4xl italic leading-tight text-ink sm:text-5xl lg:text-6xl"
+                data-reveal
+              >
+                {section.category}
+              </h2>
+              <span class="font-sans-wide text-[11px] font-medium tracking-[0.3em] uppercase text-gold">
+                {section.items.length} concerns
+              </span>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {section.items.map((item, i) => (
+                <a
+                  href={`/concerns/${item.slug}`}
+                  class="group relative block aspect-[3/4] overflow-hidden rounded-lg shadow-sm transition hover:shadow-md focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+                  data-reveal
+                  style={`--reveal-delay: ${Math.min(i, 6) * 70}ms`}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"
+                    aria-hidden="true"
+                  ></div>
+                  <div class="relative flex h-full flex-col justify-end p-6">
+                    <h3 class="font-display text-2xl text-white not-italic md:text-3xl">{item.name}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-white/90">{item.intro}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="bg-sage py-20 text-white lg:py-28">
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <p
+          class="mb-4 font-sans-wide text-[12px] font-medium tracking-[0.4em] uppercase text-white/80"
+          data-reveal
+        >
+          Not Sure Where to Start?
+        </p>
+        <h2
+          class="mx-auto max-w-3xl font-display text-4xl italic leading-tight sm:text-5xl lg:text-6xl"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          a consultation is the perfect first step.
+        </h2>
+        <div class="mt-10" data-reveal style="--reveal-delay: 220ms">
+          <a
+            href={janeAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block rounded-full bg-white px-10 py-4 text-center text-lg font-medium text-sage transition hover:bg-white/90"
+          >
+            Request an Appointment
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <QuizTab />
+</BaseLayout>

@@ -1,0 +1,184 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import QuizTab from "../../components/QuizTab.astro";
+
+const janeAppUrl = "https://816medspa.janeapp.com/";
+
+type TeamMember = {
+  name: string;
+  credentials: string;
+  image?: string;
+  bio: string[];
+};
+
+const team: TeamMember[] = [
+  {
+    name: "Sydney Cutter",
+    credentials: "APRN, WHNP-BC",
+    image: "/images/team/sydney.jpg",
+    bio: [
+      "Sydney is a board-certified Women’s Health Nurse Practitioner whose graduate training focuses on sexual and reproductive health for both men and women, with advanced clinical experience in hormone management. She has a background in mental health and home health care, which has shaped her compassionate and individualized approach to care.",
+      "Sydney is passionate about aesthetics and overall wellness, with a focus on hormone replacement therapy and medical weight loss. She stays current with emerging therapies, including peptides, as part of a personalized approach to care, with the goal of helping clients feel confident, balanced, and supported through treatment plans tailored to their unique goals.",
+      "Originally from Las Vegas, she moved to Kansas City in 2024 and appreciates the family-centered culture and four seasons of the Midwest. In her free time, she enjoys spending time with her kids, being in nature, trying new things, and going to comedy shows with her husband.",
+    ],
+  },
+  {
+    name: "Jessica Tanner",
+    credentials: "Registered Nurse",
+    image: "/images/team/Jessica.jpg",
+    bio: [
+      "Jessica is a dedicated registered nurse who has over 16 years of experience in aesthetics. There are several aspects about cosmetic injections that she enjoys. She has a passion for helping clients achieve the appearance they desire, while also maintaining a natural look is very important to her and what she prides herself in.",
+      "While any product can be used, she prefers to work with her clients and create a treatment plan that addresses their concerns and restore balance to their face.",
+    ],
+  },
+  {
+    name: "Hailey Worthington",
+    credentials: "Registered Nurse, Licensed Esthetician",
+    image: "/images/team/Hailey.jpg",
+    bio: [
+      "Hailey is a Registered Nurse and Licensed Esthetician who brings a unique blend of clinical expertise and genuine passion for skin health to her role. She earned her Biology degree from Pittsburg State University in 2019 before beginning her Army career, and later completed her Bachelor of Science in Nursing at the University of Saint Mary in 2022. More recently she became a Licensed Esthetician to expand her knowledge in skincare.",
+      "With experience in Burn ICU, Critical Care, and Psychiatry, Hailey carries forward strong skills in assessment, safety, and patient-centered care. She is deeply passionate about helping clients understand their skin, feel confident in their natural features, and achieve sustainable, noticeable results. Hailey believes in enhancing beauty through personalized treatments, expert guidance, and a nurturing touch—creating a safe, relaxing space where self-care meets self-love.",
+      "Outside of work, she enjoys spending time with her family, friends, and pets, as well as gardening, traveling, reading, and exploring nature. Committed to continual learning and natural, balanced results, Hailey strives to help every client look and feel their best at every stage of life.",
+    ],
+  },
+  {
+    // TODO: Replace placeholder copy and add a portrait for Ashley Bosserman.
+    name: "Ashley Bosserman",
+    credentials: "Med Spa Team",
+    bio: [
+      "Ashley is a valued member of the 816 Med Spa team, dedicated to creating a warm, welcoming experience from the moment you walk through the door. She believes exceptional care begins with truly listening, and she takes the time to understand each client’s goals.",
+      "With a passion for aesthetics and wellness, Ashley is committed to helping clients feel confident, comfortable, and cared for at every visit. A full bio is coming soon.",
+    ],
+  },
+];
+
+const monogram = (name: string) =>
+  name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+---
+
+<BaseLayout
+  title="Meet the Team | 816 Med Spa"
+  description="Meet the 816 Med Spa team — experienced nurse practitioners, registered nurses, and aesthetic specialists in Kansas City dedicated to personalized, natural-looking results."
+  canonical="https://816medspa.com/about-us/meet-the-team/"
+>
+  <SiteHeader />
+  <main>
+    <section class="relative isolate overflow-hidden bg-espresso text-parchment">
+      <div class="container mx-auto px-4 pt-[180px] pb-20 text-center sm:px-6 lg:px-8 lg:pt-[250px] lg:pb-24">
+        <p
+          class="mb-7 font-sans-wide text-[11px] font-normal tracking-[0.4em] uppercase text-parchment/80"
+          data-reveal
+        >
+          Meet the Team
+        </p>
+        <h1
+          class="mx-auto max-w-4xl font-serif-italic text-[clamp(52px,8vw,108px)] font-light italic leading-none text-parchment"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          the people behind your care.
+        </h1>
+        <p
+          class="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-parchment/85 sm:text-lg"
+          data-reveal
+          style="--reveal-delay: 220ms"
+        >
+          Our practitioners pair clinical experience with an artful eye, working alongside you to create personalized treatment plans that feel authentic and natural.
+        </p>
+      </div>
+    </section>
+
+    {team.map((member, i) => (
+      <section class={i % 2 === 0 ? "bg-bone py-20 lg:py-28" : "bg-cream py-20 lg:py-28"}>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+            <div
+              class={`relative mx-auto w-full max-w-[480px] ${i % 2 === 1 ? "lg:order-2" : ""}`}
+              data-reveal={i % 2 === 1 ? "fade-left" : "fade-right"}
+              style="--reveal-delay: 160ms"
+            >
+              <div class="absolute top-4 left-4 h-full w-full rounded-lg bg-sage/50" aria-hidden="true"></div>
+              <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-sage/20">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={`${member.name}, ${member.credentials}`}
+                    width="600"
+                    height="750"
+                    class="h-full w-full object-cover"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                ) : (
+                  <div class="flex h-full w-full items-center justify-center bg-sage/25">
+                    <span class="font-serif-italic text-7xl font-light italic text-espresso/40">
+                      {monogram(member.name)}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div class={i % 2 === 1 ? "lg:order-1" : ""}>
+              <p
+                class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
+                data-reveal
+              >
+                {member.credentials}
+              </p>
+              <h2
+                class="font-display text-5xl italic leading-[1.05] text-ink sm:text-6xl"
+                data-reveal
+                style="--reveal-delay: 120ms"
+              >
+                {member.name}
+              </h2>
+              <div class="mt-6 space-y-5 text-base leading-relaxed text-ink/70 sm:text-lg">
+                {member.bio.map((paragraph, p) => (
+                  <p data-reveal style={`--reveal-delay: ${180 + p * 60}ms`}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="bg-sage py-20 text-white lg:py-28">
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <p
+          class="mb-4 font-sans-wide text-[12px] font-medium tracking-[0.4em] uppercase text-white/80"
+          data-reveal
+        >
+          Schedule Your Consultation Today
+        </p>
+        <h2
+          class="mx-auto max-w-3xl font-display text-4xl italic leading-tight sm:text-5xl lg:text-6xl"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          meet the team that puts your goals first.
+        </h2>
+        <div class="mt-10" data-reveal style="--reveal-delay: 220ms">
+          <a
+            href={janeAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block rounded-full bg-white px-10 py-4 text-center text-lg font-medium text-sage transition hover:bg-white/90"
+          >
+            Request an Appointment
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <QuizTab />
+</BaseLayout>
