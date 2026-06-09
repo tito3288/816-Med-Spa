@@ -25,15 +25,6 @@ const team: TeamMember[] = [
     ],
   },
   {
-    name: "Jessica Tanner",
-    credentials: "Registered Nurse",
-    image: "/images/team/Jessica.jpg",
-    bio: [
-      "Jessica is a dedicated registered nurse who has over 16 years of experience in aesthetics. There are several aspects about cosmetic injections that she enjoys. She has a passion for helping clients achieve the appearance they desire, while also maintaining a natural look is very important to her and what she prides herself in.",
-      "While any product can be used, she prefers to work with her clients and create a treatment plan that addresses their concerns and restore balance to their face.",
-    ],
-  },
-  {
     name: "Hailey Worthington",
     credentials: "Registered Nurse, Licensed Esthetician",
     image: "/images/team/Hailey.jpg",
@@ -44,9 +35,18 @@ const team: TeamMember[] = [
     ],
   },
   {
+    name: "Jessica Tanner",
+    credentials: "Registered Nurse",
+    image: "/images/team/Jessica.jpg",
+    bio: [
+      "Jessica is a dedicated registered nurse who has over 16 years of experience in aesthetics. There are several aspects about cosmetic injections that she enjoys. She has a passion for helping clients achieve the appearance they desire, while also maintaining a natural look is very important to her and what she prides herself in.",
+      "While any product can be used, she prefers to work with her clients and create a treatment plan that addresses their concerns and restore balance to their face.",
+    ],
+  },
+  {
     // TODO: Replace placeholder copy and add a portrait for Ashley Bosserman.
     name: "Ashley Bosserman",
-    credentials: "Med Spa Team",
+    credentials: "Med Spa Manager",
     bio: [
       "Ashley is a valued member of the 816 Med Spa team, dedicated to creating a warm, welcoming experience from the moment you walk through the door. She believes exceptional care begins with truly listening, and she takes the time to understand each client’s goals.",
       "With a passion for aesthetics and wellness, Ashley is committed to helping clients feel confident, comfortable, and cared for at every visit. A full bio is coming soon.",
@@ -98,7 +98,11 @@ const monogram = (name: string) =>
     {team.map((member, i) => (
       <section class={i % 2 === 0 ? "bg-bone py-20 lg:py-28" : "bg-cream py-20 lg:py-28"}>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+          <div
+            class={`mx-auto grid max-w-6xl items-center gap-12 lg:gap-16 ${
+              i % 2 === 1 ? "lg:grid-cols-[1.18fr_0.82fr]" : "lg:grid-cols-[0.82fr_1.18fr]"
+            }`}
+          >
             <div
               class={`relative mx-auto w-full max-w-[480px] ${i % 2 === 1 ? "lg:order-2" : ""}`}
               data-reveal={i % 2 === 1 ? "fade-left" : "fade-right"}
