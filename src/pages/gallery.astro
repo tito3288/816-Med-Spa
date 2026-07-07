@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import QuizTab from "../components/QuizTab.astro";
+
+const janeAppUrl = "https://816medspa.janeapp.com/";
+
+const galleryItems = [
+  {
+    title: "IPL",
+    image: "/images/gallery/ipl.png",
+    alt: "IPL before and after treatment result at 816 Med Spa",
+  },
+  {
+    title: "Lip Fillers",
+    image: "/images/gallery/lip-fillers.png",
+    alt: "Lip filler before and after treatment result at 816 Med Spa",
+  },
+  {
+    title: "Radiofrequency Microneedling",
+    image: "/images/gallery/radiofrequency-microneedling.png",
+    alt: "Radiofrequency microneedling before and after treatment result at 816 Med Spa",
+  },
+  {
+    title: "Xeomin Before & After",
+    image: "/images/gallery/xeomin-before-after.png",
+    alt: "Xeomin before and after treatment result at 816 Med Spa",
+  },
+];
+---
+
+<BaseLayout
+  title="Gallery | 816 Med Spa"
+  description="View before and after treatment images from 816 Med Spa in Kansas City."
+  canonical="https://816medspa.com/gallery/"
+>
+  <SiteHeader />
+  <main>
+    <section class="relative isolate overflow-hidden bg-espresso text-parchment">
+      <div class="container mx-auto px-4 pt-[180px] pb-20 text-center sm:px-6 lg:px-8 lg:pt-[230px] lg:pb-24">
+        <p
+          class="mb-7 font-sans-wide text-[11px] font-normal tracking-[0.4em] uppercase text-parchment/80"
+          data-reveal
+        >
+          Gallery
+        </p>
+        <h1
+          class="mx-auto max-w-4xl font-serif-italic text-[clamp(52px,8vw,108px)] font-light italic leading-none text-parchment"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          real results, refined care.
+        </h1>
+        <p
+          class="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-parchment/85 sm:text-lg"
+          data-reveal
+          style="--reveal-delay: 220ms"
+        >
+          A closer look at treatment transformations performed with personalized planning,
+          thoughtful technique, and a natural-looking aesthetic.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-bone py-16 lg:py-24">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p
+                class="mb-4 font-sans-wide text-[11px] font-semibold tracking-[0.3em] uppercase text-gold"
+                data-reveal
+              >
+                Before & After
+              </p>
+              <h2
+                class="font-display text-4xl italic leading-tight text-ink sm:text-5xl lg:text-6xl"
+                data-reveal
+                style="--reveal-delay: 100ms"
+              >
+                treatment gallery
+              </h2>
+            </div>
+            <p
+              class="max-w-md text-sm leading-relaxed text-gray-700 sm:text-right"
+              data-reveal
+              style="--reveal-delay: 180ms"
+            >
+              Individual results vary. Your provider will help identify the best treatment path
+              for your goals.
+            </p>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2 lg:gap-6">
+            {
+              galleryItems.map((item, i) => (
+                <figure
+                  class="group overflow-hidden rounded-lg border border-sage/15 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  data-reveal
+                  style={`--reveal-delay: ${Math.min(i, 3) * 90}ms`}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    width="940"
+                    height="788"
+                    class="block h-auto w-full transition duration-500 group-hover:scale-[1.015]"
+                    loading={i < 2 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                  <figcaption class="border-t border-sage/15 bg-cream px-5 py-4">
+                    <h3 class="font-display text-2xl text-ink not-italic md:text-3xl">{item.title}</h3>
+                  </figcaption>
+                </figure>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sage py-20 text-white lg:py-28">
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <p
+          class="mb-4 font-sans-wide text-[12px] font-medium tracking-[0.4em] uppercase text-white/80"
+          data-reveal
+        >
+          Ready for a Personalized Plan?
+        </p>
+        <h2
+          class="mx-auto max-w-3xl font-display text-4xl italic leading-tight sm:text-5xl lg:text-6xl"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          let's talk through what is possible for you.
+        </h2>
+        <div class="mt-10" data-reveal style="--reveal-delay: 220ms">
+          <a
+            href={janeAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block rounded-full bg-white px-10 py-4 text-center text-lg font-medium text-sage transition hover:bg-white/90"
+          >
+            Request an Appointment
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <QuizTab />
+</BaseLayout>
