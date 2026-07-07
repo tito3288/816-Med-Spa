@@ -75,4 +75,22 @@ export const processByCategory: Record<string, ProcessStep[]> = {
         "We monitor your progress and adjust your plan over time to keep you feeling your best.",
     },
   ],
+  // Used by the /treatments/[slug] pages, which span multiple categories.
+  Treatments: [
+    {
+      title: "Consultation",
+      description:
+        "We listen first — your goals, your concerns, and what you want to see when you look in the mirror.",
+    },
+    {
+      title: "Personalized Plan",
+      description:
+        "Your provider designs a plan combining the right treatments for your area of focus and stage of life.",
+    },
+    {
+      title: "Results & Maintenance",
+      description:
+        "Results develop over the following days and weeks, with a maintenance plan to keep them going strong.",
+    },
+  ],
 };

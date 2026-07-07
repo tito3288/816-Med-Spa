@@ -1,13 +1,14 @@
 ---
 import { categories, concernsByCategory } from "../data/concerns";
 import { serviceMenu, getService } from "../data/services";
+import { treatmentGroups, treatmentsByGroup } from "../data/treatments";
 
 type NavChild = { href: string; label: string; external?: boolean };
 type NavLink = {
   href: string;
   label: string;
   caret?: boolean;
-  mega?: "concerns" | "services";
+  mega?: "concerns" | "services" | "treatments";
   children?: NavChild[];
 };
 
@@ -26,6 +27,11 @@ const serviceColumns = serviceMenu.map((column) => ({
   })),
 }));
 
+const treatmentColumns = treatmentGroups.map((group) => ({
+  category: group,
+  items: treatmentsByGroup(group),
+}));
+
 const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
   {
@@ -38,7 +44,7 @@ const navLinks: NavLink[] = [
   },
   { href: "/services", label: "Services", mega: "services" },
   { href: "/concerns", label: "Concerns", mega: "concerns" },
-  { href: "#treatments", label: "Treatments", caret: true },
+  { href: "/treatments", label: "Treatments", mega: "treatments" },
   { href: "/gallery", label: "Gallery" },
   {
     href: "/contact-us",
@@ -177,10 +183,42 @@ const navLinks: NavLink[] = [
                 class="invisible absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
               >
                 <div
-                  class="w-[min(1040px,92vw)] rounded-2xl border border-sage/15 bg-white p-8 shadow-lg"
+                  class={`${link.mega === "treatments" ? "w-[min(760px,92vw)]" : "w-[min(1040px,92vw)]"} rounded-2xl border border-sage/15 bg-white p-8 shadow-lg`}
                   role="menu"
                 >
-                  {link.mega === "services" ? (
+                  {link.mega === "treatments" ? (
+                    <div class="grid grid-cols-3 gap-x-8 gap-y-2">
+                      {treatmentColumns.map((column) => (
+                        <div class={column.category === "By Area" ? "col-span-2" : ""}>
+                          <a
+                            href="/treatments"
+                            class="block border-b border-sage/15 pb-3 font-sans-wide text-[11px] font-semibold tracking-[0.28em] text-gold uppercase transition hover:text-sage"
+                          >
+                            {column.category}
+                          </a>
+                          <ul
+                            class={
+                              column.category === "By Area"
+                                ? "mt-3 columns-2 gap-x-6"
+                                : "mt-3 space-y-1"
+                            }
+                          >
+                            {column.items.map((item) => (
+                              <li class="break-inside-avoid">
+                                <a
+                                  href={`/treatments/${item.slug}`}
+                                  role="menuitem"
+                                  class="block rounded-md px-2 py-1.5 font-sans-wide text-[11px] tracking-[0.04em] text-gray-700 transition hover:bg-sage/5 hover:text-sage focus-visible:bg-sage/5 focus-visible:text-sage focus-visible:outline-none"
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : link.mega === "services" ? (
                     <div class="grid grid-cols-4 gap-x-8 gap-y-2">
                       {serviceColumns.map((column) => (
                         <div>
@@ -326,10 +364,21 @@ const navLinks: NavLink[] = [
                   </button>
                 </div>
                 <div id={megaId} class="hidden" data-mobile-nav-submenu>
-                  {(link.mega === "services" ? serviceColumns : concernGroups).map((entry: any, gi: number) => {
+                  {(link.mega === "services"
+                    ? serviceColumns
+                    : link.mega === "treatments"
+                      ? treatmentColumns
+                      : concernGroups
+                  ).map((entry: any, gi: number) => {
                     const groupId = `mobile-nav-submenu-${i}-${gi}`;
                     const isServices = link.mega === "services";
-                    const indexHref = isServices ? "/services" : "/concerns";
+                    const indexHref =
+                      link.mega === "services"
+                        ? "/services"
+                        : link.mega === "treatments"
+                          ? "/treatments"
+                          : "/concerns";
+                    const itemBase = link.mega === "treatments" ? "/treatments" : "/concerns";
                     return (
                       <div class="ml-4">
                         <div class="flex items-center justify-between">
@@ -344,7 +393,7 @@ const navLinks: NavLink[] = [
                             class="p-3 text-current transition hover:text-sage focus-visible:text-sage focus-visible:outline-none"
                             aria-expanded="false"
                             aria-controls={groupId}
-                            aria-label={`Toggle ${entry.category} ${isServices ? "services" : "concerns"}`}
+                            aria-label={`Toggle ${entry.category} ${link.mega}`}
                             data-mobile-nav-toggle
                           >
                             <svg
@@ -378,7 +427,7 @@ const navLinks: NavLink[] = [
                               ))
                             : entry.items.map((item: any) => (
                                 <a
-                                  href={`/concerns/${item.slug}`}
+                                  href={`${itemBase}/${item.slug}`}
                                   class="block ml-4 px-2 py-2 text-sm font-medium text-current/80 transition hover:text-sage focus-visible:text-sage"
                                 >
                                   {item.name}
