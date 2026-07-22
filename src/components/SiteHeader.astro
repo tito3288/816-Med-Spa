@@ -1,14 +1,14 @@
 ---
 import { categories, concernsByCategory } from "../data/concerns";
 import { serviceMenu, getService } from "../data/services";
-import { treatmentGroups, treatmentsByGroup } from "../data/treatments";
+import { treatmentsByGroup } from "../data/treatments";
 
 type NavChild = { href: string; label: string; external?: boolean };
 type NavLink = {
   href: string;
   label: string;
   caret?: boolean;
-  mega?: "concerns" | "services" | "treatments";
+  mega?: "concerns" | "treatments";
   children?: NavChild[];
 };
 
@@ -27,10 +27,7 @@ const serviceColumns = serviceMenu.map((column) => ({
   })),
 }));
 
-const treatmentColumns = treatmentGroups.map((group) => ({
-  category: group,
-  items: treatmentsByGroup(group),
-}));
+const ageTreatments = treatmentsByGroup("By Age");
 
 const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
@@ -42,9 +39,9 @@ const navLinks: NavLink[] = [
       { href: "/about-us/meet-the-team", label: "Meet the Team" },
     ],
   },
-  { href: "/services", label: "Services", mega: "services" },
-  { href: "/concerns", label: "Concerns", mega: "concerns" },
   { href: "/treatments", label: "Treatments", mega: "treatments" },
+  { href: "/memberships", label: "Memberships" },
+  { href: "/concerns", label: "Concerns", mega: "concerns" },
   { href: "/gallery", label: "Gallery" },
   {
     href: "/contact-us",
@@ -66,7 +63,7 @@ const navLinks: NavLink[] = [
 >
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Mobile / tablet: single row -->
-    <div class="flex items-center justify-between py-4 md:py-5 min-[900px]:hidden">
+    <div class="flex items-center justify-between py-4 md:py-5 min-[1024px]:hidden">
       <a href="/" class="shrink-0" aria-label="816 Med Spa home">
         <img
           src="/logo.png"
@@ -127,7 +124,7 @@ const navLinks: NavLink[] = [
 
     <!-- Desktop: centered logo + nav row -->
     <div
-      class="hidden py-6 transition-[padding] duration-300 min-[900px]:block"
+      class="hidden py-6 transition-[padding] duration-300 min-[1024px]:block"
       data-desktop-header-inner
     >
       <div class="grid grid-cols-[1fr_auto_1fr] items-center">
@@ -163,7 +160,7 @@ const navLinks: NavLink[] = [
         </div>
       </div>
       <nav
-        class="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-2 transition-[margin] duration-300"
+        class="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 transition-[margin] duration-300 min-[1000px]:gap-x-5 min-[1100px]:gap-x-9 xl:gap-x-12"
         aria-label="Primary"
         data-header-nav
       >
@@ -183,73 +180,112 @@ const navLinks: NavLink[] = [
                 class="invisible absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
               >
                 <div
-                  class={`${link.mega === "treatments" ? "w-[min(760px,92vw)]" : "w-[min(1040px,92vw)]"} rounded-2xl border border-sage/15 bg-white p-8 shadow-lg`}
-                  role="menu"
+                  class="w-[min(1040px,92vw)] rounded-2xl border border-sage/15 bg-white p-8 shadow-lg"
+                  role={link.mega === "concerns" ? "menu" : undefined}
                 >
                   {link.mega === "treatments" ? (
-                    <div class="grid grid-cols-3 gap-x-8 gap-y-2">
-                      {treatmentColumns.map((column) => (
-                        <div class={column.category === "By Area" ? "col-span-2" : ""}>
-                          <a
-                            href="/treatments"
-                            class="block border-b border-sage/15 pb-3 font-sans-wide text-[11px] font-semibold tracking-[0.28em] text-gold uppercase transition hover:text-sage"
-                          >
-                            {column.category}
-                          </a>
-                          <ul
-                            class={
-                              column.category === "By Area"
-                                ? "mt-3 columns-2 gap-x-6"
-                                : "mt-3 space-y-1"
-                            }
-                          >
-                            {column.items.map((item) => (
-                              <li class="break-inside-avoid">
-                                <a
-                                  href={`/treatments/${item.slug}`}
-                                  role="menuitem"
-                                  class="block rounded-md px-2 py-1.5 font-sans-wide text-[11px] tracking-[0.04em] text-gray-700 transition hover:bg-sage/5 hover:text-sage focus-visible:bg-sage/5 focus-visible:text-sage focus-visible:outline-none"
-                                >
-                                  {item.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  ) : link.mega === "services" ? (
-                    <div class="grid grid-cols-4 gap-x-8 gap-y-2">
-                      {serviceColumns.map((column) => (
-                        <div>
-                          <a
-                            href="/services"
-                            class="block border-b border-sage/15 pb-3 font-sans-wide text-[11px] font-semibold tracking-[0.28em] text-gold uppercase transition hover:text-sage"
-                          >
-                            {column.category}
-                          </a>
-                          {column.groups.map((group) => (
-                            <div class="mt-4">
-                              <p class="px-2 font-sans-wide text-[9px] font-semibold tracking-[0.24em] text-ink/45 uppercase">
-                                {group.label}
-                              </p>
-                              <ul class="mt-1.5 space-y-0.5">
-                                {group.items.map((item) => (
-                                  <li>
-                                    <a
-                                      href={`/services/${item.slug}`}
-                                      role="menuitem"
-                                      class="block rounded-md px-2 py-1.5 font-sans-wide text-[11px] tracking-[0.04em] text-gray-700 transition hover:bg-sage/5 hover:text-sage focus-visible:bg-sage/5 focus-visible:text-sage focus-visible:outline-none"
-                                    >
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
+                    <div
+                      class="grid min-h-[380px] grid-cols-[180px_minmax(0,1fr)_190px] gap-x-7"
+                      data-treatment-mega
+                    >
+                      <div class="border-r border-sage/15 pr-6" role="tablist" aria-label="Treatment categories">
+                        <p class="mb-4 font-sans-wide text-[9px] font-semibold tracking-[0.24em] text-ink/40 uppercase">
+                          Explore
+                        </p>
+                        <div class="space-y-1.5">
+                          {serviceColumns.map((column, i) => (
+                            <button
+                              type="button"
+                              class="group/tab flex w-full items-center justify-between rounded-lg px-3 py-3 text-left font-display text-xl font-semibold text-ink transition hover:bg-sage/8 hover:text-sage data-[active=true]:bg-sage/10 data-[active=true]:text-sage focus-visible:bg-sage/10 focus-visible:text-sage focus-visible:outline-none"
+                              role="tab"
+                              aria-selected={i === 0 ? "true" : "false"}
+                              aria-controls={`treatment-panel-${column.category.toLowerCase()}`}
+                              data-treatment-tab={String(i)}
+                              data-active={i === 0 ? "true" : "false"}
+                            >
+                              {column.category}
+                              <svg
+                                class="size-4 opacity-40 transition group-hover/tab:translate-x-0.5 group-hover/tab:opacity-80"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.75"
+                                aria-hidden="true"
+                              >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"></path>
+                              </svg>
+                            </button>
                           ))}
                         </div>
-                      ))}
+                      </div>
+
+                      <div class="min-w-0" data-treatment-panels>
+                        {serviceColumns.map((column, i) => (
+                          <div
+                            id={`treatment-panel-${column.category.toLowerCase()}`}
+                            class={i === 0 ? "" : "hidden"}
+                            role="tabpanel"
+                            data-treatment-panel={String(i)}
+                          >
+                            <div class="flex items-center justify-between border-b border-sage/15 pb-3">
+                              <p class="font-sans-wide text-[11px] font-semibold tracking-[0.28em] text-gold uppercase">
+                                {column.category} Treatments
+                              </p>
+                              <a
+                                href={`/treatments/${column.category.toLowerCase()}`}
+                                class="inline-flex items-center gap-1.5 text-[11px] font-medium text-sage transition hover:text-ink"
+                              >
+                                View all
+                                <span aria-hidden="true">→</span>
+                              </a>
+                            </div>
+                            <div class="mt-4 grid grid-cols-2 gap-x-6 gap-y-4">
+                              {column.groups.map((group) => (
+                                <div class={group.items.length > 6 ? "col-span-2" : ""}>
+                                  <p class="px-2 font-sans-wide text-[9px] font-semibold tracking-[0.24em] text-ink/45 uppercase">
+                                    {group.label}
+                                  </p>
+                                  <ul class={group.items.length > 6 ? "mt-1.5 grid grid-cols-2 gap-x-4" : "mt-1.5 space-y-0.5"}>
+                                    {group.items.map((item) => (
+                                      <li>
+                                        <a
+                                          href={`/services/${item.slug}`}
+                                          role="menuitem"
+                                          class="block rounded-md px-2 py-1.5 font-sans-wide text-[11px] tracking-[0.04em] text-gray-700 transition hover:bg-sage/5 hover:text-sage focus-visible:bg-sage/5 focus-visible:text-sage focus-visible:outline-none"
+                                        >
+                                          {item.name}
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div class="border-l border-sage/15 pl-7">
+                        <a
+                          href="/treatments#by-age"
+                          class="block border-b border-sage/15 pb-3 font-sans-wide text-[11px] font-semibold tracking-[0.28em] text-gold uppercase transition hover:text-sage"
+                        >
+                          By Age
+                        </a>
+                        <ul class="mt-4 space-y-1">
+                          {ageTreatments.map((item) => (
+                            <li>
+                              <a
+                                href={`/treatments/${item.slug}`}
+                                role="menuitem"
+                                class="block rounded-md px-2 py-2 font-sans-wide text-[11px] tracking-[0.04em] text-gray-700 transition hover:bg-sage/5 hover:text-sage focus-visible:bg-sage/5 focus-visible:text-sage focus-visible:outline-none"
+                              >
+                                {item.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   ) : (
                     <div class="grid grid-cols-4 gap-x-8 gap-y-2">
@@ -329,7 +365,7 @@ const navLinks: NavLink[] = [
       </nav>
     </div>
 
-    <div id="mobile-menu" class="hidden pb-4 min-[900px]:hidden" data-mobile-menu>
+    <div id="mobile-menu" class="hidden pb-4 min-[1024px]:hidden" data-mobile-menu>
       <nav class="flex flex-col gap-1 border-t border-current/20 pt-4" aria-label="Mobile">
         {navLinks.map((link, i) => {
           if (link.mega) {
@@ -364,21 +400,15 @@ const navLinks: NavLink[] = [
                   </button>
                 </div>
                 <div id={megaId} class="hidden" data-mobile-nav-submenu>
-                  {(link.mega === "services"
-                    ? serviceColumns
-                    : link.mega === "treatments"
-                      ? treatmentColumns
-                      : concernGroups
-                  ).map((entry: any, gi: number) => {
+                  {(link.mega === "treatments" ? serviceColumns : concernGroups).map(
+                    (entry: any, gi: number) => {
                     const groupId = `mobile-nav-submenu-${i}-${gi}`;
-                    const isServices = link.mega === "services";
+                    const isTreatments = link.mega === "treatments";
                     const indexHref =
-                      link.mega === "services"
-                        ? "/services"
-                        : link.mega === "treatments"
-                          ? "/treatments"
-                          : "/concerns";
-                    const itemBase = link.mega === "treatments" ? "/treatments" : "/concerns";
+                      link.mega === "treatments"
+                        ? `/treatments/${entry.category.toLowerCase()}`
+                        : "/concerns";
+                    const itemBase = link.mega === "treatments" ? "/services" : "/concerns";
                     return (
                       <div class="ml-4">
                         <div class="flex items-center justify-between">
@@ -409,7 +439,7 @@ const navLinks: NavLink[] = [
                           </button>
                         </div>
                         <div id={groupId} class="hidden" data-mobile-nav-submenu>
-                          {isServices
+                          {isTreatments
                             ? entry.groups.map((group: any) => (
                                 <div class="mt-1">
                                   <p class="ml-4 px-2 pt-2 font-sans-wide text-[10px] font-semibold tracking-[0.2em] text-current/45 uppercase">
@@ -436,7 +466,49 @@ const navLinks: NavLink[] = [
                         </div>
                       </div>
                     );
-                  })}
+                    }
+                  )}
+                  {link.mega === "treatments" && (
+                    <div class="mt-2 ml-4 border-t border-current/15 pt-2">
+                      <div class="flex items-center justify-between">
+                        <a
+                          href="/treatments#by-age"
+                          class="flex-1 px-2 py-2 font-sans-wide text-xs font-semibold tracking-[0.2em] text-current uppercase transition hover:text-sage focus-visible:text-sage"
+                        >
+                          By Age
+                        </a>
+                        <button
+                          type="button"
+                          class="p-3 text-current transition hover:text-sage focus-visible:text-sage focus-visible:outline-none"
+                          aria-expanded="false"
+                          aria-controls={`${megaId}-by-age`}
+                          aria-label="Toggle treatments by age"
+                          data-mobile-nav-toggle
+                        >
+                          <svg
+                            class="h-4 w-4 transition-transform duration-200"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            data-mobile-nav-chevron
+                          >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div id={`${megaId}-by-age`} class="hidden" data-mobile-nav-submenu>
+                        {ageTreatments.map((item) => (
+                          <a
+                            href={`/treatments/${item.slug}`}
+                            class="block ml-4 px-2 py-2 text-sm font-medium text-current/80 transition hover:text-sage focus-visible:text-sage"
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             );
@@ -536,6 +608,28 @@ const navLinks: NavLink[] = [
     toggle.addEventListener("click", () => {
       const expanded = toggle.getAttribute("aria-expanded") === "true";
       setSubmenuOpen(toggle, !expanded);
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>("[data-treatment-mega]").forEach((mega) => {
+    const tabs = [...mega.querySelectorAll<HTMLButtonElement>("[data-treatment-tab]")];
+    const panels = [...mega.querySelectorAll<HTMLElement>("[data-treatment-panel]")];
+
+    const selectTreatmentCategory = (index: number) => {
+      tabs.forEach((tab, tabIndex) => {
+        const active = tabIndex === index;
+        tab.dataset.active = String(active);
+        tab.setAttribute("aria-selected", String(active));
+      });
+      panels.forEach((panel, panelIndex) => {
+        panel.classList.toggle("hidden", panelIndex !== index);
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("mouseenter", () => selectTreatmentCategory(index));
+      tab.addEventListener("focus", () => selectTreatmentCategory(index));
+      tab.addEventListener("click", () => selectTreatmentCategory(index));
     });
   });
 

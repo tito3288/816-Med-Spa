@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import QuizTab from "../../../components/QuizTab.astro";
+import {
+  serviceMenu,
+  getService,
+  type Service,
+  type ServiceMenuColumn,
+} from "../../../data/services";
+
+export function getStaticPaths() {
+  return serviceMenu.map((column) => ({
+    params: { category: column.category.toLowerCase() },
+    props: { column },
+  }));
+}
+
+interface Props {
+  column: ServiceMenuColumn;
+}
+
+const { column } = Astro.props as Props;
+const janeAppUrl = "https://816medspa.janeapp.com/";
+
+const categoryCopy = {
+  Face: {
+    eyebrow: "Refined, Natural Results",
+    headline: "treatments made for your features.",
+    description:
+      "Explore personalized injectables, sculpting, and laser treatments designed to refresh and enhance without changing what makes you look like you.",
+  },
+  Body: {
+    eyebrow: "Confidence From Every Angle",
+    headline: "care shaped around your body.",
+    description:
+      "Discover advanced body sculpting, laser, and injectable options tailored to your comfort, lifestyle, and goals.",
+  },
+  Skin: {
+    eyebrow: "Healthy Skin, Thoughtfully Treated",
+    headline: "a treatment for every glow goal.",
+    description:
+      "From personalized facials and peels to advanced resurfacing, find skin treatments selected for your tone, texture, and goals.",
+  },
+  Wellness: {
+    eyebrow: "Feel Like Yourself Again",
+    headline: "wellness built around your life.",
+    description:
+      "Explore medically guided weight management, hormone support, and specialized wellness care designed for how you want to feel every day.",
+  },
+} as const;
+
+const copy = categoryCopy[column.category];
+const groups = column.groups.map((group) => ({
+  label: group.label,
+  items: group.services
+    .map((slug) => getService(slug))
+    .filter((service): service is Service => service !== undefined),
+}));
+---
+
+<BaseLayout
+  title={`${column.category} Treatments | 816 Med Spa`}
+  description={copy.description}
+  canonical={`https://816medspa.com/treatments/${column.category.toLowerCase()}/`}
+>
+  <SiteHeader />
+  <main>
+    <section class="relative isolate overflow-hidden bg-espresso text-parchment">
+      <div class="container mx-auto px-4 pt-[180px] pb-20 text-center sm:px-6 lg:px-8 lg:pt-[230px] lg:pb-24">
+        <a
+          href="/treatments"
+          class="mb-7 inline-flex items-center gap-2 font-sans-wide text-[11px] font-normal tracking-[0.35em] uppercase text-parchment/75 transition hover:text-sage"
+          data-reveal
+        >
+          <svg
+            class="size-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"></path>
+          </svg>
+          All Treatments
+        </a>
+        <p
+          class="mb-5 font-sans-wide text-[11px] font-normal tracking-[0.4em] uppercase text-parchment/80"
+          data-reveal
+          style="--reveal-delay: 80ms"
+        >
+          {copy.eyebrow}
+        </p>
+        <h1
+          class="mx-auto max-w-5xl font-serif-italic text-[clamp(52px,8vw,104px)] font-light italic leading-none text-parchment"
+          data-reveal
+          style="--reveal-delay: 140ms"
+        >
+          {copy.headline}
+        </h1>
+        <p
+          class="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-parchment/85 sm:text-lg"
+          data-reveal
+          style="--reveal-delay: 220ms"
+        >
+          {copy.description}
+        </p>
+      </div>
+    </section>
+
+    {groups.map((group, groupIndex) => (
+      <section class={groupIndex % 2 === 0 ? "bg-bone py-16 lg:py-24" : "bg-cream py-16 lg:py-24"}>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-6xl">
+            <div class="mb-10 flex items-end justify-between gap-5">
+              <div>
+                <p class="mb-3 font-sans-wide text-[11px] font-medium tracking-[0.3em] uppercase text-gold">
+                  {column.category}
+                </p>
+                <h2 class="font-display text-4xl italic leading-tight text-ink sm:text-5xl" data-reveal>
+                  {group.label}
+                </h2>
+              </div>
+              <span class="hidden font-sans-wide text-[10px] font-medium tracking-[0.25em] uppercase text-ink/45 sm:block">
+                {group.items.length} {group.items.length === 1 ? "Treatment" : "Treatments"}
+              </span>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {group.items.map((item, i) => (
+                <a
+                  href={`/services/${item.slug}`}
+                  class="group relative block aspect-[3/4] overflow-hidden rounded-lg shadow-sm transition hover:shadow-md focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+                  data-reveal
+                  style={`--reveal-delay: ${Math.min(i, 6) * 70}ms`}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"
+                    aria-hidden="true"
+                  ></div>
+                  <div class="relative flex h-full flex-col justify-end p-6">
+                    <h3 class="font-display text-2xl text-white not-italic md:text-3xl">{item.name}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-white/90">{item.intro}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="bg-sage py-20 text-white lg:py-28">
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <p class="mb-4 font-sans-wide text-[12px] font-medium tracking-[0.4em] uppercase text-white/80">
+          Not Sure Which Treatment Fits?
+        </p>
+        <h2 class="mx-auto max-w-3xl font-display text-4xl italic leading-tight sm:text-5xl lg:text-6xl">
+          let's find the right starting point together.
+        </h2>
+        <a
+          href={janeAppUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-10 inline-block rounded-full bg-white px-10 py-4 text-center text-lg font-medium text-sage transition hover:bg-white/90"
+        >
+          Book Appointment
+        </a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <QuizTab />
+</BaseLayout>
