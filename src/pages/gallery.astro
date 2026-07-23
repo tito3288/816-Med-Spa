@@ -11,16 +11,19 @@ const galleryItems = [
     title: "IPL",
     image: "/images/gallery/ipl.png",
     alt: "IPL before and after treatment result at 816 Med Spa",
+    href: "/services/ipl",
   },
   {
     title: "Lip Fillers",
     image: "/images/gallery/lip-fillers.png",
     alt: "Lip filler before and after treatment result at 816 Med Spa",
+    href: "/services/lip-filler",
   },
   {
     title: "Radiofrequency Microneedling",
     image: "/images/gallery/radiofrequency-microneedling.png",
     alt: "Radiofrequency microneedling before and after treatment result at 816 Med Spa",
+    href: "/services/morpheus8",
   },
   {
     title: "Xeomin Before & After",
@@ -96,10 +99,19 @@ const galleryItems = [
             {
               galleryItems.map((item, i) => (
                 <figure
-                  class="group overflow-hidden rounded-lg border border-sage/15 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  class="group relative overflow-hidden rounded-lg border border-sage/15 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                   data-reveal
                   style={`--reveal-delay: ${Math.min(i, 3) * 90}ms`}
                 >
+                  {item.href && (
+                    <a
+                      href={item.href}
+                      aria-label={`View the ${item.title} service`}
+                      class="absolute inset-0 z-10 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-gold"
+                    >
+                      <span class="sr-only">View the {item.title} service</span>
+                    </a>
+                  )}
                   <img
                     src={item.image}
                     alt={item.alt}
@@ -111,6 +123,11 @@ const galleryItems = [
                   />
                   <figcaption class="border-t border-sage/15 bg-cream px-5 py-4">
                     <h3 class="font-display text-2xl text-ink not-italic md:text-3xl">{item.title}</h3>
+                    {item.href && (
+                      <p class="mt-2 font-sans-wide text-[10px] font-semibold tracking-[0.18em] uppercase text-gold transition-colors group-hover:text-ink">
+                        Learn more about this treatment <span aria-hidden="true">→</span>
+                      </p>
+                    )}
                   </figcaption>
                 </figure>
               ))
