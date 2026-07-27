@@ -239,7 +239,21 @@ export const services: Service[] = [
     areas: ["Underarms"],
   },
 
-  // ─── Skin · Facials & Peels ────────────────────────────────────────
+  // ─── Skin · Microneedling, Facials & Peels ─────────────────────────
+  {
+    slug: "microneedling",
+    name: "Microneedling",
+    category: "Skin",
+    subgroup: "Microneedling & Resurfacing",
+    image:
+      "https://images.pexels.com/photos/29648626/pexels-photo-29648626.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop",
+    intro:
+      "Collagen-induction treatment to soften the look of acne scars, fine lines, and uneven texture.",
+    description: [
+      "Traditional microneedling uses fine, sterile needles to create controlled microchannels in the skin. This process supports the skin's natural renewal response and can gradually improve the appearance of facial acne scars, fine lines, and uneven texture.",
+      "Unlike Morpheus8, traditional microneedling does not deliver radiofrequency energy. Your provider will assess your skin, goals, and health history to determine whether microneedling is an appropriate part of your personalized treatment plan.",
+    ],
+  },
   {
     slug: "dermaplane-facial",
     name: "Dermaplane Facial",
@@ -448,7 +462,7 @@ export const serviceMenu: ServiceMenuColumn[] = [
           "transform-peel",
         ],
       },
-      { label: "Microneedling & Resurfacing", services: ["morpheus8"] },
+      { label: "Microneedling & Resurfacing", services: ["microneedling", "morpheus8"] },
     ],
   },
   {

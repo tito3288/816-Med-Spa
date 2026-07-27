@@ -344,7 +344,43 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
 
-  // ─── Skin · Facials & Peels ────────────────────────────────────────
+  // ─── Skin · Microneedling, Facials & Peels ─────────────────────────
+  microneedling: {
+    benefits: [
+      "Softens the appearance of facial acne scars",
+      "Refines uneven skin texture",
+      "Reduces the look of fine lines",
+      "Supports gradual collagen renewal",
+    ],
+    howItWorks: [
+      "We assess your skin, goals, and health history",
+      "Your skin is cleansed and topical numbing may be applied for comfort",
+      "Fine, sterile needles create controlled microchannels at a customized depth",
+      "The skin's natural renewal response develops gradually after treatment",
+    ],
+    faqs: [
+      {
+        q: "How is traditional microneedling different from Morpheus8?",
+        a: "Traditional microneedling uses fine needles to create controlled microchannels without radiofrequency energy. Morpheus8 combines microneedling with RF energy, so the two treatments work differently and may suit different goals.",
+      },
+      {
+        q: "What should I expect after treatment?",
+        a: "Temporary redness, tightness, dryness, sensitivity, or light peeling can occur after microneedling. Recovery varies, and your provider will give you personalized aftercare instructions.",
+      },
+      {
+        q: "Will I need more than one treatment?",
+        a: "Some clients may benefit from a series, while others may need a different approach. Your recommended plan will depend on your skin, treatment goals, and response.",
+      },
+      {
+        q: "Is microneedling right for everyone?",
+        a: "No. Certain skin conditions, active infections, medical conditions, medications, or a tendency to develop raised scars may affect candidacy. A consultation helps your provider review the benefits and risks for you.",
+      },
+      {
+        q: "How should I care for my skin afterward?",
+        a: "Skin may be temporarily more sensitive to sunlight and skincare products. Follow your provider's instructions, use gentle products, and avoid irritating ingredients until your skin has recovered.",
+      },
+    ],
+  },
   "dermaplane-facial": {
     benefits: [
       "Instantly smoother, brighter skin",
