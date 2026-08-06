@@ -41,7 +41,7 @@ export const services: Service[] = [
     name: "Forehead Lines",
     category: "Face",
     subgroup: "Injectables",
-    image: unsplash("photo-1544161515-4ab6ce6db874"),
+    image: "/images/services/forehead-lines.jpg",
     intro: "Soften the horizontal lines across your brow with precisely placed neurotoxin.",
     description: [
       "Forehead lines deepen every time we raise our eyebrows, gradually settling into the skin even at rest. A few units of neurotoxin relax the muscles responsible and smooth the area.",
@@ -53,7 +53,7 @@ export const services: Service[] = [
     name: "Frown Lines",
     category: "Face",
     subgroup: "Injectables",
-    image: unsplash("photo-1616394584738-fc6e612e71b9"),
+    image: "/images/services/frown-lines.jpg",
     intro: "Relax the vertical '11s' between your brows for a softer, calmer look.",
     description: [
       "Frown lines form between the eyebrows from years of concentrating and squinting, often making the face look tense or tired.",
@@ -65,7 +65,7 @@ export const services: Service[] = [
     name: "Crow's Feet",
     category: "Face",
     subgroup: "Injectables",
-    image: unsplash("photo-1487412947147-5cebf100ffc2"),
+    image: "/images/services/crows-feet.jpg",
     intro: "Smooth the fine lines that fan from the corners of your eyes.",
     description: [
       "Crow's feet appear at the outer corners of the eyes from smiling and squinting, and are often among the first lines to show.",
@@ -77,7 +77,7 @@ export const services: Service[] = [
     name: "Brow Lift",
     category: "Face",
     subgroup: "Injectables",
-    image: unsplash("photo-1515377905703-c4788e51af15"),
+    image: "/images/services/brow-lift.jpg",
     intro: "A subtle, non-surgical lift to open and refresh the eyes.",
     description: [
       "Over time, the brows can drop and flatten, making the eyes look heavy or tired.",
@@ -89,7 +89,7 @@ export const services: Service[] = [
     name: "Lip Flip",
     category: "Face",
     subgroup: "Injectables",
-    image: unsplash("photo-1596178060810-72f53ce9a65c"),
+    image: "/images/services/lip-flip.jpg",
     intro: "A touch of neurotoxin to gently enhance your natural lip shape.",
     description: [
       "A lip flip uses a few units of neurotoxin along the upper lip to relax the muscle, allowing the lip to roll subtly outward.",
@@ -101,7 +101,7 @@ export const services: Service[] = [
     name: "Chin Dimpling",
     category: "Face",
     subgroup: "Injectables",
-    image: unsplash("photo-1598440947619-2c35fc9aa908"),
+    image: "/images/services/chin-dimpling.jpg",
     intro: "Smooth a dimpled or 'pebbled' chin for a more even lower face.",
     description: [
       "An overactive chin muscle can create a dimpled, orange-peel texture, especially when speaking or at rest.",
@@ -113,7 +113,7 @@ export const services: Service[] = [
     name: "Jawline and Masseter Muscles",
     category: "Face",
     subgroup: "Injectables",
-    image: unsplash("photo-1571019613454-1cb2f99b2d8b"),
+    image: "/images/services/jawline-and-masseter.jpg",
     intro: "Slim and define the jawline while easing clenching and tension.",
     description: [
       "Enlarged masseter muscles — from genetics, clenching, or grinding — can widen and square the lower face.",
@@ -181,7 +181,7 @@ export const services: Service[] = [
     name: "Laser Hair Removal",
     category: "Body",
     subgroup: "Laser",
-    image: unsplash("photo-1559599101-f09722fb4948"),
+    image: "/images/services/laser-hair-removal.jpg",
     intro: "Lasting, low-maintenance smoothness with comfortable laser sessions.",
     description: [
       "Laser hair removal targets the pigment in the hair follicle to reduce regrowth over a series of sessions.",
@@ -217,7 +217,7 @@ export const services: Service[] = [
     name: "Evolve Body Contouring",
     category: "Body",
     subgroup: "Body Sculpting",
-    image: unsplash("photo-1620916566398-39f1143ab7be"),
+    image: "/images/services/evolve.jpg",
     intro: "Hands-free body contouring to tone, firm, and refine.",
     description: [
       "Evolve uses radiofrequency energy and other modalities to remodel skin and target stubborn areas across the body.",
@@ -230,7 +230,7 @@ export const services: Service[] = [
     name: "Underarm Neurotoxin",
     category: "Body",
     subgroup: "Injectables",
-    image: unsplash("photo-1612817288484-6f916006741a"),
+    image: "/images/services/underarm-neurotoxin.jpg",
     intro: "Stay dry and confident by reducing excessive underarm sweating.",
     description: [
       "Excessive underarm sweating (hyperhidrosis) can be frustrating and out of proportion to temperature or activity.",
@@ -259,7 +259,7 @@ export const services: Service[] = [
     name: "Dermaplane Facial",
     category: "Skin",
     subgroup: "Facials",
-    image: unsplash("photo-1505944270255-72b8c68c6a70"),
+    image: "/images/services/dermaplane-facial.jpg",
     intro: "Gentle exfoliation for instantly smoother, brighter, glowing skin.",
     description: [
       "Dermaplaning gently removes dead skin cells and fine vellus hair (peach fuzz) from the surface of the skin.",
@@ -271,7 +271,7 @@ export const services: Service[] = [
     name: "Microdermabrasion Facial",
     category: "Skin",
     subgroup: "Facials",
-    image: unsplash("photo-1542848284-8afa78a08ccb"),
+    image: "/images/services/microdermabrasion-facial.jpg",
     intro: "Resurfacing exfoliation that refreshes dull, congested skin.",
     description: [
       "Microdermabrasion uses gentle mechanical exfoliation to buff away the outer layer of dull, dead skin.",
@@ -283,7 +283,7 @@ export const services: Service[] = [
     name: "816 Signature Facial",
     category: "Skin",
     subgroup: "Facials",
-    image: unsplash("photo-1620331311520-246422fd82f9"),
+    image: "/images/services/signature-facial.jpg",
     intro: "Our customized signature facial, tailored entirely to your skin.",
     description: [
       "The 816 Signature Facial is fully customized to your skin's needs, combining cleansing, exfoliation, extractions, and nourishing treatment.",
@@ -295,7 +295,7 @@ export const services: Service[] = [
     name: "Luminate Facial",
     category: "Skin",
     subgroup: "Facials",
-    image: unsplash("photo-1610992015732-2449b76344bc"),
+    image: "/images/services/luminate-facial.jpg",
     intro: "A brightening facial that targets dullness and uneven tone.",
     description: [
       "The Luminate Facial focuses on radiance — using brightening actives and exfoliation to address dullness and uneven tone.",
