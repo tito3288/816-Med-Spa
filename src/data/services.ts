@@ -319,7 +319,7 @@ export const services: Service[] = [
     name: "Clarify Peel",
     category: "Skin",
     subgroup: "Chemical Peels",
-    image: unsplash("photo-1502323777036-f29e3972d82f"),
+    image: "/images/services/chemical-peels.jpg",
     intro: "A clarifying peel to calm breakouts and congestion.",
     description: [
       "The Clarify Peel targets acne-prone and congested skin, exfoliating to clear pores and reduce breakouts.",
@@ -331,7 +331,7 @@ export const services: Service[] = [
     name: "Refine Peel",
     category: "Skin",
     subgroup: "Chemical Peels",
-    image: unsplash("photo-1526045478516-99145907023c"),
+    image: "/images/services/chemical-peels.jpg",
     intro: "A balanced peel to smooth texture and refine tone.",
     description: [
       "The Refine Peel exfoliates at a moderate depth to smooth rough texture and improve overall tone and clarity.",
@@ -343,7 +343,7 @@ export const services: Service[] = [
     name: "Transform Peel",
     category: "Skin",
     subgroup: "Chemical Peels",
-    image: unsplash("photo-1583001931096-959e9a1a6223"),
+    image: "/images/services/chemical-peels.jpg",
     intro: "Our most advanced peel for visible renewal and resurfacing.",
     description: [
       "The Transform Peel is our most intensive resurfacing peel, designed to address deeper concerns like pigmentation, texture, and signs of aging.",

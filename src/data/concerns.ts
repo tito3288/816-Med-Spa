@@ -26,7 +26,7 @@ export const concerns: Concern[] = [
     slug: "fine-lines",
     name: "Fine Lines",
     category: "Face",
-    image: unsplash("photo-1570172619644-dfd03ed5d881"),
+    image: "/images/services/botox-at-816.jpg",
     intro: "The earliest signs of expression and time, softened with a refined, natural-looking approach.",
     description: [
       "Fine lines are the shallow creases that first appear around the eyes, mouth, and forehead as skin loses collagen and elasticity. Sun exposure, repeated expressions, and the natural slowing of cell turnover all play a part.",
@@ -38,7 +38,7 @@ export const concerns: Concern[] = [
     slug: "wrinkles",
     name: "Wrinkles",
     category: "Face",
-    image: unsplash("photo-1571019613454-1cb2f99b2d8b"),
+    image: "/images/services/xeomin-at-816.jpg",
     intro: "Deeper, set-in lines relaxed and resurfaced for smoother, more youthful skin.",
     description: [
       "Wrinkles form as years of muscle movement, collagen loss, and sun damage etch lines into the skin. Unlike fine lines, they remain visible even when the face is at rest.",
@@ -50,7 +50,7 @@ export const concerns: Concern[] = [
     slug: "forehead-lines",
     name: "Forehead Lines",
     category: "Face",
-    image: unsplash("photo-1544161515-4ab6ce6db874"),
+    image: "/images/services/forehead-lines.jpg",
     intro: "Horizontal lines across the forehead eased for a smoother, calmer brow.",
     description: [
       "Forehead lines run horizontally across the brow and become more pronounced each time we raise our eyebrows. Over time, what was once a temporary crease settles into the skin.",
@@ -74,7 +74,7 @@ export const concerns: Concern[] = [
     slug: "frown-lines",
     name: "Frown Lines",
     category: "Face",
-    image: unsplash("photo-1616394584738-fc6e612e71b9"),
+    image: "/images/services/frown-lines.jpg",
     intro: "The vertical '11s' between the brows relaxed for a softer, more approachable look.",
     description: [
       "Frown lines — the vertical creases between the eyebrows often called the '11s' — form from years of concentrating, squinting, and frowning. They can leave the face looking tired or tense.",

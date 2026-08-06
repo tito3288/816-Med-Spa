@@ -25,6 +25,8 @@ const janeAppUrl = "https://816medspa.janeapp.com/";
 const concernItems = resolveConcerns(treatment.concernSlugs);
 const serviceItems = resolveServices(treatment.serviceSlugs);
 const steps = processByCategory["Treatments"] ?? [];
+const concernGridColumns = concernItems.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3";
+const serviceGridColumns = serviceItems.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3";
 
 const related = treatmentsByGroup(treatment.group)
   .filter((t) => t.slug !== treatment.slug)
@@ -154,7 +156,7 @@ const bgOf = (key: string) =>
             </p>
           </div>
 
-          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class:list={["mt-10 grid gap-4 sm:grid-cols-2", concernGridColumns]}>
             {concernItems.map((item, i) => (
               <a
                 href={`/concerns/${item.slug}`}
@@ -211,7 +213,7 @@ const bgOf = (key: string) =>
             </p>
           </div>
 
-          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class:list={["mt-10 grid gap-4 sm:grid-cols-2", serviceGridColumns]}>
             {serviceItems.map((item, i) => (
               <a
                 href={`/services/${item.slug}`}
