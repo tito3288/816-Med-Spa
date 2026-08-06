@@ -31,11 +31,19 @@
   .hero {
     background-color: #8f7f68;
     background-image:
-      linear-gradient(rgba(90, 76, 56, 0.35), rgba(60, 48, 33, 0.45)),
-      url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1920&q=80");
+      linear-gradient(rgba(32, 28, 24, 0.48), rgba(32, 28, 24, 0.58)),
+      url("/images/branding/home-lobby-hero.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      background-image:
+        linear-gradient(rgba(32, 28, 24, 0.5), rgba(32, 28, 24, 0.62)),
+        url("/images/branding/home-lobby-hero-mobile.jpg");
+    }
   }
 
   .hero-eyebrow {

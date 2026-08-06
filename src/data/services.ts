@@ -357,7 +357,7 @@ export const services: Service[] = [
     name: "Weight Loss for Women",
     category: "Wellness",
     subgroup: "Medical Weight Loss",
-    image: unsplash("photo-1556760544-74068565f05c"),
+    image: "/images/branding/weight-loss-women.jpg",
     intro: "A medically guided weight-loss program designed for women.",
     description: [
       "Our weight-loss program for women combines clinical guidance with modern therapies tailored to female metabolism and hormones.",
@@ -369,7 +369,7 @@ export const services: Service[] = [
     name: "Weight Loss for Men",
     category: "Wellness",
     subgroup: "Medical Weight Loss",
-    image: unsplash("photo-1512496015851-a90fb38ba796"),
+    image: "/images/branding/weight-loss-men.jpg",
     intro: "A medically guided weight-loss program designed for men.",
     description: [
       "Our weight-loss program for men pairs clinical oversight with effective, modern therapies to help you lose weight and keep it off.",
