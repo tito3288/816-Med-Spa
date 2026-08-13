@@ -6,6 +6,7 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
 const {
@@ -13,9 +14,11 @@ const {
   description,
   canonical = Astro.url.href,
   ogImage = "/logo.png",
+  jsonLd,
 } = Astro.props;
 
-const ogImageUrl = new URL(ogImage, Astro.url).href;
+const canonicalUrl = new URL(canonical, Astro.url).href;
+const ogImageUrl = new URL(ogImage, canonicalUrl).href;
 ---
 
 <!doctype html>
@@ -31,12 +34,12 @@ const ogImageUrl = new URL(ogImage, Astro.url).href;
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:site_name" content="816 Med Spa" />
 
@@ -48,6 +51,10 @@ const ogImageUrl = new URL(ogImage, Astro.url).href;
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/logo.png" />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+    )}
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

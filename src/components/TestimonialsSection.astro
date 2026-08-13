@@ -161,20 +161,20 @@ const slideCount = testimonials.length;
 </section>
 
 <script>
-  function initTestimonialCarousel(root) {
-    const track = root.querySelector("[data-carousel-track]");
-    const slides = [...root.querySelectorAll("[data-carousel-slide]")];
-    const prev = root.querySelector("[data-carousel-prev]");
-    const next = root.querySelector("[data-carousel-next]");
-    const dotContainer = root.querySelector("[data-carousel-dots]");
+  function initTestimonialCarousel(root: HTMLElement) {
+    const track = root.querySelector<HTMLElement>("[data-carousel-track]");
+    const slides = [...root.querySelectorAll<HTMLElement>("[data-carousel-slide]")];
+    const prev = root.querySelector<HTMLButtonElement>("[data-carousel-prev]");
+    const next = root.querySelector<HTMLButtonElement>("[data-carousel-next]");
+    const dotContainer = root.querySelector<HTMLElement>("[data-carousel-dots]");
     const dots = dotContainer
-      ? [...dotContainer.querySelectorAll("[data-carousel-dot]")]
+      ? [...dotContainer.querySelectorAll<HTMLButtonElement>("[data-carousel-dot]")]
       : [];
 
     if (!track || slides.length === 0) return;
 
     const AUTO_DELAY_MS = 5000;
-    let autoTimer = null;
+    let autoTimer: number | null = null;
     let pausedByHover = false;
     let pausedByVisibility = false;
 
@@ -209,13 +209,13 @@ const slideCount = testimonials.length;
       return Math.min(slides.length - 1, Math.max(0, Math.round(track.scrollLeft / w)));
     };
 
-    const goTo = (index) => {
+    const goTo = (index: number) => {
       const w = getPageSize();
       const clamped = Math.max(0, Math.min(slides.length - 1, index));
       track.scrollTo({ left: clamped * w, behavior: "smooth" });
     };
 
-    const goToAndResetAutoplay = (index) => {
+    const goToAndResetAutoplay = (index: number) => {
       goTo(index);
       scheduleAutoplay();
     };
@@ -248,7 +248,7 @@ const slideCount = testimonials.length;
 
     track.addEventListener("scroll", onScroll, { passive: true });
 
-    track.addEventListener("keydown", (e) => {
+    track.addEventListener("keydown", (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
         e.preventDefault();
         goToAndResetAutoplay(getIndex() - 1);
@@ -296,10 +296,12 @@ const slideCount = testimonials.length;
       scheduleAutoplay();
     };
 
-    if ("onscrollend" in track) {
+    const supportsScrollEnd = "onscrollend" in document.documentElement;
+
+    if (supportsScrollEnd) {
       track.addEventListener("scrollend", onScrollEnd);
     } else {
-      let scrollEndTimer = null;
+      let scrollEndTimer: number | null = null;
       track.addEventListener(
         "scroll",
         () => {
@@ -317,7 +319,9 @@ const slideCount = testimonials.length;
   }
 
   function boot() {
-    document.querySelectorAll("[data-testimonial-carousel]").forEach(initTestimonialCarousel);
+    document
+      .querySelectorAll<HTMLElement>("[data-testimonial-carousel]")
+      .forEach(initTestimonialCarousel);
   }
 
   if (document.readyState === "loading") {

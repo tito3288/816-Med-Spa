@@ -1,0 +1,462 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import QuizTab from "../../components/QuizTab.astro";
+import WhyChoose816 from "../../components/WhyChoose816.astro";
+import TestimonialsSection from "../../components/TestimonialsSection.astro";
+import { locations, type LocationLanding } from "../../data/locations";
+
+export function getStaticPaths() {
+  return locations.map((location) => ({
+    params: { slug: location.slug },
+    props: { location },
+  }));
+}
+
+interface Props {
+  location: LocationLanding;
+}
+
+const { location } = Astro.props;
+const appointmentUrl = "https://816medspa.janeapp.com/";
+const phoneDigits = "8165512322";
+const phoneDisplay = "816-551-2322";
+const mapsHref =
+  "https://www.google.com/maps/dir/?api=1&destination=638+W+39th+St,+Kansas+City,+MO+64111";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${location.canonical}#webpage`,
+      url: location.canonical,
+      name: location.seoTitle,
+      description: location.seoDescription,
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": "https://www.816medspa.com/#website",
+        url: "https://www.816medspa.com/",
+        name: "816 Med Spa",
+      },
+      about: { "@id": "https://www.816medspa.com/#business" },
+      areaServed: {
+        "@type": "Place",
+        name: `${location.neighborhood}, ${location.city}`,
+      },
+    },
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://www.816medspa.com/#business",
+      name: "816 Aesthetic Med Spa",
+      url: "https://www.816medspa.com/",
+      image: "https://www.816medspa.com/images/branding/home-lobby-hero.jpg",
+      telephone: "+1-816-551-2322",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "638 W 39th St.",
+        addressLocality: "Kansas City",
+        addressRegion: "MO",
+        postalCode: "64111",
+        addressCountry: "US",
+      },
+      areaServed: {
+        "@type": "Place",
+        name: `${location.neighborhood}, ${location.city}`,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "https://schema.org/Monday",
+          opens: "09:00",
+          closes: "16:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "https://schema.org/Tuesday",
+          opens: "09:00",
+          closes: "18:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "https://schema.org/Thursday",
+          opens: "09:00",
+          closes: "18:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "https://schema.org/Friday",
+          opens: "09:00",
+          closes: "16:00",
+        },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={location.seoTitle}
+  description={location.seoDescription}
+  canonical={location.canonical}
+  ogImage={location.ogImage}
+  jsonLd={jsonLd}
+>
+  <SiteHeader />
+  <main>
+    <section class="relative isolate flex min-h-[780px] items-end overflow-hidden bg-espresso text-parchment">
+      <img
+        src={location.hero.image}
+        alt={location.hero.imageAlt}
+        width="2400"
+        height="1350"
+        class="absolute inset-0 size-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+      />
+      <div
+        class="absolute inset-0 bg-[linear-gradient(90deg,rgba(30,26,23,0.92)_0%,rgba(39,33,29,0.72)_48%,rgba(39,33,29,0.25)_100%)]"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-espresso/70 via-transparent to-espresso/25"
+        aria-hidden="true"
+      ></div>
+
+      <div class="container relative z-[1] mx-auto px-4 pt-[210px] pb-20 sm:px-6 lg:px-8 lg:pt-[260px] lg:pb-24">
+        <div class="max-w-4xl">
+          <p
+            class="mb-7 font-sans-wide text-[11px] font-medium tracking-[0.38em] uppercase text-parchment/85"
+            data-reveal
+          >
+            {location.hero.eyebrow}
+          </p>
+          <h1
+            class="max-w-4xl font-serif-italic text-[clamp(50px,7vw,104px)] font-light italic leading-[0.94] text-parchment"
+            data-reveal
+            style="--reveal-delay: 120ms"
+          >
+            {location.hero.title}
+          </h1>
+          <p
+            class="mt-8 max-w-2xl text-base leading-relaxed text-parchment/90 sm:text-lg"
+            data-reveal
+            style="--reveal-delay: 220ms"
+          >
+            {location.hero.description}
+          </p>
+          <div
+            class="mt-10 flex flex-col items-start gap-4 sm:flex-row"
+            data-reveal
+            style="--reveal-delay: 320ms"
+          >
+            <a
+              href={appointmentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full bg-parchment px-8 py-4 text-center font-medium text-ink transition hover:bg-white"
+            >
+              Request an Appointment
+            </a>
+            <a
+              href="#brookside-services"
+              class="rounded-full border border-parchment/70 px-8 py-4 text-center font-medium text-parchment transition hover:bg-parchment hover:text-ink"
+            >
+              Explore Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+          <div>
+            <p
+              class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
+              data-reveal
+            >
+              {location.introduction.eyebrow}
+            </p>
+            <h2
+              class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl lg:text-7xl"
+              data-reveal
+              style="--reveal-delay: 120ms"
+            >
+              {location.introduction.title}
+            </h2>
+          </div>
+
+          <div class="space-y-6 text-base leading-relaxed text-ink/70 sm:text-lg">
+            {location.introduction.paragraphs.map((paragraph, index) => (
+              <p data-reveal style={`--reveal-delay: ${180 + index * 70}ms`}>{paragraph}</p>
+            ))}
+            <div
+              class="mt-9 flex flex-wrap gap-4 border-t border-sage/20 pt-8"
+              data-reveal
+              style="--reveal-delay: 420ms"
+            >
+              <a
+                href={mapsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full border border-sage/35 px-7 py-3 text-sm font-medium text-ink transition hover:border-sage hover:bg-sage hover:text-white"
+              >
+                Get Directions
+              </a>
+              <a
+                href={`tel:${phoneDigits}`}
+                class="rounded-full border border-sage/35 px-7 py-3 text-sm font-medium text-ink transition hover:border-sage hover:bg-sage hover:text-white"
+              >
+                Call {phoneDisplay}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brookside-services" class="scroll-mt-28 bg-cream py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="mx-auto max-w-3xl text-center">
+            <p
+              class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
+              data-reveal
+            >
+              Services Near Brookside
+            </p>
+            <h2
+              class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl lg:text-7xl"
+              data-reveal
+              style="--reveal-delay: 120ms"
+            >
+              Aesthetic and wellness care in one Kansas City studio.
+            </h2>
+          </div>
+
+          <div class="mt-14 grid gap-6 md:grid-cols-2 lg:mt-16">
+            {location.services.map((service, index) => (
+              <article
+                class="group overflow-hidden rounded-lg border border-sage/15 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                data-reveal
+                style={`--reveal-delay: ${index * 90}ms`}
+              >
+                <div class="aspect-[16/10] overflow-hidden bg-sage/10">
+                  <a href={service.href} class="block size-full" aria-label={`Explore ${service.title}`}>
+                    <img
+                      src={service.image}
+                      alt={service.imageAlt}
+                      width="900"
+                      height="560"
+                      class="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                </div>
+                <div class="p-7 sm:p-9">
+                  <h3 class="font-display text-3xl italic leading-tight text-ink sm:text-4xl">
+                    <a href={service.href} class="transition hover:text-gold">{service.title}</a>
+                  </h3>
+                  <p class="mt-5 text-base leading-relaxed text-ink/70">{service.description}</p>
+                  <ul class="mt-7 flex flex-wrap gap-2" aria-label={`Explore ${service.title}`}>
+                    {service.links.map((link) => (
+                      <li>
+                        <a
+                          href={link.href}
+                          class="inline-flex rounded-full border border-sage/25 px-4 py-2 text-xs font-medium text-ink/75 transition hover:border-sage hover:bg-sage hover:text-white"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p
+            class="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-ink/55"
+            data-reveal
+          >
+            Individual results and treatment eligibility vary. Your provider will determine the
+            appropriate plan during consultation.
+          </p>
+          <p class="mt-5 text-center" data-reveal>
+            <a href="/gallery/" class="text-sm font-semibold text-gold underline-offset-4 hover:underline">
+              View real 816 treatment results
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <WhyChoose816 class="bg-bone" />
+
+    <section class="bg-cream py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+          <div
+            class="relative overflow-hidden rounded-lg bg-sage/10 shadow-sm"
+            data-reveal="fade-right"
+          >
+            <img
+              src={location.visit.image}
+              alt={location.visit.imageAlt}
+              width="2400"
+              height="1350"
+              class="aspect-[4/3] size-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div>
+            <p
+              class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
+              data-reveal
+            >
+              {location.visit.eyebrow}
+            </p>
+            <h2
+              class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl"
+              data-reveal
+              style="--reveal-delay: 120ms"
+            >
+              {location.visit.title}
+            </h2>
+            <div class="mt-7 space-y-5 text-base leading-relaxed text-ink/70">
+              {location.visit.paragraphs.map((paragraph, index) => (
+                <p data-reveal style={`--reveal-delay: ${200 + index * 70}ms`}>{paragraph}</p>
+              ))}
+            </div>
+            <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm" data-reveal style="--reveal-delay: 340ms">
+              <a href="/about-us/meet-the-doctor/" class="font-semibold text-gold underline-offset-4 hover:underline">
+                Meet Dr. Lucaci
+              </a>
+              <a href="/about-us/meet-the-team/" class="font-semibold text-gold underline-offset-4 hover:underline">
+                Meet the 816 team
+              </a>
+            </div>
+
+            <div
+              class="mt-9 rounded-lg border border-sage/20 bg-bone p-6 sm:p-7"
+              data-reveal
+              style="--reveal-delay: 360ms"
+            >
+              <p class="font-sans-wide text-[10px] font-semibold tracking-[0.28em] uppercase text-gold">
+                816 Aesthetic Med Spa
+              </p>
+              <address class="mt-4 font-display text-2xl leading-snug text-ink not-italic">
+                638 W 39th St.<br />Kansas City, MO 64111
+              </address>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={mapsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-parchment transition hover:bg-espresso/90"
+                >
+                  Get Directions
+                </a>
+                <a
+                  href={appointmentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full border border-ink/30 px-6 py-3 text-sm font-medium text-ink transition hover:border-ink hover:bg-ink hover:text-parchment"
+                >
+                  Book Online
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <TestimonialsSection />
+
+    <section class="bg-bone py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
+          <div>
+            <p
+              class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
+              data-reveal
+            >
+              Brookside FAQs
+            </p>
+            <h2
+              class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl"
+              data-reveal
+              style="--reveal-delay: 120ms"
+            >
+              What to know before you visit.
+            </h2>
+          </div>
+
+          <dl class="divide-y divide-sage/20 border-y border-sage/20">
+            {location.faqs.map((faq, index) => (
+              <div class="py-7" data-reveal style={`--reveal-delay: ${index * 80}ms`}>
+                <dt class="font-display text-2xl italic leading-snug text-ink sm:text-3xl">{faq.q}</dt>
+                <dd class="mt-4 text-base leading-relaxed text-ink/70">{faq.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sage py-20 text-white lg:py-28">
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <p
+          class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.36em] uppercase text-white/80"
+          data-reveal
+        >
+          Brookside, Start Here
+        </p>
+        <h2
+          class="mx-auto max-w-4xl font-display text-5xl italic leading-[1.02] sm:text-6xl lg:text-7xl"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          Your next step can be a conversation.
+        </h2>
+        <p
+          class="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg"
+          data-reveal
+          style="--reveal-delay: 220ms"
+        >
+          Visit 816 Aesthetic Med Spa in Midtown Kansas City to explore a plan tailored to your
+          skin, body, wellness goals, and comfort.
+        </p>
+        <div
+          class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          data-reveal
+          style="--reveal-delay: 320ms"
+        >
+          <a
+            href={appointmentUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full bg-white px-9 py-4 text-center font-medium text-sage transition hover:bg-white/90"
+          >
+            Request an Appointment
+          </a>
+          <a
+            href={`tel:${phoneDigits}`}
+            class="rounded-full border-2 border-white px-9 py-4 text-center font-medium text-white transition hover:bg-white hover:text-sage"
+          >
+            Call {phoneDisplay}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <QuizTab />
+</BaseLayout>
