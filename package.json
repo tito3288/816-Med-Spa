@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "build:sites": "astro build && node scripts/prepare-sites.mjs",
+    "qa:locations": "node scripts/qa-location-pages.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

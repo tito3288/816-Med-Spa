@@ -41,10 +41,35 @@ const jsonLd = {
         name: "816 Med Spa",
       },
       about: { "@id": "https://www.816medspa.com/#business" },
+      breadcrumb: { "@id": `${location.canonical}#breadcrumb` },
       areaServed: {
         "@type": "Place",
         name: `${location.neighborhood}, ${location.city}`,
       },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${location.canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.816medspa.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Areas We Serve",
+          item: "https://www.816medspa.com/locations/",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: location.neighborhood,
+          item: location.canonical,
+        },
+      ],
     },
     {
       "@type": "MedicalBusiness",
@@ -60,10 +85,6 @@ const jsonLd = {
         addressRegion: "MO",
         postalCode: "64111",
         addressCountry: "US",
-      },
-      areaServed: {
-        "@type": "Place",
-        name: `${location.neighborhood}, ${location.city}`,
       },
       openingHoursSpecification: [
         {
@@ -160,7 +181,7 @@ const jsonLd = {
               Request an Appointment
             </a>
             <a
-              href="#brookside-services"
+              href="#location-services"
               class="rounded-full border border-parchment/70 px-8 py-4 text-center font-medium text-parchment transition hover:bg-parchment hover:text-ink"
             >
               Explore Our Services
@@ -218,7 +239,7 @@ const jsonLd = {
       </div>
     </section>
 
-    <section id="brookside-services" class="scroll-mt-28 bg-cream py-20 lg:py-28">
+    <section id="location-services" class="scroll-mt-28 bg-cream py-20 lg:py-28">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
           <div class="mx-auto max-w-3xl text-center">
@@ -226,14 +247,14 @@ const jsonLd = {
               class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
               data-reveal
             >
-              Services Near Brookside
+              {location.serviceSection.eyebrow}
             </p>
             <h2
               class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl lg:text-7xl"
               data-reveal
               style="--reveal-delay: 120ms"
             >
-              Aesthetic and wellness care in one Kansas City studio.
+              {location.serviceSection.title}
             </h2>
           </div>
 
@@ -388,7 +409,7 @@ const jsonLd = {
               class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
               data-reveal
             >
-              Brookside FAQs
+              {location.neighborhood} FAQs
             </p>
             <h2
               class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl"
@@ -417,22 +438,21 @@ const jsonLd = {
           class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.36em] uppercase text-white/80"
           data-reveal
         >
-          Brookside, Start Here
+          {location.closing.eyebrow}
         </p>
         <h2
           class="mx-auto max-w-4xl font-display text-5xl italic leading-[1.02] sm:text-6xl lg:text-7xl"
           data-reveal
           style="--reveal-delay: 120ms"
         >
-          Your next step can be a conversation.
+          {location.closing.title}
         </h2>
         <p
           class="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg"
           data-reveal
           style="--reveal-delay: 220ms"
         >
-          Visit 816 Aesthetic Med Spa in Midtown Kansas City to explore a plan tailored to your
-          skin, body, wellness goals, and comfort.
+          {location.closing.description}
         </p>
         <div
           class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"

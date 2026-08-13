@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import QuizTab from "../../components/QuizTab.astro";
+import { locations } from "../../data/locations";
+
+const appointmentUrl = "https://816medspa.janeapp.com/";
+const mapsHref =
+  "https://www.google.com/maps/dir/?api=1&destination=638+W+39th+St,+Kansas+City,+MO+64111";
+---
+
+<BaseLayout
+  title="Areas We Serve | 816 Med Spa Kansas City"
+  description="Explore Kansas City neighborhoods served by 816 Aesthetic Med Spa from our studio at 638 W 39th St. in Midtown Kansas City."
+  canonical="https://www.816medspa.com/locations/"
+  ogImage="/images/branding/home-lobby-hero.jpg"
+>
+  <SiteHeader />
+  <main>
+    <section class="relative isolate min-h-[700px] overflow-hidden bg-espresso text-parchment">
+      <img
+        src="/images/branding/home-lobby-hero.jpg"
+        alt="Reception lounge at 816 Aesthetic Med Spa in Kansas City"
+        width="2400"
+        height="1350"
+        class="absolute inset-0 size-full object-cover"
+        loading="eager"
+        decoding="async"
+      />
+      <div
+        class="absolute inset-0 bg-[linear-gradient(90deg,rgba(30,26,23,0.92)_0%,rgba(39,33,29,0.72)_52%,rgba(39,33,29,0.35)_100%)]"
+        aria-hidden="true"
+      ></div>
+      <div class="container relative z-[1] mx-auto px-4 pt-[240px] pb-24 sm:px-6 lg:px-8 lg:pt-[290px]">
+        <div class="max-w-4xl">
+          <p
+            class="mb-7 font-sans-wide text-[11px] font-medium tracking-[0.38em] uppercase text-parchment/85"
+            data-reveal
+          >
+            One Kansas City Studio
+          </p>
+          <h1
+            class="font-serif-italic text-[clamp(54px,8vw,112px)] font-light italic leading-[0.94] text-parchment"
+            data-reveal
+            style="--reveal-delay: 120ms"
+          >
+            Areas we serve.
+          </h1>
+          <p
+            class="mt-8 max-w-2xl text-base leading-relaxed text-parchment/90 sm:text-lg"
+            data-reveal
+            style="--reveal-delay: 220ms"
+          >
+            Personalized aesthetic and wellness care for neighborhoods across the Kansas City area,
+            all provided from our Midtown studio at 638 W 39th St.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20 lg:py-28">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
+            <div>
+              <p
+                class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.32em] uppercase text-gold"
+                data-reveal
+              >
+                Near You in Kansas City
+              </p>
+              <h2
+                class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl"
+                data-reveal
+                style="--reveal-delay: 120ms"
+              >
+                Local guidance, one trusted destination.
+              </h2>
+            </div>
+            <div class="space-y-5 text-base leading-relaxed text-ink/70 sm:text-lg">
+              <p data-reveal style="--reveal-delay: 180ms">
+                Each neighborhood guide explains how 816 serves that area, highlights relevant
+                treatment options, and helps you plan a visit to our actual Kansas City location.
+              </p>
+              <p data-reveal style="--reveal-delay: 250ms">
+                816 does not operate separate offices in these neighborhoods. Every appointment
+                takes place at our studio at 638 W 39th St., Kansas City, MO 64111.
+              </p>
+              <div class="flex flex-wrap gap-4 pt-3" data-reveal style="--reveal-delay: 320ms">
+                <a
+                  href={mapsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full bg-ink px-7 py-3 text-sm font-medium text-parchment transition hover:bg-espresso/90"
+                >
+                  Get Directions
+                </a>
+                <a
+                  href={appointmentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full border border-ink/30 px-7 py-3 text-sm font-medium text-ink transition hover:border-ink hover:bg-ink hover:text-parchment"
+                >
+                  Book Appointment
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-16 grid gap-5 md:grid-cols-2 lg:mt-20">
+            {locations.map((location, index) => (
+              <a
+                href={`/locations/${location.slug}/`}
+                class="group relative overflow-hidden rounded-lg border border-sage/20 bg-cream p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sage/40 hover:shadow-md sm:p-9"
+                data-reveal
+                style={`--reveal-delay: ${(index % 4) * 70}ms`}
+              >
+                <span class="font-sans-wide text-[10px] font-semibold tracking-[0.3em] text-gold uppercase">
+                  Serving Kansas City
+                </span>
+                <h3 class="mt-5 font-display text-4xl italic leading-tight text-ink sm:text-5xl">
+                  {location.neighborhood}
+                </h3>
+                <p class="mt-5 max-w-xl text-sm leading-relaxed text-ink/65 sm:text-base">
+                  {location.hubDescription}
+                </p>
+                <span class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold transition group-hover:text-ink">
+                  Explore this neighborhood <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sage py-20 text-white lg:py-28">
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <p
+          class="mb-4 font-sans-wide text-[11px] font-medium tracking-[0.36em] uppercase text-white/80"
+          data-reveal
+        >
+          Begin at 816
+        </p>
+        <h2
+          class="mx-auto max-w-4xl font-display text-5xl italic leading-[1.02] sm:text-6xl lg:text-7xl"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          Wherever you are coming from, your care starts with you.
+        </h2>
+        <a
+          href={appointmentUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-10 inline-flex rounded-full bg-white px-9 py-4 font-medium text-sage transition hover:bg-white/90"
+          data-reveal
+          style="--reveal-delay: 240ms"
+        >
+          Request an Appointment
+        </a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <QuizTab />
+</BaseLayout>
