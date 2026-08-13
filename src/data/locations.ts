@@ -15,7 +15,7 @@ export interface LocationFaq {
 export interface LocationLanding {
   slug: string;
   neighborhood: string;
-  city: string;
+  areaServed: string;
   seoTitle: string;
   seoDescription: string;
   canonical: string;
@@ -57,7 +57,7 @@ export const locations: LocationLanding[] = [
   {
     slug: "brookside",
     neighborhood: "Brookside",
-    city: "Kansas City, Missouri",
+    areaServed: "Brookside, Kansas City, Missouri",
     seoTitle: "Med Spa Near Brookside, Kansas City | 816 Med Spa",
     seoDescription:
       "Brookside clients visit 816 Med Spa at 638 W 39th St. in Midtown Kansas City for injectables, skin treatments, body contouring, and wellness care.",
@@ -178,7 +178,7 @@ export const locations: LocationLanding[] = [
   {
     slug: "country-club-plaza",
     neighborhood: "Country Club Plaza",
-    city: "Kansas City, Missouri",
+    areaServed: "Country Club Plaza, Kansas City, Missouri",
     seoTitle: "Med Spa Near Country Club Plaza, Kansas City | 816 Med Spa",
     seoDescription:
       "Visit 816 Med Spa on West 39th Street, north of Country Club Plaza, for personalized injectables, skin, body, and medically guided wellness care.",
@@ -299,7 +299,7 @@ export const locations: LocationLanding[] = [
   {
     slug: "union-hill",
     neighborhood: "Union Hill",
-    city: "Kansas City, Missouri",
+    areaServed: "Union Hill, Kansas City, Missouri",
     seoTitle: "Med Spa Near Union Hill, Kansas City | 816 Med Spa",
     seoDescription:
       "Explore personalized skin treatments, injectables, body contouring, and medical wellness near Union Hill at 816 Med Spa on West 39th Street.",
@@ -420,7 +420,7 @@ export const locations: LocationLanding[] = [
   {
     slug: "rockhill",
     neighborhood: "Rockhill",
-    city: "Kansas City, Missouri",
+    areaServed: "Rockhill, Kansas City, Missouri",
     seoTitle: "Med Spa Near Rockhill, Kansas City | 816 Med Spa",
     seoDescription:
       "Explore skin treatments, injectables, body contouring, and wellness care near Rockhill at 816 Med Spa, 638 W 39th St. in Midtown Kansas City.",
@@ -537,6 +537,370 @@ export const locations: LocationLanding[] = [
       title: "Build a plan around what matters to you.",
       description:
         "Visit 816 Aesthetic Med Spa on West 39th Street to discuss thoughtful options for your skin, facial aesthetics, body, and wellness goals.",
+    },
+  },
+  {
+    slug: "waldo",
+    neighborhood: "Waldo",
+    areaServed: "Waldo, Kansas City, Missouri",
+    seoTitle: "Med Spa Near Waldo, Kansas City | 816 Med Spa",
+    seoDescription:
+      "816 Med Spa serves Waldo from West 39th Street with personalized facials, microneedling, laser hair removal, body treatments, and medical wellness.",
+    canonical: "https://www.816medspa.com/locations/waldo/",
+    ogImage: "/images/branding/home-lobby-hero.jpg",
+    hubDescription:
+      "Personalized skin, laser, face, body, and wellness care serving Waldo from 816’s West 39th Street studio.",
+    hero: {
+      eyebrow: "Med Spa Serving Waldo, Kansas City",
+      title: "Med spa care near Waldo, designed for real life.",
+      description:
+        "From customized skin care and laser hair removal to face, body, and medically guided wellness options, 816 builds individualized plans at our Midtown Kansas City studio on West 39th Street.",
+      image: "/images/branding/home-lobby-hero.jpg",
+      imageAlt: "Modern reception lounge at 816 Aesthetic Med Spa in Kansas City",
+    },
+    introduction: {
+      eyebrow: "Waldo Roots, An Individual Plan",
+      title: "A clear path from concern to care.",
+      paragraphs: [
+        "Waldo’s business district gathers around 75th Street and Wornall Road, with the Harry Wiggins Trolley Track Trail carrying forward part of the area’s streetcar history. The surrounding south Kansas City neighborhood has a strong identity shaped by homes and locally rooted businesses.",
+        "Care at 816 starts with the concern, not a preset package. Your provider can help you compare treatment methods, visit frequency, expected recovery, and maintenance before you decide what belongs in your plan.",
+        "816 serves Waldo from our studio at 638 W 39th St., north of the neighborhood in Midtown Kansas City. We do not operate a separate Waldo location.",
+      ],
+    },
+    serviceSection: {
+      eyebrow: "Med Spa Services for Waldo",
+      title: "Choose the concern first. We’ll help sort the options.",
+    },
+    services: [
+      {
+        title: "Skin care from maintenance to collagen renewal",
+        description:
+          "The customized 816 Signature Facial supports regular cleansing, exfoliation, and nourishment. Traditional microneedling creates controlled microchannels without radiofrequency, while Morpheus8 combines microneedling with RF energy. Your skin, health history, and goals help determine the appropriate level of care.",
+        href: "/treatments/skin/",
+        image: "/images/branding/home-skin-care.jpg",
+        imageAlt: "Customized skin treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "816 Signature Facial", href: "/services/signature-facial/" },
+          { label: "Microneedling", href: "/services/microneedling/" },
+          { label: "Morpheus8", href: "/services/morpheus8/" },
+        ],
+      },
+      {
+        title: "Options for unwanted hair and excessive sweating",
+        description:
+          "Laser hair removal targets pigment in the hair follicle to reduce regrowth over a series of sessions. Underarm neurotoxin works differently, reducing excessive sweating by blocking the signals that activate sweat glands in the treated area. Your provider will review suitability and expectations for either service.",
+        href: "/treatments/underarms/",
+        image: "/images/services/laser-hair-removal.jpg",
+        imageAlt: "Laser hair removal treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Laser Hair Removal", href: "/services/laser-hair-removal/" },
+          { label: "Underarm Neurotoxin", href: "/services/underarm-neurotoxin/" },
+        ],
+      },
+      {
+        title: "Expression-focused injectables, planned individually",
+        description:
+          "Neurotoxin can be placed for distinct goals, including softening frown lines, creating a subtle lip flip, or relaxing overactive masseter muscles. Each area calls for a different assessment and technique, with recommendations based on your anatomy, health history, and preferred degree of change.",
+        href: "/treatments/face/",
+        image: "/images/branding/home-injectables.jpg",
+        imageAlt: "816 Med Spa provider preparing a personalized injectable treatment",
+        links: [
+          { label: "Frown Lines", href: "/services/frown-lines/" },
+          { label: "Lip Flip", href: "/services/lip-flip/" },
+          { label: "Jawline and Masseter", href: "/services/jawline-and-masseter/" },
+        ],
+      },
+      {
+        title: "Different support for body and wellness goals",
+        description:
+          "Body contouring and medical wellness address different needs. Evolve supports selected firming and toning goals, while medical weight-loss and hormone programs begin with a health assessment and ongoing clinical guidance. Your provider can explain where each approach fits—and where it does not.",
+        href: "/treatments/wellness/",
+        image: "/images/branding/home-hormone-therapy.jpg",
+        imageAlt: "816 Med Spa clinician reviewing an individualized care plan",
+        links: [
+          { label: "Evolve", href: "/services/evolve/" },
+          { label: "Weight Loss for Women", href: "/services/weight-loss-women/" },
+          { label: "Weight Loss for Men", href: "/services/weight-loss-men/" },
+        ],
+      },
+    ],
+    visit: {
+      eyebrow: "Plan Your Visit from Waldo",
+      title: "Your appointment is north on West 39th Street.",
+      paragraphs: [
+        "The intersection of 75th Street and Wornall Road is a useful reference point for central Waldo. 816 Aesthetic Med Spa is at 638 W 39th St., north of the neighborhood in Midtown Kansas City. Because Waldo covers a broad area, use Get Directions for a current route from your exact starting point.",
+        "Request a named service online when you know what you want to explore, or choose a consultation when you want help comparing options. Bring your questions, relevant health information, and any dates that could affect treatment timing or recovery.",
+      ],
+      image: "/images/branding/contact-consult.jpg",
+      imageAlt: "Provider and client discussing a personalized plan at 816 Aesthetic Med Spa",
+    },
+    faqs: [
+      {
+        q: "Does 816 Med Spa have a Waldo location?",
+        a: "No. 816 serves Waldo from our studio at 638 W 39th St. in Midtown Kansas City, north of the neighborhood. We do not operate a separate Waldo branch.",
+      },
+      {
+        q: "Where is 816 in relation to 75th and Wornall?",
+        a: "The 816 studio is north of this central Waldo intersection, at 638 W 39th St. Waldo spans a broad area, so use the Get Directions link for current navigation from your specific starting point rather than relying on a fixed travel estimate.",
+      },
+      {
+        q: "What is the difference between laser hair removal and underarm neurotoxin?",
+        a: "Laser hair removal targets hair follicles to reduce regrowth over a series of visits. Underarm neurotoxin targets the signals that activate sweat glands to reduce excessive sweating in the treated area. They address different concerns, and your provider will assess candidacy for either service.",
+      },
+      {
+        q: "How do a facial, microneedling, and Morpheus8 differ?",
+        a: "A customized facial focuses on cleansing, exfoliation, and topical nourishment. Traditional microneedling creates controlled microchannels without radiofrequency. Morpheus8 combines microneedling with RF energy and may suit different texture or firmness goals. An assessment helps determine which approach is appropriate for your skin.",
+      },
+    ],
+    closing: {
+      eyebrow: "Serving Waldo from West 39th Street",
+      title: "Choose a next step that fits your routine.",
+      description:
+        "Request an appointment at 816 Aesthetic Med Spa in Midtown Kansas City to discuss skin maintenance, face or body treatments, or medically guided wellness care.",
+    },
+  },
+  {
+    slug: "mission-hills",
+    neighborhood: "Mission Hills",
+    areaServed: "Mission Hills, Kansas",
+    seoTitle: "Med Spa Near Mission Hills, KS | 816 Med Spa",
+    seoDescription:
+      "Mission Hills, Kansas clients visit 816 Med Spa in Kansas City, Missouri for personalized injectables, skin, body, and medically guided wellness care.",
+    canonical: "https://www.816medspa.com/locations/mission-hills/",
+    ogImage: "/images/branding/home-lobby-hero.jpg",
+    hubDescription:
+      "Consultation-led aesthetic and wellness care for Mission Hills, Kansas clients at 816’s Kansas City, Missouri studio.",
+    hero: {
+      eyebrow: "Med Spa Serving Mission Hills, Kansas",
+      title: "Considered med spa care for Mission Hills clients.",
+      description:
+        "Visit 816 Aesthetic Med Spa at 638 W 39th St. in Kansas City, Missouri, for personalized skin, injectable, body, and medically guided wellness care.",
+      image: "/images/branding/home-lobby-hero.jpg",
+      imageAlt: "Modern reception lounge at 816 Aesthetic Med Spa in Kansas City, Missouri",
+    },
+    introduction: {
+      eyebrow: "Considered Care, Carefully Planned",
+      title: "Every detail should serve the plan.",
+      paragraphs: [
+        "Mission Hills was envisioned in 1912 as a garden community. Wooded hills, winding streams, fountains, sculpture, and thoughtfully landscaped roadsides remain part of the city’s identity.",
+        "At 816 Aesthetic Med Spa, a considered approach means looking beyond a single treatment. We begin with what you want to address, then account for your health history, anatomy, skin, lifestyle, comfort, and preferred degree of change before discussing appropriate options.",
+        "Appointments promoted on this page take place at 638 W 39th St. in Kansas City, Missouri—not in Mission Hills, Kansas. The studio is north and east of Mission Hills, across the state line; use Get Directions for current routing from your starting point.",
+      ],
+    },
+    serviceSection: {
+      eyebrow: "Care for Mission Hills Clients",
+      title: "A broader plan, assembled one decision at a time.",
+    },
+    services: [
+      {
+        title: "Wellness care that begins with the clinical picture",
+        description:
+          "816 offers medically guided weight-loss programs and hormone replacement therapy for women and men, along with Empower for specialized women’s wellness. Recommendations depend on your health history, goals, and provider assessment.",
+        href: "/treatments/wellness/",
+        image: "/images/branding/home-hormone-therapy.jpg",
+        imageAlt: "816 Med Spa provider preparing an individualized wellness plan",
+        links: [
+          { label: "Weight Loss for Women", href: "/services/weight-loss-women/" },
+          { label: "Weight Loss for Men", href: "/services/weight-loss-men/" },
+          { label: "Hormone Therapy for Women", href: "/services/hrt-women/" },
+          { label: "Hormone Therapy for Men", href: "/services/hrt-men/" },
+        ],
+      },
+      {
+        title: "A layered plan for facial balance and renewal",
+        description:
+          "Wrinkle relaxers can soften selected expression lines, filler can restore or enhance facial structure, and Morpheus8 can address texture and laxity through radiofrequency microneedling. Your provider can help determine whether one treatment or a staged combination fits your goals.",
+        href: "/treatments/face/",
+        image: "/images/branding/home-injectables.jpg",
+        imageAlt: "816 Med Spa provider preparing an individualized facial treatment",
+        links: [
+          { label: "Brow Lift", href: "/services/brow-lift/" },
+          { label: "Cheek Filler", href: "/services/cheek-filler/" },
+          { label: "Morpheus8", href: "/services/morpheus8/" },
+        ],
+      },
+      {
+        title: "Skin maintenance with adjustable intensity",
+        description:
+          "A customized facial can support routine maintenance, while chemical peels and IPL offer more targeted options for concerns such as dullness, uneven texture, visible pigment, or redness. Treatment intensity and timing are selected for your skin and goals.",
+        href: "/treatments/skin/",
+        image: "/images/branding/home-skin-care.jpg",
+        imageAlt: "Customized facial treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "816 Signature Facial", href: "/services/signature-facial/" },
+          { label: "Refine Peel", href: "/services/refine-peel/" },
+          { label: "IPL Photofacial", href: "/services/ipl/" },
+        ],
+      },
+      {
+        title: "Body-focused care, selected by concern",
+        description:
+          "Evolve offers a non-surgical option for body-toning, firming, and contouring goals. Laser hair removal supports longer-term hair reduction, while underarm neurotoxin is available for excessive sweating.",
+        href: "/treatments/body/",
+        image: "/images/services/evolve.jpg",
+        imageAlt: "Evolve body contouring treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Evolve", href: "/services/evolve/" },
+          { label: "Laser Hair Removal", href: "/services/laser-hair-removal/" },
+          { label: "Underarm Neurotoxin", href: "/services/underarm-neurotoxin/" },
+        ],
+      },
+    ],
+    visit: {
+      eyebrow: "From Mission Hills, Kansas, to West 39th Street",
+      title: "Cross the state line for care in Kansas City, Missouri.",
+      paragraphs: [
+        "816 Aesthetic Med Spa is located at 638 W 39th St. in Kansas City, Missouri, north and east of Mission Hills. The visit crosses the Kansas–Missouri state line, but the precise route depends on where you begin, so use the directions link for current navigation.",
+        "If you already know which service you want to discuss, request an appointment online. If your goals cross more than one category, tell the team when booking so they can help identify the appropriate consultation and provider.",
+      ],
+      image: "/images/branding/contact-consult.jpg",
+      imageAlt: "Provider and client discussing a personalized plan at 816 Aesthetic Med Spa",
+    },
+    faqs: [
+      {
+        q: "Is 816 Med Spa located in Mission Hills, Kansas?",
+        a: "No. This page is for clients coming from Mission Hills, but appointments promoted here take place at 638 W 39th St. in Kansas City, Missouri.",
+      },
+      {
+        q: "Which direction is 816 from Mission Hills?",
+        a: "The studio is north and east of Mission Hills, across the Kansas–Missouri state line. Because the best streets can vary by your starting point and current conditions, use the Get Directions link for live routing.",
+      },
+      {
+        q: "Can I discuss both aesthetic and wellness goals?",
+        a: "Yes. Share the full scope of your goals when requesting an appointment. Different services may require different providers, assessments, or treatment plans, and the team can help identify an appropriate starting point.",
+      },
+      {
+        q: "Which services can support an ongoing skin-maintenance plan?",
+        a: "Options include the 816 Signature Facial, Luminate Facial, chemical peels, IPL, microneedling, and Morpheus8. An in-person skin assessment helps determine the appropriate treatment type, intensity, and schedule.",
+      },
+    ],
+    closing: {
+      eyebrow: "Mission Hills Clients, Begin Here",
+      title: "Choose care that considers the full picture.",
+      description:
+        "Visit 816 Aesthetic Med Spa at 638 W 39th St. in Kansas City, Missouri, to discuss a personalized plan for your aesthetic, skin, body, or wellness goals.",
+    },
+  },
+  {
+    slug: "prairie-village",
+    neighborhood: "Prairie Village",
+    areaServed: "Prairie Village, Kansas",
+    seoTitle: "Med Spa Near Prairie Village, KS | 816 Med Spa",
+    seoDescription:
+      "Explore personalized skin, injectable, body, and wellness care near Prairie Village at 816 Med Spa on West 39th Street in Kansas City, Missouri.",
+    canonical: "https://www.816medspa.com/locations/prairie-village/",
+    ogImage: "/images/branding/home-lobby-hero.jpg",
+    hubDescription:
+      "Personalized aesthetic and wellness care for Prairie Village, provided across the state line at our Kansas City, Missouri, studio.",
+    hero: {
+      eyebrow: "Med Spa Near Prairie Village, Kansas",
+      title: "A clear path to med spa care near Prairie Village.",
+      description:
+        "816 brings skin, injectable, body, and medically guided wellness services together at our West 39th Street studio in Kansas City, Missouri, north and east of Prairie Village.",
+      image: "/images/branding/home-lobby-hero.jpg",
+      imageAlt: "Modern reception lounge at 816 Aesthetic Med Spa in Kansas City, Missouri",
+    },
+    introduction: {
+      eyebrow: "Kansas to Missouri, with the Details Clear",
+      title: "One studio. A plan built from the full picture.",
+      paragraphs: [
+        "Prairie Village is a Johnson County, Kansas, city bordered by neighboring municipalities, including Kansas City, Missouri. Whether you begin near the 75th Street corridor, Harmon Park, or Meadowbrook Park on Nall Avenue, 816’s studio is north and east in Kansas City, Missouri.",
+        "Your visit can begin with questions rather than a treatment name. Tell us whether your priority is skin texture, facial expression lines, body goals, or medically guided wellness. The team can explain relevant options, candidacy, timing, and how care could be sequenced.",
+        "Appointments described on this page take place at 638 W 39th St., Kansas City, MO 64111. 816 serves the Prairie Village area from this Missouri studio; this page does not represent a Prairie Village or Kansas location.",
+      ],
+    },
+    serviceSection: {
+      eyebrow: "Care Available to Prairie Village",
+      title: "Four ways to begin, one place to ask questions.",
+    },
+    services: [
+      {
+        title: "Wellness care that begins with clinical context",
+        description:
+          "Medical weight-loss programs and hormone therapy are evaluated against your goals, health history, and clinical assessment. Empower offers an additional women’s wellness option. Recommendations and monitoring are individualized.",
+        href: "/treatments/wellness/",
+        image: "/images/branding/home-hormone-therapy.jpg",
+        imageAlt: "816 Med Spa provider reviewing a medically guided wellness plan",
+        links: [
+          { label: "Weight Loss for Women", href: "/services/weight-loss-women/" },
+          { label: "Weight Loss for Men", href: "/services/weight-loss-men/" },
+          { label: "Hormone Therapy for Women", href: "/services/hrt-women/" },
+          { label: "Hormone Therapy for Men", href: "/services/hrt-men/" },
+        ],
+      },
+      {
+        title: "Choose skin care by concern, not intensity alone",
+        description:
+          "Dermaplaning provides surface exfoliation, while the Retinol Plus Facial and Transform Peel use different approaches to renewal. Your provider can discuss which option fits your skin, goals, and expected aftercare.",
+        href: "/treatments/skin/",
+        image: "/images/services/dermaplane-facial.jpg",
+        imageAlt: "Dermaplane facial treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Dermaplane Facial", href: "/services/dermaplane-facial/" },
+          { label: "Retinol Plus Facial", href: "/services/retinol-plus-facial/" },
+          { label: "Transform Peel", href: "/services/transform-peel/" },
+        ],
+      },
+      {
+        title: "Target expression lines and facial balance selectively",
+        description:
+          "Neurotoxin can be placed for concerns such as crow’s feet, a downward-pulling brow, or a lip flip. Placement and dosing depend on your anatomy, movement, goals, and candidacy.",
+        href: "/treatments/face/",
+        image: "/images/branding/home-injectables.jpg",
+        imageAlt: "816 Med Spa provider preparing a targeted injectable treatment",
+        links: [
+          { label: "Crow’s Feet", href: "/services/crows-feet/" },
+          { label: "Brow Lift", href: "/services/brow-lift/" },
+          { label: "Lip Flip", href: "/services/lip-flip/" },
+        ],
+      },
+      {
+        title: "Body options for specific, practical goals",
+        description:
+          "Laser hair removal targets follicles to reduce regrowth over a series, underarm neurotoxin addresses excessive sweating, and Evolve supports firming, toning, and contouring goals. A consultation helps match the option to the concern.",
+        href: "/treatments/body/",
+        image: "/images/services/laser-hair-removal.jpg",
+        imageAlt: "Laser hair removal treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Laser Hair Removal", href: "/services/laser-hair-removal/" },
+          { label: "Underarm Neurotoxin", href: "/services/underarm-neurotoxin/" },
+          { label: "Evolve Body Contouring", href: "/services/evolve/" },
+        ],
+      },
+    ],
+    visit: {
+      eyebrow: "Plan Your Visit from Prairie Village",
+      title: "Check the state and city before you go.",
+      paragraphs: [
+        "Prairie Village covers several corridors, and your starting point may be near State Line Road, Mission Road, or Nall Avenue. The destination is 638 W 39th St., Kansas City, MO 64111—north and east of Prairie Village, across the Kansas–Missouri state line. Use Get Directions for live navigation from your exact starting point.",
+        "Before leaving, confirm that the map destination shows Kansas City, Missouri, not Prairie Village or another Kansas address. If you are unsure which appointment type to request, start with a consultation and list the concerns you want to discuss.",
+      ],
+      image: "/images/branding/contact-consult.jpg",
+      imageAlt: "Provider and client discussing treatment priorities at 816 Aesthetic Med Spa",
+    },
+    faqs: [
+      {
+        q: "Is 816 Med Spa in Prairie Village, Kansas?",
+        a: "No. The location promoted on this page is 638 W 39th St., Kansas City, MO 64111. This is an area-served page for Prairie Village, not a Prairie Village or Kansas location listing.",
+      },
+      {
+        q: "Will I cross the state line from Prairie Village?",
+        a: "Yes. Prairie Village is in Johnson County, Kansas, while 816 is in Kansas City, Missouri. The studio is north and east of Prairie Village across the Kansas–Missouri state line. Use Get Directions for current navigation from your exact starting point.",
+      },
+      {
+        q: "Does the route differ from Harmon Park and Meadowbrook Park?",
+        a: "Yes. Harmon Park is near 77th Place and Delmar Street, while Meadowbrook Park is at 9101 Nall Avenue, so the best path depends on your starting point and current conditions. Use live directions to 638 W 39th St., Kansas City, MO 64111.",
+      },
+      {
+        q: "Can I compare a facial, a peel, and an injectable during a consultation?",
+        a: "Yes. Bring each concern you want to discuss. Your provider can assess your skin, facial movement, health history, timing, and preferences, then explain which options may be appropriate and whether they should be staged.",
+      },
+    ],
+    closing: {
+      eyebrow: "Prairie Village, Meet Us in Missouri",
+      title: "Bring your questions across the state line.",
+      description:
+        "Request a consultation at 816’s West 39th Street studio in Kansas City, Missouri, to discuss the skin, face, body, or wellness goals you want to prioritize.",
     },
   },
 ];

@@ -92,6 +92,8 @@ const pages = slugs.map((slug) => {
   const neighborhood = breadcrumb?.itemListElement?.at(-1)?.name;
 
   if (webPage?.url !== expectedCanonical) errors.push(`${slug}: WebPage schema URL is incorrect`);
+  if (!webPage?.areaServed?.name?.includes(neighborhood ?? ""))
+    errors.push(`${slug}: WebPage areaServed does not match its neighborhood`);
   if (!breadcrumb || breadcrumb.itemListElement?.length !== 3)
     errors.push(`${slug}: BreadcrumbList schema is missing or incomplete`);
   if (business?.["@id"] !== "https://www.816medspa.com/#business")
@@ -117,6 +119,11 @@ const pages = slugs.map((slug) => {
     description,
     h1,
     neighborhood,
+    uniqueCopy: [
+      ...html.matchAll(
+        /<([a-z0-9]+)\b[^>]*\bdata-location-copy(?:=["'][^"']*["'])?[^>]*>(.*?)<\/\1>/gis,
+      ),
+    ].map((match) => text(match[2]).toLowerCase()),
   };
 });
 
@@ -131,21 +138,54 @@ for (const field of ["title", "description", "h1"]) {
   }
 }
 
+const uniqueCopyValues = new Map();
+for (const page of pages) {
+  if (page.uniqueCopy.length < 20)
+    errors.push(`${page.slug}: expected at least 20 page-specific copy elements`);
+
+  for (const value of page.uniqueCopy) {
+    if (value.length < 50) continue;
+    if (uniqueCopyValues.has(value))
+      errors.push(`${page.slug}: duplicate long-form copy also used by ${uniqueCopyValues.get(value)}`);
+    uniqueCopyValues.set(value, page.slug);
+  }
+}
+
 for (const page of pages) {
   if (!page.neighborhood) errors.push(`${page.slug}: neighborhood is missing from breadcrumb schema`);
+  const pageText = text(page.main).toLowerCase();
   for (const other of pages) {
-    if (
-      other.slug !== page.slug &&
-      other.neighborhood &&
-      text(page.main).toLowerCase().includes(other.neighborhood.toLowerCase())
-    ) {
-      errors.push(`${page.slug}: possible copy leakage from ${other.neighborhood}`);
-    }
+    if (other.slug === page.slug || !other.neighborhood) continue;
+
+    const leakageMarkers = [
+      `med spa near ${other.neighborhood}`,
+      `services near ${other.neighborhood}`,
+      `treatments near ${other.neighborhood}`,
+      `plan your visit from ${other.neighborhood}`,
+      `${other.neighborhood} faqs`,
+    ];
+
+    if (leakageMarkers.some((marker) => pageText.includes(marker.toLowerCase())))
+      errors.push(`${page.slug}: possible templated copy leakage from ${other.neighborhood}`);
   }
 }
 
 const hub = readFileSync(join(locationsRoot, "index.html"), "utf8");
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
+const hubSchemaMatch = hub.match(
+  /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/is,
+);
+let hubSchema;
+try {
+  hubSchema = JSON.parse(hubSchemaMatch?.[1] ?? "");
+} catch (error) {
+  errors.push(`locations hub: JSON-LD does not parse (${error.message})`);
+}
+
+const hubItems = hubSchema?.["@graph"]?.find((item) => item["@type"] === "ItemList");
+if (hubItems?.numberOfItems !== pages.length || hubItems?.itemListElement?.length !== pages.length)
+  errors.push(`locations hub: ItemList count does not match the ${pages.length} live pages`);
+
 for (const page of pages) {
   const path = `/locations/${page.slug}/`;
   if (!hub.includes(`href="${path}"`)) errors.push(`${page.slug}: missing crawlable link from hub`);

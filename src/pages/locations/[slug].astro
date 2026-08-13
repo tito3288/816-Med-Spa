@@ -44,7 +44,7 @@ const jsonLd = {
       breadcrumb: { "@id": `${location.canonical}#breadcrumb` },
       areaServed: {
         "@type": "Place",
-        name: `${location.neighborhood}, ${location.city}`,
+        name: location.areaServed,
       },
     },
     {
@@ -154,6 +154,7 @@ const jsonLd = {
             {location.hero.eyebrow}
           </p>
           <h1
+            data-location-copy
             class="max-w-4xl font-serif-italic text-[clamp(50px,7vw,104px)] font-light italic leading-[0.94] text-parchment"
             data-reveal
             style="--reveal-delay: 120ms"
@@ -161,6 +162,7 @@ const jsonLd = {
             {location.hero.title}
           </h1>
           <p
+            data-location-copy
             class="mt-8 max-w-2xl text-base leading-relaxed text-parchment/90 sm:text-lg"
             data-reveal
             style="--reveal-delay: 220ms"
@@ -202,6 +204,7 @@ const jsonLd = {
               {location.introduction.eyebrow}
             </p>
             <h2
+              data-location-copy
               class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl lg:text-7xl"
               data-reveal
               style="--reveal-delay: 120ms"
@@ -212,7 +215,9 @@ const jsonLd = {
 
           <div class="space-y-6 text-base leading-relaxed text-ink/70 sm:text-lg">
             {location.introduction.paragraphs.map((paragraph, index) => (
-              <p data-reveal style={`--reveal-delay: ${180 + index * 70}ms`}>{paragraph}</p>
+              <p data-location-copy data-reveal style={`--reveal-delay: ${180 + index * 70}ms`}>
+                {paragraph}
+              </p>
             ))}
             <div
               class="mt-9 flex flex-wrap gap-4 border-t border-sage/20 pt-8"
@@ -250,6 +255,7 @@ const jsonLd = {
               {location.serviceSection.eyebrow}
             </p>
             <h2
+              data-location-copy
               class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl lg:text-7xl"
               data-reveal
               style="--reveal-delay: 120ms"
@@ -279,10 +285,15 @@ const jsonLd = {
                   </a>
                 </div>
                 <div class="p-7 sm:p-9">
-                  <h3 class="font-display text-3xl italic leading-tight text-ink sm:text-4xl">
+                  <h3
+                    data-location-copy
+                    class="font-display text-3xl italic leading-tight text-ink sm:text-4xl"
+                  >
                     <a href={service.href} class="transition hover:text-gold">{service.title}</a>
                   </h3>
-                  <p class="mt-5 text-base leading-relaxed text-ink/70">{service.description}</p>
+                  <p data-location-copy class="mt-5 text-base leading-relaxed text-ink/70">
+                    {service.description}
+                  </p>
                   <ul class="mt-7 flex flex-wrap gap-2" aria-label={`Explore ${service.title}`}>
                     {service.links.map((link) => (
                       <li>
@@ -344,6 +355,7 @@ const jsonLd = {
               {location.visit.eyebrow}
             </p>
             <h2
+              data-location-copy
               class="font-display text-5xl italic leading-[1.02] text-ink sm:text-6xl"
               data-reveal
               style="--reveal-delay: 120ms"
@@ -352,7 +364,9 @@ const jsonLd = {
             </h2>
             <div class="mt-7 space-y-5 text-base leading-relaxed text-ink/70">
               {location.visit.paragraphs.map((paragraph, index) => (
-                <p data-reveal style={`--reveal-delay: ${200 + index * 70}ms`}>{paragraph}</p>
+                <p data-location-copy data-reveal style={`--reveal-delay: ${200 + index * 70}ms`}>
+                  {paragraph}
+                </p>
               ))}
             </div>
             <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm" data-reveal style="--reveal-delay: 340ms">
@@ -423,8 +437,13 @@ const jsonLd = {
           <dl class="divide-y divide-sage/20 border-y border-sage/20">
             {location.faqs.map((faq, index) => (
               <div class="py-7" data-reveal style={`--reveal-delay: ${index * 80}ms`}>
-                <dt class="font-display text-2xl italic leading-snug text-ink sm:text-3xl">{faq.q}</dt>
-                <dd class="mt-4 text-base leading-relaxed text-ink/70">{faq.a}</dd>
+                <dt
+                  data-location-copy
+                  class="font-display text-2xl italic leading-snug text-ink sm:text-3xl"
+                >
+                  {faq.q}
+                </dt>
+                <dd data-location-copy class="mt-4 text-base leading-relaxed text-ink/70">{faq.a}</dd>
               </div>
             ))}
           </dl>
@@ -441,6 +460,7 @@ const jsonLd = {
           {location.closing.eyebrow}
         </p>
         <h2
+          data-location-copy
           class="mx-auto max-w-4xl font-display text-5xl italic leading-[1.02] sm:text-6xl lg:text-7xl"
           data-reveal
           style="--reveal-delay: 120ms"
@@ -448,6 +468,7 @@ const jsonLd = {
           {location.closing.title}
         </h2>
         <p
+          data-location-copy
           class="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg"
           data-reveal
           style="--reveal-delay: 220ms"

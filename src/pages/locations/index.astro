@@ -8,13 +8,63 @@ import { locations } from "../../data/locations";
 const appointmentUrl = "https://816medspa.janeapp.com/";
 const mapsHref =
   "https://www.google.com/maps/dir/?api=1&destination=638+W+39th+St,+Kansas+City,+MO+64111";
+const canonical = "https://www.816medspa.com/locations/";
+const title = "Areas We Serve | 816 Med Spa Kansas City";
+const description =
+  "Explore Kansas City-area communities served by 816 Aesthetic Med Spa from our studio at 638 W 39th St. in Midtown Kansas City.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      about: { "@id": "https://www.816medspa.com/#business" },
+      breadcrumb: { "@id": `${canonical}#breadcrumb` },
+      mainEntity: { "@id": `${canonical}#areas` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.816medspa.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Areas We Serve",
+          item: canonical,
+        },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${canonical}#areas`,
+      name: "Areas served by 816 Aesthetic Med Spa",
+      numberOfItems: locations.length,
+      itemListElement: locations.map((location, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: location.neighborhood,
+        url: location.canonical,
+      })),
+    },
+  ],
+};
 ---
 
 <BaseLayout
-  title="Areas We Serve | 816 Med Spa Kansas City"
-  description="Explore Kansas City neighborhoods served by 816 Aesthetic Med Spa from our studio at 638 W 39th St. in Midtown Kansas City."
-  canonical="https://www.816medspa.com/locations/"
+  title={title}
+  description={description}
+  canonical={canonical}
   ogImage="/images/branding/home-lobby-hero.jpg"
+  jsonLd={jsonLd}
 >
   <SiteHeader />
   <main>
@@ -52,7 +102,7 @@ const mapsHref =
             data-reveal
             style="--reveal-delay: 220ms"
           >
-            Personalized aesthetic and wellness care for neighborhoods across the Kansas City area,
+            Personalized aesthetic and wellness care for communities across the Kansas City area,
             all provided from our Midtown studio at 638 W 39th St.
           </p>
         </div>
@@ -80,11 +130,11 @@ const mapsHref =
             </div>
             <div class="space-y-5 text-base leading-relaxed text-ink/70 sm:text-lg">
               <p data-reveal style="--reveal-delay: 180ms">
-                Each neighborhood guide explains how 816 serves that area, highlights relevant
+                Each community guide explains how 816 serves that area, highlights relevant
                 treatment options, and helps you plan a visit to our actual Kansas City location.
               </p>
               <p data-reveal style="--reveal-delay: 250ms">
-                816 does not operate separate offices in these neighborhoods. Every appointment
+                816 does not operate separate offices in these communities. Every appointment
                 takes place at our studio at 638 W 39th St., Kansas City, MO 64111.
               </p>
               <div class="flex flex-wrap gap-4 pt-3" data-reveal style="--reveal-delay: 320ms">
@@ -117,7 +167,7 @@ const mapsHref =
                 style={`--reveal-delay: ${(index % 4) * 70}ms`}
               >
                 <span class="font-sans-wide text-[10px] font-semibold tracking-[0.3em] text-gold uppercase">
-                  Serving Kansas City
+                  Serving the Kansas City Area
                 </span>
                 <h3 class="mt-5 font-display text-4xl italic leading-tight text-ink sm:text-5xl">
                   {location.neighborhood}
