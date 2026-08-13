@@ -188,7 +188,7 @@ export const locations: LocationLanding[] = [
       "Physician-led aesthetic and wellness care near Country Club Plaza, provided from our West 39th Street studio.",
     hero: {
       eyebrow: "Med Spa Near Country Club Plaza",
-      title: "A considered approach to aesthetics, north of the Plaza.",
+      title: "A considered approach to med spa care near Country Club Plaza.",
       description:
         "From refined injectables and customized skin care to body and wellness treatments, 816 brings physician-led, personalized care to our West 39th Street studio in Midtown Kansas City.",
       image: "/images/branding/home-lobby-hero.jpg",
@@ -901,6 +901,371 @@ export const locations: LocationLanding[] = [
       title: "Bring your questions across the state line.",
       description:
         "Request a consultation at 816’s West 39th Street studio in Kansas City, Missouri, to discuss the skin, face, body, or wellness goals you want to prioritize.",
+    },
+  },
+  {
+    slug: "fairway",
+    neighborhood: "Fairway",
+    areaServed: "Fairway, Kansas",
+    seoTitle: "Med Spa Near Fairway, KS | 816 Med Spa",
+    seoDescription:
+      "Fairway, Kansas clients visit 816 Med Spa in Kansas City, Missouri for customized skin care, injectables, body treatments, and medical weight-loss care.",
+    canonical: "https://www.816medspa.com/locations/fairway/",
+    ogImage: "/images/branding/home-lobby-hero.jpg",
+    hubDescription:
+      "Personalized skin, injectable, body, and medically guided wellness care for Fairway, Kansas clients at 816’s Kansas City, Missouri studio.",
+    hero: {
+      eyebrow: "Med Spa Serving Fairway, Kansas",
+      title: "Thoughtful med spa care for Fairway, with room to grow.",
+      description:
+        "Fairway clients visit 816 Aesthetic Med Spa at 638 W 39th St. in Kansas City, Missouri, for foundational skin care, targeted renewal, detail-focused injectables, body treatments, and medical weight-loss care.",
+      image: "/images/branding/home-lobby-hero.jpg",
+      imageAlt: "Modern reception lounge at 816 Aesthetic Med Spa in Kansas City, Missouri",
+    },
+    introduction: {
+      eyebrow: "For Fairway Clients",
+      title: "Care can be both focused and flexible.",
+      paragraphs: [
+        "Fairway was incorporated in 1949 and is a city in northeast Johnson County, Kansas. Its specific local anchors include the Shawnee Indian Mission State Historic Site and Neale Peterson Park, while the city’s Tree Board coordinates care for public trees and tree education.",
+        "Some goals call for routine skin maintenance; others benefit from targeted technology, an injectable assessment, or medically guided care. At 816, the starting point is your concern, health history, skin or anatomy, schedule, and preferred degree of change—not a prebuilt package.",
+        "Appointments promoted on this page take place at 638 W 39th St. in Kansas City, Missouri—not at an office in Fairway or elsewhere in Kansas. The studio is north and east of Fairway, across the Kansas–Missouri state line.",
+      ],
+    },
+    serviceSection: {
+      eyebrow: "Options for Fairway Clients",
+      title: "Start at the level of care that fits today.",
+    },
+    services: [
+      {
+        title: "Begin with the skin’s everyday foundation",
+        description:
+          "The 816 Signature Facial can be customized to the skin’s current needs, dermaplaning provides surface exfoliation, and the Luminate Facial focuses on dullness and uneven tone. These are different starting points rather than a prescribed sequence.",
+        href: "/treatments/skin/",
+        image: "/images/branding/home-skin-care.jpg",
+        imageAlt: "Customized facial treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "816 Signature Facial", href: "/services/signature-facial/" },
+          { label: "Dermaplane Facial", href: "/services/dermaplane-facial/" },
+          { label: "Luminate Facial", href: "/services/luminate-facial/" },
+        ],
+      },
+      {
+        title: "Use targeted renewal when the concern calls for it",
+        description:
+          "Traditional microneedling supports the skin’s renewal response for acne scarring, fine lines, and uneven texture. IPL addresses visible pigment and redness, while the Transform Peel is 816’s most intensive peel. An assessment helps match the method and timing to your skin.",
+        href: "/treatments/skin/",
+        image: "/images/services/chemical-peels.jpg",
+        imageAlt: "Chemical peel treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Microneedling", href: "/services/microneedling/" },
+          { label: "IPL Photofacial", href: "/services/ipl/" },
+          { label: "Transform Peel", href: "/services/transform-peel/" },
+        ],
+      },
+      {
+        title: "Focus on one facial detail at a time",
+        description:
+          "A lip flip can subtly enhance the upper lip without filler, neurotoxin can smooth chin dimpling, and masseter treatment can address jawline shape or clenching-related tension. Placement is planned around anatomy, movement, goals, health history, and candidacy.",
+        href: "/treatments/face/",
+        image: "/images/branding/home-injectables.jpg",
+        imageAlt: "816 Med Spa provider preparing a detail-focused injectable treatment",
+        links: [
+          { label: "Lip Flip", href: "/services/lip-flip/" },
+          { label: "Chin Dimpling", href: "/services/chin-dimpling/" },
+          { label: "Jawline and Masseter", href: "/services/jawline-and-masseter/" },
+        ],
+      },
+      {
+        title: "Match body care to the kind of goal",
+        description:
+          "Evolve supports aesthetic firming, toning, and contouring goals, while laser hair removal addresses unwanted hair through a separate treatment path. Medical weight-loss programs begin with clinical assessment and ongoing guidance. These services address different concerns and are not interchangeable.",
+        href: "/treatments/",
+        image: "/images/services/evolve.jpg",
+        imageAlt: "Evolve body contouring treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Evolve Body Contouring", href: "/services/evolve/" },
+          { label: "Laser Hair Removal", href: "/services/laser-hair-removal/" },
+          { label: "Weight Loss for Women", href: "/services/weight-loss-women/" },
+          { label: "Weight Loss for Men", href: "/services/weight-loss-men/" },
+        ],
+      },
+    ],
+    visit: {
+      eyebrow: "From Fairway, Kansas, to West 39th Street",
+      title: "Plan for a Missouri destination.",
+      paragraphs: [
+        "Fairway residents may begin near Mission Road, Roe Avenue, or Shawnee Mission Parkway. Whatever your starting point, the destination is 638 W 39th St., Kansas City, MO 64111—north and east of Fairway and across the state line. Use Get Directions for current navigation.",
+        "When requesting the visit, list each concern you want evaluated. If you want to compare basic skin maintenance with resurfacing, or an aesthetic service with medical weight care, the team can help identify the appropriate appointment type and provider.",
+      ],
+      image: "/images/branding/contact-consult.jpg",
+      imageAlt: "Provider and client discussing treatment priorities at 816 Aesthetic Med Spa",
+    },
+    faqs: [
+      {
+        q: "Does 816 Med Spa have an office in Fairway, Kansas?",
+        a: "No. This page serves clients coming from Fairway, but appointments promoted here take place at 638 W 39th St., Kansas City, MO 64111. 816 does not operate a Fairway or Kansas location.",
+      },
+      {
+        q: "What should I enter in maps when leaving Fairway?",
+        a: "Enter 638 W 39th St., Kansas City, MO 64111. The studio is north and east of Fairway, and the trip crosses the Kansas–Missouri state line. Use the Get Directions link for a current route from your exact starting point.",
+      },
+      {
+        q: "Do I have to begin with an advanced skin treatment?",
+        a: "No. Depending on your skin and goals, an appropriate starting point could be a customized facial, dermaplaning, or another maintenance-focused service. Microneedling, IPL, and chemical peels address different concerns and require an individual assessment.",
+      },
+      {
+        q: "Are Evolve and medical weight loss the same kind of service?",
+        a: "No. Evolve is an aesthetic body-contouring service for selected firming, toning, and contouring goals. Medical weight-loss care is a clinically guided program based on your health history, goals, and provider assessment. They are distinct services rather than substitutes for one another.",
+      },
+    ],
+    closing: {
+      eyebrow: "Fairway Clients, Begin on West 39th",
+      title: "Start where today’s concern is clearest.",
+      description:
+        "Request an appointment at 816 Aesthetic Med Spa in Kansas City, Missouri, to discuss the skin, facial, body, or medically guided wellness goal you want to prioritize.",
+    },
+  },
+  {
+    slug: "westwood",
+    neighborhood: "Westwood",
+    areaServed: "Westwood, Kansas",
+    seoTitle: "Med Spa Near Westwood, KS | 816 Med Spa",
+    seoDescription:
+      "816 Med Spa serves Westwood, Kansas, from 638 W 39th St. in Kansas City, Missouri, with personalized face, skin, body, and wellness care.",
+    canonical: "https://www.816medspa.com/locations/westwood/",
+    ogImage: "/images/branding/home-lobby-hero.jpg",
+    hubDescription:
+      "Personalized aesthetic and wellness care for Westwood, Kansas, at 816’s Kansas City, Missouri studio.",
+    hero: {
+      eyebrow: "Med Spa Serving Westwood, Kansas",
+      title: "Med spa care for Westwood, planned around specific goals.",
+      description:
+        "816 serves Westwood with personalized face, skin, body, and medically guided wellness care from our West 39th Street studio in Kansas City, Missouri.",
+      image: "/images/branding/home-lobby-hero.jpg",
+      imageAlt: "Modern reception lounge at 816 Aesthetic Med Spa in Kansas City, Missouri",
+    },
+    introduction: {
+      eyebrow: "A Small City with a Distinct Identity",
+      title: "Specific place. Individual priorities.",
+      paragraphs: [
+        "Westwood is an incorporated Johnson County city covering just under one-half square mile at the county’s northeast corner. City Hall marks 47th Street and Rainbow Boulevard, while the city’s comprehensive plan identifies natural limestone walls and streetscape details as part of Westwood’s distinct character.",
+        "At 816, precision starts by separating the questions. Movement lines, lost volume, visible pigmentation, skin laxity, body contour, and medical wellness are not interchangeable concerns. Your provider can identify the relevant category before recommending a service.",
+        "Westwood and Westwood Hills are separate incorporated Kansas cities. This page specifically serves Westwood. All 816 appointments take place at 638 W 39th St. in Kansas City, Missouri; this page does not represent an 816 office in Westwood, Westwood Hills, or Kansas.",
+      ],
+    },
+    serviceSection: {
+      eyebrow: "Treatment Planning for Westwood Clients",
+      title: "Name the goal before the treatment.",
+    },
+    services: [
+      {
+        title: "Is the goal movement, volume, or skin quality?",
+        description:
+          "Movement-related frown lines may be addressed with neurotoxin, cheek filler can restore or enhance facial support, and Morpheus8 uses radiofrequency microneedling for texture and laxity concerns. These services work differently, so the plan begins with anatomy, skin, health history, and the result you want to pursue.",
+        href: "/treatments/face/",
+        image: "/images/branding/home-injectables.jpg",
+        imageAlt: "816 Med Spa provider preparing a personalized facial treatment",
+        links: [
+          { label: "Frown Lines", href: "/services/frown-lines/" },
+          { label: "Cheek Filler", href: "/services/cheek-filler/" },
+          { label: "Morpheus8", href: "/services/morpheus8/" },
+        ],
+      },
+      {
+        title: "Does your skin need maintenance or targeted renewal?",
+        description:
+          "The 816 Signature Facial offers customized cleansing, exfoliation, and nourishment. IPL targets visible pigment and redness, while traditional microneedling supports gradual renewal for concerns such as acne scars, fine lines, and uneven texture. Your provider can help match the method to the concern.",
+        href: "/treatments/skin/",
+        image: "/images/branding/home-skin-care.jpg",
+        imageAlt: "Customized skin treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "816 Signature Facial", href: "/services/signature-facial/" },
+          { label: "IPL Photofacial", href: "/services/ipl/" },
+          { label: "Microneedling", href: "/services/microneedling/" },
+        ],
+      },
+      {
+        title: "Are you addressing contour, laxity, or excessive sweating?",
+        description:
+          "Evolve supports selected body-toning, firming, and contouring goals. Morpheus8 can be tailored to face and body areas for texture and laxity, while underarm neurotoxin addresses excessive sweating by reducing signals to sweat glands. Each concern calls for its own assessment.",
+        href: "/treatments/body/",
+        image: "/images/services/evolve.jpg",
+        imageAlt: "Evolve body contouring treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Evolve Body Contouring", href: "/services/evolve/" },
+          { label: "Morpheus8", href: "/services/morpheus8/" },
+          { label: "Underarm Neurotoxin", href: "/services/underarm-neurotoxin/" },
+        ],
+      },
+      {
+        title: "Does the next step require medical context?",
+        description:
+          "Medical weight-loss programs begin with a health assessment, hormone therapy uses lab testing and ongoing monitoring, and Empower begins with a private consultation for specialized women’s wellness concerns. Recommendations depend on your health history and provider assessment.",
+        href: "/treatments/wellness/",
+        image: "/images/branding/home-hormone-therapy.jpg",
+        imageAlt: "816 Med Spa clinician reviewing an individualized wellness plan",
+        links: [
+          { label: "Weight Loss for Women", href: "/services/weight-loss-women/" },
+          { label: "Hormone Therapy for Women", href: "/services/hrt-women/" },
+          { label: "Hormone Therapy for Men", href: "/services/hrt-men/" },
+          { label: "Empower", href: "/services/empower/" },
+        ],
+      },
+    ],
+    visit: {
+      eyebrow: "From Westwood, Kansas, to West 39th Street",
+      title: "Your appointment is across the state line in Missouri.",
+      paragraphs: [
+        "Westwood City Hall sits at 47th Street and Rainbow Boulevard, and the city identifies 47th Place as its east-west connector between Rainbow and State Line. The 816 destination is 638 W 39th St., Kansas City, MO 64111. Use Get Directions for current navigation from your exact starting point.",
+        "Before leaving Westwood, confirm that your map destination shows Kansas City, Missouri 64111—not Westwood, Kansas 66205. If you are comparing more than one treatment category, list each concern when you request your appointment so the team can identify an appropriate starting point.",
+      ],
+      image: "/images/branding/contact-consult.jpg",
+      imageAlt: "Provider and client reviewing treatment goals at 816 Aesthetic Med Spa",
+    },
+    faqs: [
+      {
+        q: "Is 816 Med Spa located in Westwood, Kansas?",
+        a: "No. 816 serves Westwood from 638 W 39th St., Kansas City, MO 64111. This is an area-served page, not a Westwood or Kansas office listing.",
+      },
+      {
+        q: "Are Westwood and Westwood Hills the same city?",
+        a: "No. Westwood and Westwood Hills are separate incorporated Johnson County municipalities. This page is specifically for Westwood, Kansas; appointments take place at the same 816 studio in Kansas City, Missouri.",
+      },
+      {
+        q: "What destination should I enter from 47th Street and Rainbow Boulevard?",
+        a: "Enter 638 W 39th St., Kansas City, MO 64111. The destination is across the Kansas–Missouri state line from Westwood. Use the Get Directions link for a current route rather than relying on a fixed travel estimate.",
+      },
+      {
+        q: "How are movement lines, volume loss, and skin texture treated differently?",
+        a: "Neurotoxin can relax selected muscles that create movement-related lines, filler can add or restore volume, and services such as IPL, microneedling, or Morpheus8 address different skin concerns. Your provider will assess anatomy, skin, health history, and goals before recommending an option.",
+      },
+    ],
+    closing: {
+      eyebrow: "Westwood Clients, Confirm the Missouri Address",
+      title: "Begin with the right destination and the right questions.",
+      description:
+        "Request an appointment at 816 Aesthetic Med Spa, 638 W 39th St. in Kansas City, Missouri, to discuss the face, skin, body, or wellness goal you want to prioritize.",
+    },
+  },
+  {
+    slug: "mission",
+    neighborhood: "Mission",
+    areaServed: "Mission, Kansas",
+    seoTitle: "Med Spa Near Mission, KS | 816 Med Spa",
+    seoDescription:
+      "Explore skin, injectable, body, and medically guided wellness care near Mission, Kansas, at 816 Med Spa on West 39th Street in Kansas City, Missouri.",
+    canonical: "https://www.816medspa.com/locations/mission/",
+    ogImage: "/images/branding/home-lobby-hero.jpg",
+    hubDescription:
+      "Skin, injectable, technology, and medical-wellness consultations for Mission, Kansas, at 816’s Kansas City, Missouri studio.",
+    hero: {
+      eyebrow: "Med Spa Serving Mission, Kansas",
+      title: "Start in Mission. Choose med spa care by the concern.",
+      description:
+        "816 serves Mission from its West 39th Street studio in Kansas City, Missouri, with consultation-led skin, injectable, body-technology, and medically guided wellness options.",
+      image: "/images/branding/home-lobby-hero.jpg",
+      imageAlt: "Modern reception lounge at 816 Aesthetic Med Spa in Kansas City, Missouri",
+    },
+    introduction: {
+      eyebrow: "Mission, Properly Identified",
+      title: "This is Mission, Kansas—the city centered on Johnson Drive.",
+      paragraphs: [
+        "Mission and Mission Hills are separate incorporated cities in Johnson County, Kansas. Mission began as Mission Hill Acres, shortened its name to Mission in 1938, and incorporated in 1951. Its historic downtown is centered along Johnson Drive, while Rock Creek Trail crosses the city from west to east.",
+        "The same precision matters when choosing a service. A facial, peel, injectable, light-based treatment, body device, and medical wellness program answer different questions. Begin with the concern, then use a consultation to compare fit, timing, aftercare, and whether services should be staged.",
+        "Appointments described on this page take place at 638 W 39th St., Kansas City, MO 64111, northeast of Mission and across the state line. This is an area-served page for Mission, Kansas—not a Mission or Mission Hills office listing.",
+      ],
+    },
+    serviceSection: {
+      eyebrow: "Services for Mission, Kansas",
+      title: "Compare methods before committing to a treatment name.",
+    },
+    services: [
+      {
+        title: "Three different approaches to surface concerns",
+        description:
+          "Microdermabrasion mechanically exfoliates dull surface buildup. Dermaplaning removes dead surface cells and fine vellus hair. The Clarify Peel is intended for acne-prone, congested skin. An in-person assessment helps determine the appropriate method and aftercare.",
+        href: "/treatments/skin/",
+        image: "/images/services/microdermabrasion-facial.jpg",
+        imageAlt: "Microdermabrasion facial treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Microdermabrasion Facial", href: "/services/microdermabrasion-facial/" },
+          { label: "Dermaplane Facial", href: "/services/dermaplane-facial/" },
+          { label: "Clarify Peel", href: "/services/clarify-peel/" },
+        ],
+      },
+      {
+        title: "Small-area injectables, individually assessed",
+        description:
+          "Neurotoxin placement is not interchangeable from one concern to another. Chin-dimpling, frown-line, and masseter treatments target different muscles and goals, so anatomy, movement, health history, placement, and dosing all require individual review.",
+        href: "/treatments/face/",
+        image: "/images/services/chin-dimpling.jpg",
+        imageAlt: "Close-up view representing chin-dimpling treatment at 816 Aesthetic Med Spa",
+        links: [
+          { label: "Chin Dimpling", href: "/services/chin-dimpling/" },
+          { label: "Frown Lines", href: "/services/frown-lines/" },
+          { label: "Jawline and Masseter", href: "/services/jawline-and-masseter/" },
+        ],
+      },
+      {
+        title: "Know what each technology is meant to address",
+        description:
+          "IPL uses intense pulsed light for concerns such as visible pigment and redness. Morpheus8 combines microneedling with radiofrequency for texture and firmness goals. Evolve uses radiofrequency and other modalities for selected body-toning, firming, and contouring goals. Candidacy and timing vary by treatment.",
+        href: "/services/",
+        image: "/images/services/evolve.jpg",
+        imageAlt: "Evolve body-treatment technology at 816 Aesthetic Med Spa",
+        links: [
+          { label: "IPL Photofacial", href: "/services/ipl/" },
+          { label: "Morpheus8", href: "/services/morpheus8/" },
+          { label: "Evolve Body Contouring", href: "/services/evolve/" },
+        ],
+      },
+      {
+        title: "Hormone and intimate-wellness care with clinical context",
+        description:
+          "Hormone therapy programs for women and men are tailored to labs, health history, symptoms, and goals. Empower is a separate women’s wellness option for select intimate-health concerns. Screening, candidacy, and follow-up depend on the service and individual assessment.",
+        href: "/treatments/wellness/",
+        image: "/images/branding/home-hormone-therapy.jpg",
+        imageAlt: "816 Med Spa clinician reviewing a medically guided wellness plan",
+        links: [
+          { label: "Hormone Therapy for Women", href: "/services/hrt-women/" },
+          { label: "Hormone Therapy for Men", href: "/services/hrt-men/" },
+          { label: "Empower", href: "/services/empower/" },
+        ],
+      },
+    ],
+    visit: {
+      eyebrow: "Plan Your Visit from Mission, Kansas",
+      title: "Johnson Drive is the reference point. West 39th Street is the destination.",
+      paragraphs: [
+        "Mission’s downtown follows Johnson Drive, while Broadmoor Park and different sections of Rock Creek Trail provide other local starting points. 816 is northeast of Mission at 638 W 39th St., Kansas City, MO 64111, across the Kansas–Missouri state line. Use Get Directions for current navigation from your exact starting point.",
+        "Confirm that the map result says Kansas City, Missouri 64111; it should not resolve to Mission or Mission Hills, Kansas. If you have not chosen a service, request a consultation and share the concerns you want to compare.",
+      ],
+      image: "/images/branding/contact-consult.jpg",
+      imageAlt: "Provider and client discussing treatment options at 816 Aesthetic Med Spa",
+    },
+    faqs: [
+      {
+        q: "Is this page for Mission or Mission Hills?",
+        a: "Mission. Mission and Mission Hills are separate incorporated cities in Johnson County, Kansas. This page serves people searching from the City of Mission, whose historic downtown is along Johnson Drive; Mission Hills has its own separate location page.",
+      },
+      {
+        q: "What destination should I enter when leaving Mission?",
+        a: "Enter 638 W 39th St., Kansas City, MO 64111. The destination is 816’s Missouri studio, northeast of Mission and across the state line. It is not an office in Mission, Kansas.",
+      },
+      {
+        q: "Will directions differ from downtown Mission and Broadmoor Park?",
+        a: "Yes. Johnson Drive, Broadmoor Park, and other parts of Mission are different starting points. Use Get Directions from your exact location for current routing rather than relying on a fixed route, mileage, or travel-time estimate.",
+      },
+      {
+        q: "How do microdermabrasion, dermaplaning, and the Clarify Peel differ?",
+        a: "Microdermabrasion uses mechanical exfoliation for dull surface buildup. Dermaplaning removes dead surface cells and fine vellus hair. The Clarify Peel is a chemical-peel option for acne-prone or congested skin. Your provider can assess your skin and discuss suitability, intensity, and aftercare.",
+      },
+    ],
+    closing: {
+      eyebrow: "Mission, Kansas, Served from Missouri",
+      title: "Turn a concern into a focused next step.",
+      description:
+        "Request a consultation at 816’s West 39th Street studio in Kansas City, Missouri, to compare appropriate skin, injectable, technology, or medically guided wellness options.",
     },
   },
 ];

@@ -4,6 +4,18 @@ import { join } from "node:path";
 const root = process.argv[2] ?? "dist/client";
 const locationsRoot = join(root, "locations");
 const errors = [];
+const expectedSlugs = [
+  "brookside",
+  "country-club-plaza",
+  "fairway",
+  "mission",
+  "mission-hills",
+  "prairie-village",
+  "rockhill",
+  "union-hill",
+  "waldo",
+  "westwood",
+].sort();
 
 const decode = (value) =>
   value
@@ -40,6 +52,12 @@ const slugs = readdirSync(locationsRoot, { withFileTypes: true })
   .filter((entry) => entry.isDirectory() && existsSync(join(locationsRoot, entry.name, "index.html")))
   .map((entry) => entry.name)
   .sort();
+
+if (slugs.join("|") !== expectedSlugs.join("|")) {
+  errors.push(
+    `location routes: expected ${expectedSlugs.join(", ")}; found ${slugs.join(", ") || "none"}`,
+  );
+}
 
 const pages = slugs.map((slug) => {
   const html = readFileSync(join(locationsRoot, slug, "index.html"), "utf8");
@@ -138,6 +156,11 @@ for (const field of ["title", "description", "h1"]) {
   }
 }
 
+for (const page of pages) {
+  if (!page.h1.toLowerCase().includes((page.neighborhood ?? "").toLowerCase()))
+    errors.push(`${page.slug}: H1 does not identify its neighborhood`);
+}
+
 const uniqueCopyValues = new Map();
 for (const page of pages) {
   if (page.uniqueCopy.length < 20)
@@ -156,6 +179,8 @@ for (const page of pages) {
   const pageText = text(page.main).toLowerCase();
   for (const other of pages) {
     if (other.slug === page.slug || !other.neighborhood) continue;
+    if (page.neighborhood.toLowerCase().startsWith(`${other.neighborhood.toLowerCase()} `))
+      continue;
 
     const leakageMarkers = [
       `med spa near ${other.neighborhood}`,
