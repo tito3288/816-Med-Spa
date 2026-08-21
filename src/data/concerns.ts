@@ -234,7 +234,7 @@ export const concerns: Concern[] = [
     slug: "skin-laxity",
     name: "Skin Laxity",
     category: "Skin",
-    image: unsplash("photo-1552693673-1bf958298935"),
+    image: "/images/concerns/skin-laxity.webp",
     intro: "Loose, sagging skin firmed and lifted by rebuilding collagen.",
     description: [
       "Skin laxity — looseness and sagging — develops as collagen and elastin production slows with age, often appearing on the face, neck, and body.",
@@ -246,7 +246,7 @@ export const concerns: Concern[] = [
     slug: "hyperpigmentation",
     name: "Hyperpigmentation",
     category: "Skin",
-    image: unsplash("photo-1532413992378-f169ac26fff0"),
+    image: "/images/concerns/hyperpigmentation.webp",
     intro: "Dark spots and uneven tone faded for brighter, more even skin.",
     description: [
       "Hyperpigmentation appears as dark patches or spots when the skin produces excess melanin, often triggered by sun exposure, inflammation, or hormones.",
@@ -258,7 +258,7 @@ export const concerns: Concern[] = [
     slug: "sun-damage",
     name: "Sun Damage",
     category: "Skin",
-    image: unsplash("photo-1583001931096-959e9a1a6223"),
+    image: "/images/concerns/sun-damage.webp",
     intro: "Years of sun exposure reversed for healthier, more radiant skin.",
     description: [
       "Sun damage accumulates over years, leaving behind dark spots, rough texture, broken vessels, and premature lines — even when the skin looked fine at the time.",
@@ -270,7 +270,7 @@ export const concerns: Concern[] = [
     slug: "redness-and-rosacea",
     name: "Redness and Rosacea",
     category: "Skin",
-    image: unsplash("photo-1519824145371-296894a0daa9"),
+    image: "/images/concerns/redness-and-rosacea.webp",
     intro: "Persistent facial redness calmed for a more even, comfortable complexion.",
     description: [
       "Rosacea and chronic redness cause flushing, visible vessels, and sensitivity, most often across the cheeks, nose, and forehead. Flare-ups can be triggered by heat, stress, and certain foods.",
@@ -282,7 +282,7 @@ export const concerns: Concern[] = [
     slug: "acne",
     name: "Acne",
     category: "Skin",
-    image: unsplash("photo-1505944270255-72b8c68c6a70"),
+    image: "/images/concerns/acne.webp",
     intro: "Active breakouts cleared and prevented for calmer, clearer skin.",
     description: [
       "Acne occurs when pores become clogged with oil and dead skin, leading to breakouts that can affect the face, back, and chest at any age.",
@@ -294,7 +294,7 @@ export const concerns: Concern[] = [
     slug: "acne-scars",
     name: "Acne Scars",
     category: "Skin",
-    image: unsplash("photo-1576091160550-2173dba999ef"),
+    image: "/images/concerns/acne-scars.webp",
     intro: "Pitted and discolored acne scarring smoothed and resurfaced.",
     description: [
       "Acne scars — whether pitted, raised, or discolored — can remain long after breakouts heal, leaving uneven texture and tone.",
@@ -306,7 +306,7 @@ export const concerns: Concern[] = [
     slug: "enlarged-pores",
     name: "Enlarged Pores",
     category: "Skin",
-    image: unsplash("photo-1542848284-8afa78a08ccb"),
+    image: "/images/concerns/enlarged-pores.webp",
     intro: "Visibly large pores refined for smoother-looking skin.",
     description: [
       "Enlarged pores become more noticeable with excess oil, sun damage, and the natural loss of firmness that keeps pores tight.",
@@ -318,7 +318,7 @@ export const concerns: Concern[] = [
     slug: "dull-skin",
     name: "Dull Skin",
     category: "Skin",
-    image: unsplash("photo-1620331311520-246422fd82f9"),
+    image: "/images/concerns/dull-skin.webp",
     intro: "Tired, lackluster skin revived to a fresh, healthy glow.",
     description: [
       "Dull skin lacks radiance, often from a buildup of dead skin cells, dehydration, and slowed cell turnover. The result is a tired, uneven appearance.",
@@ -330,7 +330,7 @@ export const concerns: Concern[] = [
     slug: "dehydrated-skin",
     name: "Dehydrated Skin",
     category: "Skin",
-    image: unsplash("photo-1610992015732-2449b76344bc"),
+    image: "/images/concerns/dehydrated-skin.webp",
     intro: "Thirsty, tight-feeling skin replenished and restored.",
     description: [
       "Dehydrated skin lacks water — not necessarily oil — leaving it feeling tight, looking dull, and showing fine lines more readily. Any skin type can be dehydrated.",
@@ -342,7 +342,7 @@ export const concerns: Concern[] = [
     slug: "oily-skin",
     name: "Oily Skin",
     category: "Skin",
-    image: unsplash("photo-1502323777036-f29e3972d82f"),
+    image: "/images/concerns/oily-skin.webp",
     intro: "Excess shine and oil balanced for a clearer, matte-fresh complexion.",
     description: [
       "Oily skin produces excess sebum, which can lead to shine, clogged pores, and frequent breakouts. Genetics and hormones often play a role.",
@@ -354,7 +354,7 @@ export const concerns: Concern[] = [
     slug: "melasma",
     name: "Melasma",
     category: "Skin",
-    image: unsplash("photo-1526045478516-99145907023c"),
+    image: "/images/concerns/melasma.webp",
     intro: "Hormone-related brown patches gently lightened and managed.",
     description: [
       "Melasma causes symmetrical brown or gray-brown patches, usually on the cheeks, forehead, and upper lip. It's often driven by hormones and worsened by sun exposure.",
@@ -366,7 +366,7 @@ export const concerns: Concern[] = [
     slug: "stretch-marks",
     name: "Stretch Marks",
     category: "Skin",
-    image: unsplash("photo-1519415943484-9fa1873496d4"),
+    image: "/images/concerns/stretch-marks.webp",
     intro: "Textured stretch marks softened and blended into the surrounding skin.",
     description: [
       "Stretch marks appear when skin stretches rapidly during growth, pregnancy, or weight change, leaving streaks of altered texture and color.",
@@ -378,7 +378,7 @@ export const concerns: Concern[] = [
     slug: "broken-capillaries",
     name: "Broken Capillaries",
     category: "Skin",
-    image: unsplash("photo-1498843053639-170ff2122f35"),
+    image: "/images/concerns/broken-capillaries.webp",
     intro: "Visible facial capillaries diminished for clearer, even-toned skin.",
     description: [
       "Broken capillaries are small, visible blood vessels — often around the nose and cheeks — caused by sun damage, genetics, and skin sensitivity.",
@@ -390,7 +390,7 @@ export const concerns: Concern[] = [
     slug: "skin-texture-irregularities",
     name: "Skin Texture Irregularities",
     category: "Skin",
-    image: unsplash("photo-1487070183336-b863922373d4"),
+    image: "/images/concerns/skin-texture-irregularities.webp",
     intro: "Rough, uneven texture resurfaced to a smooth, polished finish.",
     description: [
       "Uneven texture — roughness, bumps, and an irregular surface — can result from sun damage, scarring, congestion, and the natural slowing of cell turnover.",
@@ -402,7 +402,7 @@ export const concerns: Concern[] = [
     slug: "skin-aging",
     name: "Skin Aging",
     category: "Skin",
-    image: unsplash("photo-1525909002-1b05e0c869d8"),
+    image: "/images/concerns/skin-aging.webp",
     intro: "The combined signs of aging addressed with a comprehensive, tailored plan.",
     description: [
       "Aging skin shows a combination of changes — lines, volume loss, laxity, dullness, and uneven tone — as collagen, elastin, and hydration naturally decline.",
@@ -416,7 +416,7 @@ export const concerns: Concern[] = [
     slug: "weight-gain",
     name: "Weight Gain",
     category: "Wellness",
-    image: unsplash("photo-1556760544-74068565f05c"),
+    image: "/images/concerns/weight-gain.webp",
     intro: "Stubborn weight addressed with medically guided, sustainable programs.",
     description: [
       "Unwanted weight gain can stem from hormones, metabolism, stress, and lifestyle — and it often resists diet and exercise alone.",
@@ -428,7 +428,7 @@ export const concerns: Concern[] = [
     slug: "hair-loss",
     name: "Hair Loss",
     category: "Wellness",
-    image: unsplash("photo-1540555700478-4be289fbecef"),
+    image: "/images/concerns/hair-loss.webp",
     intro: "Thinning hair supported with regenerative, restorative therapies.",
     description: [
       "Hair thinning and loss affect both men and women and can be driven by genetics, hormones, stress, and nutrition.",
@@ -440,7 +440,7 @@ export const concerns: Concern[] = [
     slug: "low-energy",
     name: "Low Energy",
     category: "Wellness",
-    image: unsplash("photo-1522337660859-02fbefca4702"),
+    image: "/images/concerns/low-energy.webp",
     intro: "Persistent fatigue addressed at the source for renewed vitality.",
     description: [
       "Ongoing low energy and fatigue can signal hormonal imbalance, nutrient deficiency, or the cumulative toll of stress and poor sleep.",
@@ -452,7 +452,7 @@ export const concerns: Concern[] = [
     slug: "mens-hormone-balancing",
     name: "Men's Hormone Balancing",
     category: "Wellness",
-    image: unsplash("photo-1512496015851-a90fb38ba796"),
+    image: "/images/concerns/mens-hormone-balancing.webp",
     intro: "Optimized hormones for energy, strength, focus, and well-being in men.",
     description: [
       "Declining testosterone and shifting hormones can leave men with fatigue, reduced strength, low drive, weight gain, and mental fog.",
@@ -464,7 +464,7 @@ export const concerns: Concern[] = [
     slug: "womens-hormone-balancing",
     name: "Women's Hormone Balancing",
     category: "Wellness",
-    image: unsplash("photo-1582719478250-c89cae4dc85b"),
+    image: "/images/concerns/womens-hormone-balancing.webp",
     intro: "Balanced hormones for mood, energy, and well-being through every stage.",
     description: [
       "Hormonal shifts through perimenopause, menopause, and beyond can bring fatigue, mood changes, weight gain, sleep issues, and low drive.",
@@ -476,7 +476,7 @@ export const concerns: Concern[] = [
     slug: "low-sex-drive",
     name: "Low Sex Drive",
     category: "Wellness",
-    image: unsplash("photo-1544161515-4ab6ce6db874"),
+    image: "/images/concerns/low-sex-drive.webp",
     intro: "Diminished libido addressed through hormone and wellness optimization.",
     description: [
       "A low sex drive in men or women is often rooted in hormonal imbalance, stress, fatigue, or life stage — and it's more common than most people realize.",
