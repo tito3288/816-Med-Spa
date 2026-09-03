@@ -86,7 +86,7 @@ export const concerns: Concern[] = [
     slug: "nasolabial-folds",
     name: "Nasolabial Folds",
     category: "Face",
-    image: unsplash("photo-1629909613654-28e377c37b09"),
+    image: "/images/concerns/nasolabial-folds.webp",
     intro: "The lines from the nose to the mouth softly restored with balanced volume.",
     description: [
       "Nasolabial folds are the lines that run from the sides of the nose to the corners of the mouth. As the cheeks lose volume with age, these folds deepen and can age the face.",
@@ -98,7 +98,7 @@ export const concerns: Concern[] = [
     slug: "marionette-lines",
     name: "Marionette Lines",
     category: "Face",
-    image: unsplash("photo-1512290923902-8a9f81dc236c"),
+    image: "/images/concerns/marionette-lines.webp",
     intro: "The lines from the mouth to the chin lifted and softened for a happier resting face.",
     description: [
       "Marionette lines extend downward from the corners of the mouth toward the chin. Volume loss and gravity can pull the mouth into a downturned, sometimes sad-looking expression.",
@@ -110,7 +110,7 @@ export const concerns: Concern[] = [
     slug: "volume-loss-in-cheeks",
     name: "Volume Loss in Cheeks",
     category: "Face",
-    image: unsplash("photo-1515377905703-c4788e51af15"),
+    image: "/images/concerns/volume-loss-in-cheeks.webp",
     intro: "Flattened, hollow cheeks re-contoured for natural lift and definition.",
     description: [
       "The cheeks are often the first area to lose volume as facial fat pads shrink and descend with age. This flattening can make the face look tired and accentuate the lines below.",
@@ -122,7 +122,7 @@ export const concerns: Concern[] = [
     slug: "hollow-under-eyes",
     name: "Hollow Under-Eyes",
     category: "Face",
-    image: unsplash("photo-1596178060810-72f53ce9a65c"),
+    image: "/images/concerns/hollow-under-eyes.webp",
     intro: "Tired, shadowed under-eyes brightened and smoothed for a well-rested look.",
     description: [
       "Hollow under-eyes, or tear troughs, create shadows and a tired appearance even after a full night's sleep. They develop as volume diminishes and skin thins around the delicate eye area.",
@@ -148,7 +148,7 @@ export const concerns: Concern[] = [
     slug: "cellulite",
     name: "Cellulite",
     category: "Body",
-    image: unsplash("photo-1556228578-8c89e6adf883"),
+    image: "/images/concerns/cellulite.webp",
     intro: "Dimpled skin on the thighs and hips smoothed for a firmer texture.",
     description: [
       "Cellulite is the dimpled, uneven texture that appears most often on the thighs, hips, and buttocks. It forms when fat pushes against connective tissue beneath the skin and affects people of every body type.",
@@ -160,7 +160,7 @@ export const concerns: Concern[] = [
     slug: "stubborn-fat",
     name: "Stubborn Fat",
     category: "Body",
-    image: unsplash("photo-1570554886111-e80fcca6a029"),
+    image: "/images/concerns/stubborn-fat.webp",
     intro: "Diet- and exercise-resistant pockets of fat targeted and reduced.",
     description: [
       "Stubborn fat refers to localized pockets — the abdomen, flanks, thighs, or arms — that persist despite a healthy diet and consistent exercise.",
@@ -172,7 +172,7 @@ export const concerns: Concern[] = [
     slug: "weak-core-muscles",
     name: "Weak Core Muscles",
     category: "Body",
-    image: unsplash("photo-1612817288484-6f916006741a"),
+    image: "/images/concerns/weak-core-muscles.webp",
     intro: "Lost core strength and tone supported through targeted body treatments.",
     description: [
       "A weak core can follow pregnancy, weight changes, or simply time, affecting posture, definition, and confidence in how the midsection looks and feels.",
@@ -184,7 +184,7 @@ export const concerns: Concern[] = [
     slug: "spider-veins",
     name: "Spider Veins",
     category: "Body",
-    image: unsplash("photo-1601049541289-9b1b7bbbfe19"),
+    image: "/images/concerns/spider-veins.webp",
     intro: "Fine, visible veins on the face and legs diminished for clearer skin.",
     description: [
       "Spider veins are small, web-like clusters of red or blue veins that appear on the legs and face. They're caused by weakened vessels and are influenced by genetics, hormones, and sun exposure.",
@@ -196,7 +196,7 @@ export const concerns: Concern[] = [
     slug: "postpartum-body",
     name: "Postpartum Body",
     category: "Body",
-    image: unsplash("photo-1607779097040-26e80aa78e66"),
+    image: "/images/concerns/postpartum-body.webp",
     intro: "Comprehensive, compassionate support to help you feel like yourself again.",
     description: [
       "Pregnancy transforms the body in remarkable ways, and the postpartum period can leave lingering changes — loose skin, stubborn fat, and shifts in tone and energy.",
@@ -208,7 +208,7 @@ export const concerns: Concern[] = [
     slug: "muscle-tone-loss",
     name: "Muscle Tone Loss",
     category: "Body",
-    image: unsplash("photo-1620916566398-39f1143ab7be"),
+    image: "/images/concerns/muscle-tone-loss.webp",
     intro: "Softening definition firmed and restored for a more sculpted shape.",
     description: [
       "Muscle tone naturally declines with age, hormonal change, and reduced activity, leaving areas of the body looking softer and less defined.",
@@ -220,7 +220,7 @@ export const concerns: Concern[] = [
     slug: "unwanted-and-excess-hair",
     name: "Unwanted and Excess Hair",
     category: "Body",
-    image: unsplash("photo-1559599101-f09722fb4948"),
+    image: "/images/concerns/unwanted-and-excess-hair.webp",
     intro: "Smooth, hair-free skin with lasting laser hair removal.",
     description: [
       "Unwanted hair on the face, underarms, legs, bikini area, and beyond can be tedious to manage with shaving, waxing, and plucking.",
