@@ -16,17 +16,13 @@ export interface Concern {
 // Display order for category columns / sections.
 export const categories: ConcernCategory[] = ["Face", "Body", "Skin", "Wellness"];
 
-// All image IDs below are verified to resolve on images.unsplash.com.
-const unsplash = (id: string) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&h=1500&q=80`;
-
 export const concerns: Concern[] = [
   // ─── Face ──────────────────────────────────────────────────────────
   {
     slug: "fine-lines",
     name: "Fine Lines",
     category: "Face",
-    image: "/images/services/botox-at-816.jpg",
+    image: "/images/concerns/fine-lines.webp",
     intro: "The earliest signs of expression and time, softened with a refined, natural-looking approach.",
     description: [
       "Fine lines are the shallow creases that first appear around the eyes, mouth, and forehead as skin loses collagen and elasticity. Sun exposure, repeated expressions, and the natural slowing of cell turnover all play a part.",
@@ -38,7 +34,7 @@ export const concerns: Concern[] = [
     slug: "wrinkles",
     name: "Wrinkles",
     category: "Face",
-    image: "/images/services/xeomin-at-816.jpg",
+    image: "/images/concerns/wrinkles.webp",
     intro: "Deeper, set-in lines relaxed and resurfaced for smoother, more youthful skin.",
     description: [
       "Wrinkles form as years of muscle movement, collagen loss, and sun damage etch lines into the skin. Unlike fine lines, they remain visible even when the face is at rest.",
@@ -62,7 +58,7 @@ export const concerns: Concern[] = [
     slug: "crows-feet",
     name: "Crow's Feet",
     category: "Face",
-    image: unsplash("photo-1487412947147-5cebf100ffc2"),
+    image: "/images/concerns/crows-feet.webp",
     intro: "The fine lines that fan from the corners of the eyes, gently smoothed.",
     description: [
       "Crow's feet are the small lines that radiate outward from the outer corners of the eyes, deepened by smiling, squinting, and sun exposure. They're often one of the first areas to show age.",
@@ -134,7 +130,7 @@ export const concerns: Concern[] = [
     slug: "double-chin",
     name: "Double Chin",
     category: "Face",
-    image: unsplash("photo-1598440947619-2c35fc9aa908"),
+    image: "/images/concerns/double-chin.webp",
     intro: "Submental fullness contoured for a sleeker, more defined jawline.",
     description: [
       "A double chin — fullness beneath the jaw — can be stubborn and resistant to diet and exercise, often due to genetics or age-related skin laxity.",
